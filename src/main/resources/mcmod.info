@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "bakaintouhou",
+    "name": "BakaInTouhou",
+    "description": "There are ⑨ baka in touhou",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/TartaricAcid/BakaInTouhou",
+    "updateUrl": "",
+    "authorList": [
+      "TartaricAcid <- This is a baka"
+    ],
+    "credits": "ZUN, Notch",
+    "logoFile": "/assets/bakaintouhou/logo.png"
+  }
+]
