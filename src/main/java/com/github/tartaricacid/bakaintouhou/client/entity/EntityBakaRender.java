@@ -4,6 +4,7 @@ import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.client.model.EntityBakaModel;
 import com.github.tartaricacid.bakaintouhou.common.entity.EntityBaka;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -24,6 +25,11 @@ public class EntityBakaRender extends RenderLiving<EntityBaka> {
     @Override
     protected ResourceLocation getEntityTexture(EntityBaka entity) {
         return resourceLocation;
+    }
+
+    @Override
+    protected void preRenderCallback(EntityBaka entity, float partialTickTime) {
+        GlStateManager.scale(0.8f, 0.8f, 0.8f);
     }
 
     public static class Factory implements IRenderFactory<EntityBaka> {
