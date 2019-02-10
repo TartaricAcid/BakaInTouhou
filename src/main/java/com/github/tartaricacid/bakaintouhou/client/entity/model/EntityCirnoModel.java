@@ -1,11 +1,11 @@
-package com.github.tartaricacid.bakaintouhou.client.model;
+package com.github.tartaricacid.bakaintouhou.client.entity.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class EntityBakaModel extends ModelBase {
+public class EntityCirnoModel extends ModelBase {
     //fields
     ModelRenderer head;
     ModelRenderer body1;
@@ -25,7 +25,7 @@ public class EntityBakaModel extends ModelBase {
     ModelRenderer handL;
     ModelRenderer handR;
 
-    public EntityBakaModel() {
+    public EntityCirnoModel() {
         textureWidth = 128;
         textureHeight = 32;
 
@@ -171,19 +171,19 @@ public class EntityBakaModel extends ModelBase {
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;
-        this.handL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 2F * limbSwingAmount;
-        this.handL.rotateAngleZ = MathHelper.cos(ageInTicks * 0.05f) * 0.05f - 0.523f;
-        this.handR.rotateAngleX = -MathHelper.cos(limbSwing * 2F) * 2F * limbSwingAmount;
         this.footR.rotateAngleX = -MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;
+        this.handL.rotateAngleX = MathHelper.cos(limbSwing * 1.7F) * 1F * limbSwingAmount;
+        this.handL.rotateAngleZ = MathHelper.cos(ageInTicks * 0.05f) * 0.05f - 0.523f;
+        this.handR.rotateAngleX = -MathHelper.cos(limbSwing * 1.7F) * 1F * limbSwingAmount;
         this.handR.rotateAngleZ = -MathHelper.cos(ageInTicks * 0.05f) * 0.05f + 0.523f;
 
         // 翅膀的周期运动
-        this.wingR1.rotateAngleY = MathHelper.cos(ageInTicks * 0.3f) * 0.1f - 0.3f;
-        this.wingR2.rotateAngleY = MathHelper.cos(ageInTicks * 0.3f) * 0.1f - 0.3f;
-        this.wingR3.rotateAngleY = MathHelper.cos(ageInTicks * 0.3f) * 0.1f - 0.3f;
-        this.wingL1.rotateAngleY = -MathHelper.cos(ageInTicks * 0.3f) * 0.1f + 0.3f;
-        this.wingL2.rotateAngleY = -MathHelper.cos(ageInTicks * 0.3f) * 0.1f + 0.3f;
-        this.wingL3.rotateAngleY = -MathHelper.cos(ageInTicks * 0.3f) * 0.1f + 0.3f;
+        this.wingR1.rotateAngleY = MathHelper.cos(ageInTicks * 0.3f) * 0.4f - 0.8f;
+        this.wingR2.rotateAngleY = MathHelper.cos(ageInTicks * 0.3f) * 0.4f - 0.8f;
+        this.wingR3.rotateAngleY = MathHelper.cos(ageInTicks * 0.3f) * 0.4f - 0.8f;
+        this.wingL1.rotateAngleY = -MathHelper.cos(ageInTicks * 0.3f) * 0.4f + 0.8f;
+        this.wingL2.rotateAngleY = -MathHelper.cos(ageInTicks * 0.3f) * 0.4f + 0.8f;
+        this.wingL3.rotateAngleY = -MathHelper.cos(ageInTicks * 0.3f) * 0.4f + 0.8f;
 
         // 头饰的周期运动
         this.headdress1.rotateAngleY = MathHelper.cos(ageInTicks * 0.2f) * 0.05f - 0.2f;

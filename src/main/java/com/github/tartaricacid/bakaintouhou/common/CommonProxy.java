@@ -1,7 +1,8 @@
 package com.github.tartaricacid.bakaintouhou.common;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
-import com.github.tartaricacid.bakaintouhou.common.entity.EntityBaka;
+import com.github.tartaricacid.bakaintouhou.common.entity.EntityCirno;
+import com.github.tartaricacid.bakaintouhou.common.entity.EntityReimu;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -24,8 +25,11 @@ public class CommonProxy {
     }
 
     private void entityRegister() {
-        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/baka.png"),
-                EntityBaka.class, "touhou_baka", 1, BakaInTouhou.INSTANCE, 64,
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/cirno.png"),
+                EntityCirno.class, "entity_cirno", 1, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x4a6195, 0xffffff);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/reimu.png"),
+                EntityReimu.class, "entity_reimu", 2, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xbc0408, 0xffffff);
     }
 }
