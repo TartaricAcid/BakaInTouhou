@@ -1,9 +1,11 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
 import com.github.tartaricacid.bakaintouhou.client.entity.EntityCirnoRender;
+import com.github.tartaricacid.bakaintouhou.client.entity.EntityMarisaRender;
 import com.github.tartaricacid.bakaintouhou.client.entity.EntityReimuRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.entity.EntityCirno;
+import com.github.tartaricacid.bakaintouhou.common.entity.EntityMarisa;
 import com.github.tartaricacid.bakaintouhou.common.entity.EntityReimu;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +19,7 @@ public class ClientProxy extends CommonProxy {
         super.preinit(event);
         RenderingRegistry.registerEntityRenderingHandler(EntityCirno.class, EntityCirnoRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityReimu.class, EntityReimuRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityMarisa.class, EntityMarisaRender.FACTORY);
     }
 
     @Mod.EventHandler
