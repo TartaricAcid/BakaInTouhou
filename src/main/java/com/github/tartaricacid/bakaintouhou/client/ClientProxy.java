@@ -1,12 +1,8 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
-import com.github.tartaricacid.bakaintouhou.client.entity.EntityCirnoRender;
-import com.github.tartaricacid.bakaintouhou.client.entity.EntityMarisaRender;
-import com.github.tartaricacid.bakaintouhou.client.entity.EntityReimuRender;
+import com.github.tartaricacid.bakaintouhou.client.entity.*;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
-import com.github.tartaricacid.bakaintouhou.common.entity.EntityCirno;
-import com.github.tartaricacid.bakaintouhou.common.entity.EntityMarisa;
-import com.github.tartaricacid.bakaintouhou.common.entity.EntityReimu;
+import com.github.tartaricacid.bakaintouhou.common.entity.*;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -20,6 +16,8 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityCirno.class, EntityCirnoRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityReimu.class, EntityReimuRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityMarisa.class, EntityMarisaRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRumia.class, EntityRumiaRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityDaiyousei.class, EntityDaiyouseiRender.FACTORY);
     }
 
     @Mod.EventHandler
