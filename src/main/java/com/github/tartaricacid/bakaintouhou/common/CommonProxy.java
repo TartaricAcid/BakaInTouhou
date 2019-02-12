@@ -50,5 +50,8 @@ public class CommonProxy {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/patchouli.png"),
                 EntityPatchouli.class, "entity_patchouli", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x975680, 0xf1e1eb);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/sakuya.png"),
+                EntitySakuya.class, "entity_sakuya", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0x00c68, 0xced0d0);
     }
 }
