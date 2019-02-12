@@ -1,3 +1,4 @@
+# ～ the Embodiment of Scarlet Devil.
 entity.entity_reimu.name=Reimu Hakurei
 entity.entity_marisa.name=Marisa Kirisame
 entity.entity_rumia.name=Rumia
@@ -9,3 +10,6 @@ entity.entity_patchouli.name=Patchouli Knowledge
 entity.entity_sakuya.name=Sakuya Izayoi
 entity.entity_remilia.name=Remilia Scarlet
 entity.entity_frandle.name=Frandle Scarlet
+
+# ～ Subterranean Animism.
+entity.entity_kisume.name=Kisume
