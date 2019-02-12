@@ -161,6 +161,8 @@ public class EntityPatchouliModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
+        this.hat1.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
+        this.hat2.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;
