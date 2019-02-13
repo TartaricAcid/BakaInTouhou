@@ -11,5 +11,8 @@ entity.entity_sakuya.name=Sakuya Izayoi
 entity.entity_remilia.name=Remilia Scarlet
 entity.entity_frandle.name=Frandle Scarlet
 
+# ～ Perfect Cherry Blossom.
+entity.entity_letty.name=Letty Whiterock
+
 # ～ Subterranean Animism.
 entity.entity_kisume.name=Kisume
