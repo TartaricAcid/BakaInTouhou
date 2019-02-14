@@ -30,7 +30,7 @@ public class EntityKisumeRender extends RenderLiving<EntityKisume> {
     @Override
     protected void preRenderCallback(EntityKisume entity, float partialTickTime) {
         GlStateManager.scale(1.0f, 1.0f, 1.0f);
-        GlStateManager.translate(0f, -0.3f, 0f);
+        GlStateManager.translate(0f, -0.2f, 0f);
     }
 
     public static class Factory implements IRenderFactory<EntityKisume> {
