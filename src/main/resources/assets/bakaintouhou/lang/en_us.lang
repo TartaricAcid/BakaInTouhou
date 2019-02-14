@@ -16,6 +16,9 @@ entity.entity_letty.name=Letty Whiterock
 entity.entity_chen.name=Chen
 entity.entity_alice.name=Alice Margatroid
 entity.entity_lily.name=Lily White
+entity.entity_lunasa.name=Lunasa Prismriver
+entity.entity_merlin.name=Merlin Prismriver
+entity.entity_lyrica.name=Lyrica Prismriver
 
 # ～ Subterranean Animism.
 entity.entity_kisume.name=Kisume
