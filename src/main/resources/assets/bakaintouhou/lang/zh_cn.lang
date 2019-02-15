@@ -1,0 +1,31 @@
+# 东方红魔乡
+entity.entity_reimu.name=博丽灵梦
+entity.entity_marisa.name=雾雨魔理沙
+entity.entity_rumia.name=露米娅
+entity.entity_cirno.name=琪露诺
+entity.entity_daiyousei.name=大妖精
+entity.entity_meiling.name=红美铃
+entity.entity_koakuma.name=小恶魔
+entity.entity_patchouli.name=帕秋莉·诺蕾姬
+entity.entity_sakuya.name=十六夜咲夜
+entity.entity_remilia.name=蕾米莉亚·斯卡蕾特
+entity.entity_frandle.name=芙兰朵露·斯卡蕾特
+
+# 东方妖妖梦
+entity.entity_letty.name=蕾蒂·霍瓦特洛克
+entity.entity_chen.name=橙
+entity.entity_alice.name=爱丽丝·玛格特罗依德
+entity.entity_lily.name=莉莉霍瓦特
+entity.entity_lunasa.name=露娜萨·普莉兹姆利巴
+entity.entity_merlin.name=梅露兰·普莉兹姆利巴
+entity.entity_lyrica.name=莉莉卡·普莉兹姆利巴
+entity.entity_ran.name=八云蓝
+entity.entity_youmu.name=魂魄妖梦
+entity.entity_yuyuko.name=西行寺幽幽子
+entity.entity_yukari.name=八云紫
+
+# 东方地灵殿
+entity.entity_kisume.name=琪斯美
+
+# 东方辉针城
+entity.entity_wakasagihime.name=若鹭姬
