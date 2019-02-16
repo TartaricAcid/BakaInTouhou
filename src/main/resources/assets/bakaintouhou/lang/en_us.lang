@@ -27,6 +27,9 @@ entity.entity_yukari.name=Yakumo Yukari
 # ～ Immaterial and Missing Power.
 entity.entity_suika.name=Ibuki Suika
 
+# ~ Touhou Sangetsusei
+entity.entity_sunny.name=Sunny Milk
+
 # ～ Subterranean Animism.
 entity.entity_kisume.name=Kisume
 
