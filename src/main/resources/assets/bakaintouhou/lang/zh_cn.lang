@@ -24,6 +24,9 @@ entity.entity_youmu.name=魂魄妖梦
 entity.entity_yuyuko.name=西行寺幽幽子
 entity.entity_yukari.name=八云紫
 
+# 东方萃梦想
+entity.entity_suika.name=伊吹萃香
+
 # 东方地灵殿
 entity.entity_kisume.name=琪斯美
 
