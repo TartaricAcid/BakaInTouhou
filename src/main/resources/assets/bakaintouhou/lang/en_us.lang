@@ -30,6 +30,7 @@ entity.entity_suika.name=Ibuki Suika
 # ~ Touhou Sangetsusei
 entity.entity_sunny.name=Sunny Milk
 entity.entity_lunar.name=Lunar Child
+entity.entity_star.name=Star Saphire
 
 # ～ Subterranean Animism.
 entity.entity_kisume.name=Kisume
