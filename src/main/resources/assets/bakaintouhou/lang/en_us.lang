@@ -24,6 +24,9 @@ entity.entity_youmu.name=Konpaku Youmu
 entity.entity_yuyuko.name=Saigyouji Yuyuko
 entity.entity_yukari.name=Yakumo Yukari
 
+# ～ Immaterial and Missing Power.
+entity.entity_suika.name=Ibuki Suika
+
 # ～ Subterranean Animism.
 entity.entity_kisume.name=Kisume
 
