@@ -1,20 +1,31 @@
 package com.github.tartaricacid.bakaintouhou.common;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
+import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
 import com.github.tartaricacid.bakaintouhou.common.entity.*;
+import com.github.tartaricacid.bakaintouhou.common.world.TouhouWorldProvider;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.DimensionType;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
+@Mod.EventBusSubscriber
 public class CommonProxy {
     private static int id = 0;
 
-    @Mod.EventHandler
-    public void preinit(FMLPreInitializationEvent event) {
-        entityRegister();
+    @SubscribeEvent
+    public static void blockRegister(RegistryEvent.Register<Block> event) {
+        event.getRegistry().register(new BlockSaisenBako());
     }
 
     @Mod.EventHandler
@@ -111,4 +122,22 @@ public class CommonProxy {
                 EntityStar.class, "entity_star", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x55658b, 0x5e3927);
     }
+
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
+                BlockObjectHolder.blockSaisenBako.getRegistryName()));
+    }
+
+    @Mod.EventHandler
+    public void preinit(FMLPreInitializationEvent event) {
+        entityRegister();
+        dimensionsRegister();
+    }
+
+    private void dimensionsRegister() {
+        DimensionManager.registerDimension(9, DimensionType.register(BakaInTouhou.MOD_ID, "_touhou", 9,
+                TouhouWorldProvider.class, false));
+    }
+
 }

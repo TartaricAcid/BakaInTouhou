@@ -1,0 +1,28 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "bakaintouhou:saisen_bako"
+  },
+  "variants": {
+    "normal": [
+      {}
+    ],
+    "inventory": [
+      {}
+    ],
+    "facing": {
+      "north": {
+        "y": 90
+      },
+      "south": {
+        "y": 270
+      },
+      "west": {},
+      "east": {
+        "y": 180
+      },
+      "up": {},
+      "down": {}
+    }
+  }
+}

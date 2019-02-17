@@ -1,0 +1,267 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "bakaintouhou:blocks/saisen_bako_front",
+    "1": "bakaintouhou:blocks/saisen_bako_side",
+    "2": "bakaintouhou:blocks/saisen_bako_top",
+    "particle": "bakaintouhou:blocks/saisen_bako_side"
+  },
+  "elements": [
+    {
+      "name": "bottom",
+      "from": [
+        4,
+        0,
+        1
+      ],
+      "to": [
+        12,
+        8,
+        15
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            1,
+            4,
+            15,
+            12
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            1,
+            4,
+            15,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            8,
+            14
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            3,
+            2,
+            11,
+            16
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "top",
+      "from": [
+        3,
+        8,
+        0
+      ],
+      "to": [
+        13,
+        10,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            0,
+            13,
+            2
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            3,
+            0,
+            13,
+            2
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            3,
+            0,
+            13,
+            16
+          ],
+          "texture": "#2"
+        },
+        "down": {
+          "uv": [
+            3,
+            0,
+            13,
+            16
+          ],
+          "texture": "#1"
+        }
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        -30.75,
+        0
+      ],
+      "translation": [
+        0.5,
+        0,
+        -3
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        -30.75,
+        0
+      ],
+      "translation": [
+        0.5,
+        0,
+        -3
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -30.75,
+        0
+      ],
+      "translation": [
+        0.5,
+        0,
+        -3
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -30.75,
+        0
+      ],
+      "translation": [
+        0.5,
+        0,
+        -3
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        1.75,
+        0
+      ],
+      "scale": [
+        0.7207,
+        0.7207,
+        0.7207
+      ]
+    },
+    "gui": {
+      "rotation": [
+        -15,
+        47,
+        40
+      ],
+      "translation": [
+        -0.25,
+        1.5,
+        0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "head": {
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "translation": [
+        0.25,
+        14.5,
+        0.25
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    }
+  }
+}
