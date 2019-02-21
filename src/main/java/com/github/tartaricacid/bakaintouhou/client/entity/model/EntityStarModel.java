@@ -117,6 +117,12 @@ public class EntityStarModel extends ModelBase {
         wingR.setTextureSize(128, 32);
         wingR.mirror = true;
         setRotation(wingR, 0.0872665F, 0.3490659F, 0F);
+
+        head.addChild(hair);
+        head.addChild(headdressLB);
+        head.addChild(headdressLT);
+        head.addChild(headdressRB);
+        head.addChild(headdressRT);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -130,11 +136,6 @@ public class EntityStarModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        headdressLT.render(f5);
-        headdressRT.render(f5);
-        headdressRB.render(f5);
-        headdressLB.render(f5);
-        hair.render(f5);
         wingL.render(f5);
         wingR.render(f5);
     }

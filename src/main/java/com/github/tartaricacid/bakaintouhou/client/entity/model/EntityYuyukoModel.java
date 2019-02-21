@@ -124,6 +124,9 @@ public class EntityYuyukoModel extends ModelBase {
         soul4.setTextureSize(128, 32);
         soul4.mirror = true;
         setRotation(soul4, 0F, 0F, -0.2268928F);
+
+        head.addChild(hat);
+        head.addChild(headdress);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -139,8 +142,6 @@ public class EntityYuyukoModel extends ModelBase {
         band.render(f5);
         bow1.render(f5);
         bow2.render(f5);
-        hat.render(f5);
-        headdress.render(f5);
         soul1.render(f5);
         soul2.render(f5);
         soul3.render(f5);
@@ -160,7 +161,6 @@ public class EntityYuyukoModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左手右手的运动
         this.handR.rotateAngleZ = MathHelper.cos(ageInTicks * 0.05f) * 0.05f + 0.3f;

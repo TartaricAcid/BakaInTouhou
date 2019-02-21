@@ -90,6 +90,10 @@ public class EntityRumiaModel extends ModelBase {
         handL.setTextureSize(128, 32);
         handL.mirror = true;
         setRotation(handL, 0F, 0F, 0.1745329F);
+
+        head.addChild(headdressB);
+        head.addChild(headdressT);
+        head.addChild(headdressM);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -101,9 +105,6 @@ public class EntityRumiaModel extends ModelBase {
         body3.render(f5);
         footR.render(f5);
         footL.render(f5);
-        headdressM.render(f5);
-        headdressT.render(f5);
-        headdressB.render(f5);
         handR.render(f5);
         handL.render(f5);
     }

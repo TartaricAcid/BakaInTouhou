@@ -118,6 +118,14 @@ public class EntityReimuModel extends ModelBase {
         hair2.setTextureSize(128, 32);
         hair2.mirror = true;
         setRotation(hair2, 0.3490659F, 0F, 0F);
+
+        head.addChild(hair);
+        head.addChild(hair2);
+        head.addChild(headdressM);
+        head.addChild(headdressLB);
+        head.addChild(headdressLT);
+        head.addChild(headdressRB);
+        head.addChild(headdressRT);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -129,15 +137,8 @@ public class EntityReimuModel extends ModelBase {
         body3.render(f5);
         footL.render(f5);
         footR.render(f5);
-        headdressM.render(f5);
-        hair.render(f5);
-        headdressLT.render(f5);
-        headdressRT.render(f5);
-        headdressLB.render(f5);
-        headdressRB.render(f5);
         handR.render(f5);
         handL.render(f5);
-        hair2.render(f5);
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z) {

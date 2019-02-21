@@ -131,6 +131,10 @@ public class EntityCirnoModel extends ModelBase {
         handR.setTextureSize(128, 32);
         handR.mirror = true;
         setRotation(handR, 0F, 3.141593F, 0.5235988F);
+
+        head.addChild(headdress1);
+        head.addChild(headdress2);
+        head.addChild(headdress3);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -146,9 +150,6 @@ public class EntityCirnoModel extends ModelBase {
         wingL1.render(f5);
         wingL2.render(f5);
         wingL3.render(f5);
-        headdress1.render(f5);
-        headdress2.render(f5);
-        headdress3.render(f5);
         footL.render(f5);
         footR.render(f5);
         handL.render(f5);

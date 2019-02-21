@@ -117,6 +117,9 @@ public class EntityYoumuModel extends ModelBase {
         soul4.setTextureSize(128, 32);
         soul4.mirror = true;
         setRotation(soul4, 0F, 0F, 0.1745329F);
+
+        head.addChild(headdress1);
+        head.addChild(headdress2);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -129,8 +132,6 @@ public class EntityYoumuModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        headdress1.render(f5);
-        headdress2.render(f5);
         slash1.render(f5);
         slash2.render(f5);
         soul1.render(f5);

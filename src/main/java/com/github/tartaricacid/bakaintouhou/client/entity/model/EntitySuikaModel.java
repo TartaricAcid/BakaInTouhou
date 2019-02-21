@@ -180,6 +180,19 @@ public class EntitySuikaModel extends ModelBase {
         headdress6.setTextureSize(128, 32);
         headdress6.mirror = true;
         setRotation(headdress6, 0F, 0F, 0F);
+
+        head.addChild(hornL1);
+        head.addChild(hornL2);
+        head.addChild(hornL3);
+        head.addChild(hornR1);
+        head.addChild(hornR2);
+        head.addChild(hornR3);
+        head.addChild(headdress1);
+        head.addChild(headdress2);
+        head.addChild(headdress3);
+        head.addChild(headdress4);
+        head.addChild(headdress5);
+        head.addChild(headdress6);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -192,23 +205,11 @@ public class EntitySuikaModel extends ModelBase {
         hand2.render(f5);
         footL.render(f5);
         footR.render(f5);
-        hornL1.render(f5);
-        hornR1.render(f5);
-        hornL2.render(f5);
-        hornL3.render(f5);
-        hornR2.render(f5);
-        hornR3.render(f5);
         gourd1.render(f5);
         gourd2.render(f5);
         gourd3.render(f5);
-        headdress1.render(f5);
-        headdress2.render(f5);
-        headdress3.render(f5);
-        headdress4.render(f5);
-        headdress5.render(f5);
         hairL.render(f5);
         hairR.render(f5);
-        headdress6.render(f5);
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z) {

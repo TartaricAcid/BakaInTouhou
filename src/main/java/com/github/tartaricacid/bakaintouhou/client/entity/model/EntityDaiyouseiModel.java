@@ -111,6 +111,11 @@ public class EntityDaiyouseiModel extends ModelBase {
         handL.setTextureSize(128, 32);
         handL.mirror = true;
         setRotation(handL, 0F, 0F, -0.5235988F);
+
+        head.addChild(hair);
+        head.addChild(headdressB);
+        head.addChild(headdressF);
+        head.addChild(headdressM);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -122,10 +127,6 @@ public class EntityDaiyouseiModel extends ModelBase {
         body3.render(f5);
         footR.render(f5);
         footL.render(f5);
-        hair.render(f5);
-        headdressM.render(f5);
-        headdressB.render(f5);
-        headdressF.render(f5);
         wingL.render(f5);
         wingR.render(f5);
         handR.render(f5);

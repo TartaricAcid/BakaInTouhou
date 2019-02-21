@@ -96,6 +96,8 @@ public class EntityKoakumaModel extends ModelBase {
         handL.setTextureSize(128, 32);
         handL.mirror = true;
         setRotation(handL, 0F, 0F, -0.3490659F);
+
+        head.addChild(hair);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -106,7 +108,6 @@ public class EntityKoakumaModel extends ModelBase {
         body2.render(f5);
         footR.render(f5);
         footL.render(f5);
-        hair.render(f5);
         headdressR.render(f5);
         headdressL.render(f5);
         wingL.render(f5);

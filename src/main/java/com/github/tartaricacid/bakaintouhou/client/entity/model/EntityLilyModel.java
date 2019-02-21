@@ -131,6 +131,13 @@ public class EntityLilyModel extends ModelBase {
         wingR.setTextureSize(128, 32);
         wingR.mirror = true;
         setRotation(wingR, -0.1745329F, 0.4363323F, 3.141593F);
+
+        head.addChild(hat1);
+        head.addChild(hat2);
+        head.addChild(hat3);
+        head.addChild(hat4);
+        head.addChild(headdress);
+        head.addChild(hair);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -145,12 +152,6 @@ public class EntityLilyModel extends ModelBase {
         handL.render(f5);
         armR.render(f5);
         armL.render(f5);
-        hat1.render(f5);
-        hat2.render(f5);
-        hat3.render(f5);
-        hat4.render(f5);
-        headdress.render(f5);
-        hair.render(f5);
         wingL.render(f5);
         wingR.render(f5);
     }

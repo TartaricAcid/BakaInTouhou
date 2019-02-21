@@ -146,6 +146,11 @@ public class EntityRemiliaModel extends ModelBase {
         footL.setTextureSize(128, 32);
         footL.mirror = true;
         setRotation(footL, 0F, 0F, 0F);
+
+        head.addChild(hat);
+        head.addChild(headdressB);
+        head.addChild(headdressF);
+        head.addChild(headdressM);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -155,10 +160,6 @@ public class EntityRemiliaModel extends ModelBase {
         body1.render(f5);
         body2.render(f5);
         body3.render(f5);
-        hat.render(f5);
-        headdressM.render(f5);
-        headdressB.render(f5);
-        headdressF.render(f5);
         bowM.render(f5);
         bowRT.render(f5);
         bowLB.render(f5);
@@ -185,7 +186,6 @@ public class EntityRemiliaModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;

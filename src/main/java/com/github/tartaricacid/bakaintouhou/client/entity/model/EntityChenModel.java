@@ -118,6 +118,12 @@ public class EntityChenModel extends ModelBase {
         tail2.setTextureSize(128, 32);
         tail2.mirror = true;
         setRotation(tail2, 2.530727F, 0.3F, -0.4363323F);
+
+        head.addChild(earL1);
+        head.addChild(earL2);
+        head.addChild(earR1);
+        head.addChild(earR2);
+        head.addChild(hat);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -131,11 +137,6 @@ public class EntityChenModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        hat.render(f5);
-        earR1.render(f5);
-        earR2.render(f5);
-        earL1.render(f5);
-        earL2.render(f5);
         tail1.render(f5);
         tail2.render(f5);
     }
@@ -153,7 +154,6 @@ public class EntityChenModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;

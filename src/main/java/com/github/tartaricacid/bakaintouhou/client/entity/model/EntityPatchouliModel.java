@@ -125,6 +125,15 @@ public class EntityPatchouliModel extends ModelBase {
         handL.setTextureSize(128, 32);
         handL.mirror = true;
         setRotation(handL, 0F, 0F, -0.5235988F);
+
+        head.addChild(hat1);
+        head.addChild(hat2);
+        head.addChild(headdress1);
+        head.addChild(headdress2);
+        head.addChild(headdress3);
+        head.addChild(hairB);
+        head.addChild(hairR);
+        head.addChild(hairL);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -134,13 +143,6 @@ public class EntityPatchouliModel extends ModelBase {
         body1.render(f5);
         body2.render(f5);
         body3.render(f5);
-        hat1.render(f5);
-        hat2.render(f5);
-        headdress1.render(f5);
-        headdress2.render(f5);
-        headdress3.render(f5);
-        hairB.render(f5);
-        hairR.render(f5);
         hairL.render(f5);
         footR.render(f5);
         footL.render(f5);
@@ -161,8 +163,6 @@ public class EntityPatchouliModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat1.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat2.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;

@@ -96,6 +96,9 @@ public class EntityLettyModel extends ModelBase {
         scarf2.setTextureSize(128, 32);
         scarf2.mirror = true;
         setRotation(scarf2, 0.5235988F, -0.6981317F, 0.0872665F);
+
+        head.addChild(hat);
+        head.addChild(headdress);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -109,8 +112,6 @@ public class EntityLettyModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        hat.render(f5);
-        headdress.render(f5);
         scarf1.render(f5);
         scarf2.render(f5);
     }
@@ -128,7 +129,6 @@ public class EntityLettyModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;

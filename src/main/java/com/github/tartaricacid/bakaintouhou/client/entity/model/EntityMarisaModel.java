@@ -152,6 +152,14 @@ public class EntityMarisaModel extends ModelBase {
         bowRB.setTextureSize(128, 64);
         bowRB.mirror = true;
         setRotation(bowRB, 0F, 0F, -0.6981317F);
+
+        face.addChild(hat1);
+        face.addChild(hat2);
+        face.addChild(hat3);
+        face.addChild(hat4);
+        face.addChild(headdressL);
+        face.addChild(headdressR);
+        face.addChild(headdressM);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -163,13 +171,6 @@ public class EntityMarisaModel extends ModelBase {
         body3.render(f5);
         footR.render(f5);
         footL.render(f5);
-        hat1.render(f5);
-        hat2.render(f5);
-        hat3.render(f5);
-        hat4.render(f5);
-        headdressM.render(f5);
-        headdressR.render(f5);
-        headdressL.render(f5);
         handR.render(f5);
         handL.render(f5);
         bowM.render(f5);

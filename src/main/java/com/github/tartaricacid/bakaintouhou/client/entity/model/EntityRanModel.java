@@ -220,10 +220,6 @@ public class EntityRanModel extends ModelBase {
         footR.render(f5);
         footL.render(f5);
         hand.render(f5);
-        earR1.render(f5);
-        earR2.render(f5);
-        earL1.render(f5);
-        earL2.render(f5);
         tail1.render(f5);
         tail2.render(f5);
         tail3.render(f5);
@@ -242,6 +238,10 @@ public class EntityRanModel extends ModelBase {
         tail16.render(f5);
         tail17.render(f5);
         tail18.render(f5);
+        earL1.render(f5);
+        earL2.render(f5);
+        earR1.render(f5);
+        earR2.render(f5);
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z) {

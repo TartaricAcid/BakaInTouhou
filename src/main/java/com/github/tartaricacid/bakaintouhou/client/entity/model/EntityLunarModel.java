@@ -138,6 +138,12 @@ public class EntityLunarModel extends ModelBase {
         wingR.setTextureSize(128, 32);
         wingR.mirror = true;
         setRotation(wingR, 0F, 0.2617994F, -0.0872665F);
+
+        head.addChild(hat);
+        head.addChild(headdressL1);
+        head.addChild(headdressL2);
+        head.addChild(headdressR1);
+        head.addChild(headdressR2);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -151,11 +157,6 @@ public class EntityLunarModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        hat.render(f5);
-        headdressR1.render(f5);
-        headdressR2.render(f5);
-        headdressL1.render(f5);
-        headdressL2.render(f5);
         bowM.render(f5);
         bowR.render(f5);
         bowL.render(f5);
@@ -176,7 +177,6 @@ public class EntityLunarModel extends ModelBase {
         // 头部转动
         this.head.rotateAngleX = headPitch / 45f / (float) Math.PI;
         this.head.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
-        this.hat.rotateAngleY = netHeadYaw / 45f / (float) Math.PI;
 
         // 左脚右脚，左手右手的运动
         this.footL.rotateAngleX = MathHelper.cos(limbSwing * 2F) * 1.2F * limbSwingAmount;

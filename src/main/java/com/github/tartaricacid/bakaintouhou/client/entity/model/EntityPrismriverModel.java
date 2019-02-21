@@ -96,6 +96,12 @@ public class EntityPrismriverModel extends ModelBase {
         headdress.setTextureSize(128, 32);
         headdress.mirror = true;
         setRotation(headdress, 0F, 0F, 0F);
+
+        head.addChild(hat1);
+        head.addChild(hat2);
+        head.addChild(hat3);
+        head.addChild(hat4);
+        head.addChild(headdress);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -108,11 +114,6 @@ public class EntityPrismriverModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        hat1.render(f5);
-        hat2.render(f5);
-        hat3.render(f5);
-        hat4.render(f5);
-        headdress.render(f5);
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z) {

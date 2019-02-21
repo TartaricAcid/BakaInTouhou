@@ -124,6 +124,10 @@ public class EntitySunnyModel extends ModelBase {
         wingR.setTextureSize(128, 32);
         wingR.mirror = true;
         setRotation(wingR, 0F, 0.6108652F, 0.0872665F);
+
+        head.addChild(headdress);
+        head.addChild(hairL);
+        head.addChild(hairR);
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -137,9 +141,6 @@ public class EntitySunnyModel extends ModelBase {
         footL.render(f5);
         handR.render(f5);
         handL.render(f5);
-        hairR.render(f5);
-        hairL.render(f5);
-        headdress.render(f5);
         bowM.render(f5);
         bowL.render(f5);
         bowR.render(f5);
