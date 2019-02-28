@@ -1,6 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -30,6 +31,7 @@ public class BlockSaisenBako extends Block {
         setRegistryName("saisen_bako");
         setBlockUnbreakable();
         setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
     }
 
     @Override

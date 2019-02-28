@@ -3,7 +3,9 @@ package com.github.tartaricacid.bakaintouhou.common;
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
-import com.github.tartaricacid.bakaintouhou.common.entity.*;
+import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -39,6 +41,14 @@ public class CommonProxy {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         entityRegister();
+    }
+
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemDanmaku());
+
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
+                BlockObjectHolder.blockSaisenBako.getRegistryName()));
     }
 
     private void entityRegister() {
@@ -126,11 +136,8 @@ public class CommonProxy {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/star.png"),
                 EntityStar.class, "entity_star", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x55658b, 0x5e3927);
-    }
-
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
-                BlockObjectHolder.blockSaisenBako.getRegistryName()));
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/damaku.png"),
+                EntityDanmaku.class, "entity_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
     }
 }

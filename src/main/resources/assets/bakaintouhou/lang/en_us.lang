@@ -37,3 +37,11 @@ entity.entity_kisume.name=Kisume
 
 # ～ Double Dealing Character.
 entity.entity_wakasagihime.name=Wakasagihime
+
+# Other
+itemGroup.bakaintouhou.items=Baka In Touhou
+tile.bakaintouhou.saisen_bako.name=Saisen Bako
+item.bakaintouhou.danmaku.name=Danmaku Item
+bakaintouhou.danmaku.tooltips.type=Type: %d
+bakaintouhou.danmaku.tooltips.damage=Damage: %d
+bakaintouhou.danmaku.tooltips.gravity=Gravity: %d
