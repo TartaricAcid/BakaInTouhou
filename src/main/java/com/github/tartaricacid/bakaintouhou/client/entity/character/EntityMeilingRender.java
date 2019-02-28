@@ -6,14 +6,13 @@ import com.github.tartaricacid.bakaintouhou.common.entity.character.EntityMeilin
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nullable;
 
-public class EntityMeilingRender extends RenderLiving<EntityMeiling> {
+public class EntityMeilingRender extends RenderEntityTouhouCharacter<EntityMeiling> {
     public static final Factory FACTORY = new Factory();
     private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/meiling.png");
 

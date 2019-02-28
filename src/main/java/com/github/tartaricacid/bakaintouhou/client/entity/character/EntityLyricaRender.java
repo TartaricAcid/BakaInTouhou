@@ -6,14 +6,13 @@ import com.github.tartaricacid.bakaintouhou.common.entity.character.EntityLyrica
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nullable;
 
-public class EntityLyricaRender extends RenderLiving<EntityLyrica> {
+public class EntityLyricaRender extends RenderEntityTouhouCharacter<EntityLyrica> {
     public static final Factory FACTORY = new Factory();
     private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/lyrica.png");
 

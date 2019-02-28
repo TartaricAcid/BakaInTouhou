@@ -1,13 +1,12 @@
 package com.github.tartaricacid.bakaintouhou.common.entity.character;
 
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.util.DanmakuShoot;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
@@ -81,11 +80,6 @@ public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob
 
     @Override
     public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
-        EntityDanmaku entityDanmaku = new EntityDanmaku(this.world, this, 0);
-        entityDanmaku.shoot(target.posX - this.posX, target.posY - this.posY + 2, target.posZ - this.posZ, 0.9f, 30f);
-        this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_SNOWBALL_THROW,
-                this.getSoundCategory(), 1.0F, 0.8F + this.rand.nextFloat() * 0.4F);
-        this.world.spawnEntity(entityDanmaku);
-        // TODO
+        DanmakuShoot.aimedShot(this.world, this, target, 0.9f, 15f, 0, 0.3f);
     }
 }

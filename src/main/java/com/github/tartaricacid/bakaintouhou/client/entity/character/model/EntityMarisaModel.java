@@ -1,11 +1,10 @@
 package com.github.tartaricacid.bakaintouhou.client.entity.character.model;
 
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class EntityMarisaModel extends ModelBase {
+public class EntityMarisaModel extends EntityTouhouCharacterModel {
     //fields
     ModelRenderer face;
     ModelRenderer body1;
