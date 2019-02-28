@@ -35,15 +35,18 @@ public class EntityDanmaku extends EntityThrowable {
     }
 
     public EntityDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuType) {
-        this(worldIn, throwerIn, danmakuType);
+        super(worldIn, throwerIn);
         this.damage = damage;
         this.gravity = gravity;
         this.danmakuType = danmakuType;
+        this.getDataManager().register(TYPE, danmakuType);
+        this.getDataManager().register(DAMAGE, damage);
+        this.getDataManager().register(GRAVITY, gravity);
     }
 
     public EntityDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuType, float width, float height) {
         this(worldIn, throwerIn, damage, gravity, danmakuType);
-        setSize(width, height);
+        this.setSize(width, height);
     }
 
     @Override
