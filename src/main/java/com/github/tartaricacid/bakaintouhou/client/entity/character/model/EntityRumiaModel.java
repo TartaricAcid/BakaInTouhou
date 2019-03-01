@@ -7,17 +7,17 @@ import net.minecraft.util.math.MathHelper;
 public class EntityRumiaModel extends EntityTouhouCharacterModel {
 
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer headdressM;
-    ModelRenderer headdressT;
-    ModelRenderer headdressB;
-    ModelRenderer handR;
-    ModelRenderer handL;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer headdressM;
+    private ModelRenderer headdressT;
+    private ModelRenderer headdressB;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
 
     public EntityRumiaModel() {
         textureWidth = 128;

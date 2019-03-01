@@ -34,8 +34,48 @@ public class ItemDanmaku extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         if (!worldIn.isRemote) {
             ItemStack stack = playerIn.getHeldItem(handIn);
-            EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
-                    getDanmakuGravity(stack), getDanmakuType(stack));
+            EntityDanmaku entityDanmaku;
+            switch (getDanmakuType(stack)) {
+                case 0:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 0.1f, 0.1f);
+                    break;
+                case 1:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 0.2f, 0.2f);
+                    break;
+                case 2:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 1f, 1f);
+                    break;
+                case 3:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 4f, 4f);
+                    break;
+                case 4:
+                case 9:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 0.2f, 0.4f);
+                    break;
+                case 5:
+                case 7:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 0.25f, 0.4f);
+                    break;
+                case 6:
+                case 8:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack));
+                    break;
+
+                case 10:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack), 0.15f, 0.35f);
+                    break;
+                default:
+                    entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                            getDanmakuGravity(stack), getDanmakuType(stack));
+            }
             playerIn.getHeldItem(handIn).shrink(1);
             Vec3d v = playerIn.getLookVec();
             entityDanmaku.shoot(v.x, v.y, v.z, 0.9f, 5f);
@@ -60,13 +100,15 @@ public class ItemDanmaku extends Item {
         if (this.isInCreativeTab(tab)) {
             items.add(getDefaultInstance());
             items.add(setDanmakuType(getDefaultInstance(), 1));
-            items.add(setDanmakuType(getDefaultInstance(), 2));
-            items.add(setDanmakuType(getDefaultInstance(), 3));
-            items.add(setDanmakuType(getDefaultInstance(), 4));
-            items.add(setDanmakuType(getDefaultInstance(), 5));
-            items.add(setDanmakuType(getDefaultInstance(), 6));
-            items.add(setDanmakuType(getDefaultInstance(), 7));
-            items.add(setDanmakuType(getDefaultInstance(), 8));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 2), 3), 0.005f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 3), 4), 0.003f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 4), 2), 0.002f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 5), 2), 0.005f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 6), 2), 0.01f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 7), 2), 0.01f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 8), 2), 0.01f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 9), 3), 0.01f));
+            items.add(setDanmakuGravity(setDanmakuDamage(setDanmakuType(getDefaultInstance(), 10), 3), 0.01f));
         }
     }
 
@@ -121,7 +163,8 @@ public class ItemDanmaku extends Item {
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(I18n.format(BakaInTouhou.MOD_ID + ".danmaku.tooltips.type", getDanmakuType(stack)));
+        tooltip.add(I18n.format(BakaInTouhou.MOD_ID + ".danmaku.tooltips.type",
+                I18n.format(BakaInTouhou.MOD_ID + ".danmaku.type_name." + getDanmakuType(stack))));
         tooltip.add(I18n.format(BakaInTouhou.MOD_ID + ".danmaku.tooltips.damage", getDanmakuDamage(stack)));
         tooltip.add(I18n.format(BakaInTouhou.MOD_ID + ".danmaku.tooltips.gravity", getDanmakuGravity(stack)));
     }

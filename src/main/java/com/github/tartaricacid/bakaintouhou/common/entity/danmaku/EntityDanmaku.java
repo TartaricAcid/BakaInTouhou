@@ -8,8 +8,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityDanmaku extends EntityThrowable {
     private static final DataParameter<Integer> TYPE = EntityDataManager.createKey(EntityDanmaku.class, DataSerializers.VARINT);
@@ -63,7 +61,6 @@ public class EntityDanmaku extends EntityThrowable {
         return this.getDataManager().get(GRAVITY);
     }
 
-    @SideOnly(Side.CLIENT)
     public int getDanmakuType() {
         return this.getDataManager().get(TYPE);
     }

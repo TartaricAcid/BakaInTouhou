@@ -7,25 +7,25 @@ import net.minecraft.util.math.MathHelper;
 public class EntityRemiliaModel extends EntityTouhouCharacterModel {
 
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer hat;
-    ModelRenderer headdressM;
-    ModelRenderer headdressB;
-    ModelRenderer headdressF;
-    ModelRenderer bowM;
-    ModelRenderer bowRT;
-    ModelRenderer bowLB;
-    ModelRenderer bowLT;
-    ModelRenderer bowRB;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer footR;
-    ModelRenderer footL;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer hat;
+    private ModelRenderer headdressM;
+    private ModelRenderer headdressB;
+    private ModelRenderer headdressF;
+    private ModelRenderer bowM;
+    private ModelRenderer bowRT;
+    private ModelRenderer bowLB;
+    private ModelRenderer bowLT;
+    private ModelRenderer bowRB;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
 
     public EntityRemiliaModel() {
         textureWidth = 128;

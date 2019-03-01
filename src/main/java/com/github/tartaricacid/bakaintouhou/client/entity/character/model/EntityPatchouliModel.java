@@ -7,22 +7,22 @@ import net.minecraft.util.math.MathHelper;
 public class EntityPatchouliModel extends EntityTouhouCharacterModel {
 
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer hat1;
-    ModelRenderer hat2;
-    ModelRenderer headdress1;
-    ModelRenderer headdress2;
-    ModelRenderer headdress3;
-    ModelRenderer hairB;
-    ModelRenderer hairR;
-    ModelRenderer hairL;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer hat1;
+    private ModelRenderer hat2;
+    private ModelRenderer headdress1;
+    private ModelRenderer headdress2;
+    private ModelRenderer headdress3;
+    private ModelRenderer hairB;
+    private ModelRenderer hairR;
+    private ModelRenderer hairL;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
 
     public EntityPatchouliModel() {
         textureWidth = 128;

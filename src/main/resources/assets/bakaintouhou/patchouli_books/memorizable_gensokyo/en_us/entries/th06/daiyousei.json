@@ -1,0 +1,20 @@
+{
+  "name": "Daiyousei",
+  "icon": "bakaintouhou:touhou_icons{icons_type:1}",
+  "category": "th06",
+  "advancement": "bakaintouhou:th06/daiyousei",
+  "pages": [
+    {
+      "type": "link",
+      "url": "https://en.touhouwiki.net/wiki/Daiyousei",
+      "link_text": "Touhou Wiki",
+      "text": "Daiyousei is a greater fairy who lives around the Misty Lake near the Scarlet Devil Mansion. Like other fairies, she's cheerful and mischievous, simple and emotional. Little is known about her."
+    },
+    {
+      "type": "entity",
+      "entity": "bakaintouhou:textures/entity/daiyousei.png",
+      "offset": 0.1,
+      "scale": 0.9
+    }
+  ]
+}

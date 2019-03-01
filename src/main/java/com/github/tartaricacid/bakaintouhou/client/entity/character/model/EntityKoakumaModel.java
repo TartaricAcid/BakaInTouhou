@@ -6,18 +6,18 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityKoakumaModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer hair;
-    ModelRenderer headdressR;
-    ModelRenderer headdressL;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
-    ModelRenderer handR;
-    ModelRenderer handL;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer hair;
+    private ModelRenderer headdressR;
+    private ModelRenderer headdressL;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
 
     public EntityKoakumaModel() {
         textureWidth = 128;

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.th06.meiling.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.th06.meiling.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:1}"
+    }
+  },
+  "criteria": {
+    "bakaintouhou.hurt.meiling": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "bakaintouhou:textures/entity/meiling.png"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 9
+  },
+  "parent": "bakaintouhou:th06/cirno"
+}

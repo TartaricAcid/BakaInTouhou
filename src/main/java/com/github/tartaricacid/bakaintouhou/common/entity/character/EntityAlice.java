@@ -13,6 +13,6 @@ public class EntityAlice extends EntityTouhouCharacter {
     @Override
     public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
         DanmakuShoot.fanShapedShot(this.world, this, target, 0.5f, 2f,
-                1, 0.2f, Math.PI / 2, 5);
+                2, 0.2f, Math.PI / 2, 6);
     }
 }

@@ -7,21 +7,21 @@ import net.minecraft.util.math.MathHelper;
 public class EntityChenModel extends EntityTouhouCharacterModel {
 
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer hat;
-    ModelRenderer earR1;
-    ModelRenderer earR2;
-    ModelRenderer earL1;
-    ModelRenderer earL2;
-    ModelRenderer tail1;
-    ModelRenderer tail2;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer hat;
+    private ModelRenderer earR1;
+    private ModelRenderer earR2;
+    private ModelRenderer earL1;
+    private ModelRenderer earL2;
+    private ModelRenderer tail1;
+    private ModelRenderer tail2;
 
     public EntityChenModel() {
         textureWidth = 128;

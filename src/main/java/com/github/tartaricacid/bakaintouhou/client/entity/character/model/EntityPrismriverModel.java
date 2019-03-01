@@ -6,18 +6,18 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityPrismriverModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer hat1;
-    ModelRenderer hat2;
-    ModelRenderer hat3;
-    ModelRenderer hat4;
-    ModelRenderer headdress;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer hat1;
+    private ModelRenderer hat2;
+    private ModelRenderer hat3;
+    private ModelRenderer hat4;
+    private ModelRenderer headdress;
 
     public EntityPrismriverModel() {
         textureWidth = 128;

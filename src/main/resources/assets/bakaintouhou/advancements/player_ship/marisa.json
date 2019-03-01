@@ -1,0 +1,28 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.th06.marisa.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.th06.marisa.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:3}"
+    }
+  },
+  "criteria": {
+    "bakaintouhou.hurt.marisa": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "bakaintouhou:textures/entity/marisa.png"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 9
+  },
+  "parent": "bakaintouhou:player_ship/reimu"
+}

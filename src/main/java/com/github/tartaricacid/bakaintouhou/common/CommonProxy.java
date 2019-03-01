@@ -6,6 +6,7 @@ import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemTouhouIcons;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -46,6 +47,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemDanmaku());
+        event.getRegistry().register(new ItemTouhouIcons());
 
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
                 BlockObjectHolder.blockSaisenBako.getRegistryName()));

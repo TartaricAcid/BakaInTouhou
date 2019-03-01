@@ -6,18 +6,18 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityLettyModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer hat;
-    ModelRenderer headdress;
-    ModelRenderer scarf1;
-    ModelRenderer scarf2;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer hat;
+    private ModelRenderer headdress;
+    private ModelRenderer scarf1;
+    private ModelRenderer scarf2;
 
     public EntityLettyModel() {
         textureWidth = 128;

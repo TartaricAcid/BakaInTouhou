@@ -1,0 +1,29 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.th06.frandle.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.th06.frandle.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:1}"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "bakaintouhou.hurt.frandle": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "bakaintouhou:textures/entity/frandle.png"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 9
+  },
+  "parent": "bakaintouhou:th06/remilia"
+}

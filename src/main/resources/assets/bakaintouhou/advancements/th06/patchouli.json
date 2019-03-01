@@ -1,0 +1,28 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.th06.patchouli.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.th06.patchouli.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:1}"
+    }
+  },
+  "criteria": {
+    "bakaintouhou.hurt.patchouli": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "bakaintouhou:textures/entity/patchouli.png"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 9
+  },
+  "parent": "bakaintouhou:th06/koakuma"
+}

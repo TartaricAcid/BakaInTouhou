@@ -1,0 +1,28 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.th06.koakuma.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.th06.koakuma.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:1}"
+    }
+  },
+  "criteria": {
+    "bakaintouhou.hurt.koakuma": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "bakaintouhou:textures/entity/koakuma.png"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 9
+  },
+  "parent": "bakaintouhou:th06/meiling"
+}

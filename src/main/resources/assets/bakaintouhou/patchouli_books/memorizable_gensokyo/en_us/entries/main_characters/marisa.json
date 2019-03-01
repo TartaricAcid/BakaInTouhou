@@ -1,0 +1,20 @@
+{
+  "name": "Marisa Kirisame",
+  "icon": "bakaintouhou:touhou_icons{icons_type:3}",
+  "category": "main_characters",
+  "advancement": "bakaintouhou:player_ship/marisa",
+  "pages": [
+    {
+      "type": "link",
+      "url": "https://en.touhouwiki.net/wiki/Marisa_Kirisame",
+      "link_text": "Touhou Wiki",
+      "text": "Marisa Kirisame is an ordinary human magician who specializes in light and heat magic and currently resides in the Forest of Magic. She's considered to be the deuteragonist of the Touhou Project series along with the main protagonist, Reimu Hakurei."
+    },
+    {
+      "type": "entity",
+      "entity": "bakaintouhou:textures/entity/marisa.png",
+      "offset": 0.3,
+      "scale": 0.8
+    }
+  ]
+}

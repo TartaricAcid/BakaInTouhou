@@ -6,21 +6,21 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityStarModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer headdressLT;
-    ModelRenderer headdressRT;
-    ModelRenderer headdressRB;
-    ModelRenderer headdressLB;
-    ModelRenderer hair;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer headdressLT;
+    private ModelRenderer headdressRT;
+    private ModelRenderer headdressRB;
+    private ModelRenderer headdressLB;
+    private ModelRenderer hair;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
 
     public EntityStarModel() {
         textureWidth = 128;

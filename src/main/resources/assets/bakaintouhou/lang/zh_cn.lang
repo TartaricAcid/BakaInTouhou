@@ -37,3 +37,26 @@ entity.entity_kisume.name=琪斯美
 
 # 东方辉针城
 entity.entity_wakasagihime.name=若鹭姬
+
+# Other
+itemGroup.bakaintouhou.items=还没想好名字，按照规则应该是 东方xxx
+tile.bakaintouhou.saisen_bako.name=赛钱箱
+
+# 弹幕部分
+item.bakaintouhou.danmaku.name=弹幕子弹
+
+bakaintouhou.danmaku.tooltips.type=类型：%d
+bakaintouhou.danmaku.tooltips.damage=伤害值：%d
+bakaintouhou.danmaku.tooltips.gravity=重力加速度：%d
+
+bakaintouhou.danmaku.type_name.0=点弹
+bakaintouhou.danmaku.type_name.1=小玉
+bakaintouhou.danmaku.type_name.2=中玉
+bakaintouhou.danmaku.type_name.3=大玉
+bakaintouhou.danmaku.type_name.4=米弹
+bakaintouhou.danmaku.type_name.5=札弹
+bakaintouhou.danmaku.type_name.6=星弹
+bakaintouhou.danmaku.type_name.7=椭弹
+bakaintouhou.danmaku.type_name.8=心弹
+bakaintouhou.danmaku.type_name.9=音符
+bakaintouhou.danmaku.type_name.10=休止符

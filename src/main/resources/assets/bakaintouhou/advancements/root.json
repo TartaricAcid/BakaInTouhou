@@ -1,0 +1,22 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.root.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.root.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:0}"
+    },
+    "background": "bakaintouhou:textures/gui/advancements/back_ground.png"
+  },
+  "criteria": {
+    "rumia": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+      }
+    }
+  }
+}

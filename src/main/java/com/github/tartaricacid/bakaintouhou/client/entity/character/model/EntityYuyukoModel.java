@@ -6,22 +6,22 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityYuyukoModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer band;
-    ModelRenderer bow1;
-    ModelRenderer bow2;
-    ModelRenderer hat;
-    ModelRenderer headdress;
-    ModelRenderer soul1;
-    ModelRenderer soul2;
-    ModelRenderer soul3;
-    ModelRenderer soul4;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer band;
+    private ModelRenderer bow1;
+    private ModelRenderer bow2;
+    private ModelRenderer hat;
+    private ModelRenderer headdress;
+    private ModelRenderer soul1;
+    private ModelRenderer soul2;
+    private ModelRenderer soul3;
+    private ModelRenderer soul4;
 
     public EntityYuyukoModel() {
         textureWidth = 128;

@@ -6,25 +6,25 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityWakasagihimeModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer fishtail1;
-    ModelRenderer fishtail2;
-    ModelRenderer fishtail3;
-    ModelRenderer fishtail4;
-    ModelRenderer fishtail5;
-    ModelRenderer fishtail6;
-    ModelRenderer fishtail7;
-    ModelRenderer fishtail8;
-    ModelRenderer fishtail9;
-    ModelRenderer fishtail10;
-    ModelRenderer fishtail11;
-    ModelRenderer headdressL;
-    ModelRenderer headdressR;
+    private ModelRenderer head;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer fishtail1;
+    private ModelRenderer fishtail2;
+    private ModelRenderer fishtail3;
+    private ModelRenderer fishtail4;
+    private ModelRenderer fishtail5;
+    private ModelRenderer fishtail6;
+    private ModelRenderer fishtail7;
+    private ModelRenderer fishtail8;
+    private ModelRenderer fishtail9;
+    private ModelRenderer fishtail10;
+    private ModelRenderer fishtail11;
+    private ModelRenderer headdressL;
+    private ModelRenderer headdressR;
 
     public EntityWakasagihimeModel() {
         textureWidth = 64;

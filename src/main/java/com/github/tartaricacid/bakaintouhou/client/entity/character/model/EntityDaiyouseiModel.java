@@ -7,20 +7,20 @@ import net.minecraft.util.math.MathHelper;
 public class EntityDaiyouseiModel extends EntityTouhouCharacterModel {
 
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer hair;
-    ModelRenderer headdressM;
-    ModelRenderer headdressB;
-    ModelRenderer headdressF;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
-    ModelRenderer handR;
-    ModelRenderer handL;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer hair;
+    private ModelRenderer headdressM;
+    private ModelRenderer headdressB;
+    private ModelRenderer headdressF;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
 
     public EntityDaiyouseiModel() {
         textureWidth = 128;

@@ -6,30 +6,30 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntitySuikaModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer hand1;
-    ModelRenderer hand2;
-    ModelRenderer footL;
-    ModelRenderer footR;
-    ModelRenderer hornL1;
-    ModelRenderer hornR1;
-    ModelRenderer hornL2;
-    ModelRenderer hornL3;
-    ModelRenderer hornR2;
-    ModelRenderer hornR3;
-    ModelRenderer gourd1;
-    ModelRenderer gourd2;
-    ModelRenderer gourd3;
-    ModelRenderer headdress1;
-    ModelRenderer headdress2;
-    ModelRenderer headdress3;
-    ModelRenderer headdress4;
-    ModelRenderer headdress5;
-    ModelRenderer hairL;
-    ModelRenderer hairR;
-    ModelRenderer headdress6;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer hand1;
+    private ModelRenderer hand2;
+    private ModelRenderer footL;
+    private ModelRenderer footR;
+    private ModelRenderer hornL1;
+    private ModelRenderer hornR1;
+    private ModelRenderer hornL2;
+    private ModelRenderer hornL3;
+    private ModelRenderer hornR2;
+    private ModelRenderer hornR3;
+    private ModelRenderer gourd1;
+    private ModelRenderer gourd2;
+    private ModelRenderer gourd3;
+    private ModelRenderer headdress1;
+    private ModelRenderer headdress2;
+    private ModelRenderer headdress3;
+    private ModelRenderer headdress4;
+    private ModelRenderer headdress5;
+    private ModelRenderer hairL;
+    private ModelRenderer hairR;
+    private ModelRenderer headdress6;
 
     public EntitySuikaModel() {
         textureWidth = 128;

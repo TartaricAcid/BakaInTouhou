@@ -80,6 +80,6 @@ public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob
 
     @Override
     public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
-        DanmakuShoot.aimedShot(this.world, this, target, 0.9f, 15f, 0, 0.3f);
+        DanmakuShoot.aimedShot(this.world, this, target, 0.9f, 15f, 1, 0.3f);
     }
 }

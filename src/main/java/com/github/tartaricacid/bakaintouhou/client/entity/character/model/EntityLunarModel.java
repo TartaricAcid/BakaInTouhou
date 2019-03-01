@@ -6,24 +6,24 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityLunarModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer hat;
-    ModelRenderer headdressR1;
-    ModelRenderer headdressR2;
-    ModelRenderer headdressL1;
-    ModelRenderer headdressL2;
-    ModelRenderer bowM;
-    ModelRenderer bowR;
-    ModelRenderer bowL;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer hat;
+    private ModelRenderer headdressR1;
+    private ModelRenderer headdressR2;
+    private ModelRenderer headdressL1;
+    private ModelRenderer headdressL2;
+    private ModelRenderer bowM;
+    private ModelRenderer bowR;
+    private ModelRenderer bowL;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
 
     public EntityLunarModel() {
         textureWidth = 128;

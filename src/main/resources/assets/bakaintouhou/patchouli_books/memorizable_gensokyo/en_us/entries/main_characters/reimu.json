@@ -1,0 +1,20 @@
+{
+  "name": "Reimu Hakurei",
+  "icon": "bakaintouhou:touhou_icons{icons_type:3}",
+  "category": "main_characters",
+  "advancement": "bakaintouhou:player_ship/reimu",
+  "pages": [
+    {
+      "type": "link",
+      "url": "https://en.touhouwiki.net/wiki/Reimu_Hakurei",
+      "link_text": "Touhou Wiki",
+      "text": "Reimu Hakurei is the main protagonist of the Touhou Project series along with the deuteragonist, Marisa Kirisame. As the shrine maiden of the Hakurei Shrine, she manages the Hakurei Border of Gensokyo and exterminates troublesome youkai."
+    },
+    {
+      "type": "entity",
+      "entity": "bakaintouhou:textures/entity/reimu.png",
+      "offset": 0.1,
+      "scale": 0.9
+    }
+  ]
+}

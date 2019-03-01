@@ -6,14 +6,14 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityAliceModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer book;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer book;
 
     public EntityAliceModel() {
         textureWidth = 64;

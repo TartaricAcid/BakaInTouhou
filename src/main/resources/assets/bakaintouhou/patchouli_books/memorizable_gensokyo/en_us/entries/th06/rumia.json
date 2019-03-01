@@ -1,0 +1,20 @@
+{
+  "name": "Rumia",
+  "icon": "bakaintouhou:touhou_icons{icons_type:1}",
+  "category": "th06",
+  "advancement": "bakaintouhou:th06/rumia",
+  "pages": [
+    {
+      "type": "link",
+      "url": "https://en.touhouwiki.net/wiki/Rumia",
+      "link_text": "Touhou Wiki",
+      "text": "Rumia is a youkai with the ability of manipulating the darkness. She is one of the few youkai that doesn't seem to belong to any particular species."
+    },
+    {
+      "type": "entity",
+      "entity": "bakaintouhou:textures/entity/rumia.png",
+      "offset": 0.1,
+      "scale": 0.9
+    }
+  ]
+}

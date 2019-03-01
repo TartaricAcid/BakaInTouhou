@@ -6,16 +6,16 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntitySakuyaModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer headdress;
-    ModelRenderer hairR;
-    ModelRenderer hairL;
-    ModelRenderer handR;
-    ModelRenderer handL;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer headdress;
+    private ModelRenderer hairR;
+    private ModelRenderer hairL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
 
     public EntitySakuyaModel() {
         textureWidth = 128;

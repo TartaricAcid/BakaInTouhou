@@ -6,23 +6,23 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityLilyModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer armR;
-    ModelRenderer armL;
-    ModelRenderer hat1;
-    ModelRenderer hat2;
-    ModelRenderer hat3;
-    ModelRenderer hat4;
-    ModelRenderer headdress;
-    ModelRenderer hair;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer armR;
+    private ModelRenderer armL;
+    private ModelRenderer hat1;
+    private ModelRenderer hat2;
+    private ModelRenderer hat3;
+    private ModelRenderer hat4;
+    private ModelRenderer headdress;
+    private ModelRenderer hair;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
 
     public EntityLilyModel() {
         textureWidth = 128;

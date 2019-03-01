@@ -48,6 +48,25 @@ public class ClientProxy extends CommonProxy {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako),
                 0, new ModelResourceLocation(BlockObjectHolder.blockSaisenBako.getRegistryName(), "inventory"));
 
+        ModelResourceLocation touhou_icons_0 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_0", "inventory");
+        ModelResourceLocation touhou_icons_1 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_1", "inventory");
+        ModelResourceLocation touhou_icons_2 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_2", "inventory");
+        ModelResourceLocation touhou_icons_3 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_3", "inventory");
+        ModelBakery.registerItemVariants(ItemObjectHolder.itemTouhouIcons, touhou_icons_0, touhou_icons_1, touhou_icons_2, touhou_icons_3);
+        ModelLoader.setCustomMeshDefinition(ItemObjectHolder.itemTouhouIcons, stack -> {
+            switch (ItemObjectHolder.itemTouhouIcons.getIconsType(stack)) {
+                case 0:
+                default:
+                    return touhou_icons_0;
+                case 1:
+                    return touhou_icons_1;
+                case 2:
+                    return touhou_icons_2;
+                case 3:
+                    return touhou_icons_3;
+            }
+        });
+
         // 为弹幕渲染进行注册
         ModelResourceLocation danmaku_0 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_0", "inventory");
         ModelResourceLocation danmaku_1 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_1", "inventory");
@@ -58,12 +77,14 @@ public class ClientProxy extends CommonProxy {
         ModelResourceLocation danmaku_6 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_6", "inventory");
         ModelResourceLocation danmaku_7 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_7", "inventory");
         ModelResourceLocation danmaku_8 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_8", "inventory");
+        ModelResourceLocation danmaku_9 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_9", "inventory");
+        ModelResourceLocation danmaku_10 = new ModelResourceLocation(itemDanmaku.getRegistryName() + "_10", "inventory");
 
         // 分别为物品形态和投掷物形态注册
         ModelBakery.registerItemVariants(itemDanmaku, danmaku_0, danmaku_1, danmaku_2, danmaku_3,
-                danmaku_4, danmaku_5, danmaku_6, danmaku_7, danmaku_8);
+                danmaku_4, danmaku_5, danmaku_6, danmaku_7, danmaku_8, danmaku_9, danmaku_10);
         ModelBakery.registerItemVariants(ItemObjectHolder.itemDanmaku, danmaku_0, danmaku_1, danmaku_2, danmaku_3,
-                danmaku_4, danmaku_5, danmaku_6, danmaku_7, danmaku_8);
+                danmaku_4, danmaku_5, danmaku_6, danmaku_7, danmaku_8, danmaku_9, danmaku_10);
 
         // 依据不同的 type 数据，渲染不同的材质
         ItemMeshDefinition itemMeshDefinition = stack -> {
@@ -87,6 +108,10 @@ public class ClientProxy extends CommonProxy {
                         return danmaku_7;
                     case 8:
                         return danmaku_8;
+                    case 9:
+                        return danmaku_9;
+                    case 10:
+                        return danmaku_10;
                 }
             }
             return danmaku_0;

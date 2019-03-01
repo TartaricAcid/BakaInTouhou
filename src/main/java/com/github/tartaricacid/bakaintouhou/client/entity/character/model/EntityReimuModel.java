@@ -7,21 +7,21 @@ import net.minecraft.util.math.MathHelper;
 public class EntityReimuModel extends EntityTouhouCharacterModel {
 
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footL;
-    ModelRenderer footR;
-    ModelRenderer headdressM;
-    ModelRenderer hair;
-    ModelRenderer headdressLT;
-    ModelRenderer headdressRT;
-    ModelRenderer headdressLB;
-    ModelRenderer headdressRB;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer hair2;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footL;
+    private ModelRenderer footR;
+    private ModelRenderer headdressM;
+    private ModelRenderer hair;
+    private ModelRenderer headdressLT;
+    private ModelRenderer headdressRT;
+    private ModelRenderer headdressLB;
+    private ModelRenderer headdressRB;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer hair2;
 
     public EntityReimuModel() {
         textureWidth = 128;

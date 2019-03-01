@@ -6,21 +6,21 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityKisumeModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer barrel1;
-    ModelRenderer barrel2;
-    ModelRenderer barrel3;
-    ModelRenderer barrel4;
-    ModelRenderer barrel5;
-    ModelRenderer barrel6;
-    ModelRenderer barrel7;
-    ModelRenderer barrel8;
-    ModelRenderer body;
-    ModelRenderer head;
-    ModelRenderer handL;
-    ModelRenderer handR;
-    ModelRenderer hairL;
-    ModelRenderer hairR;
-    ModelRenderer barrelB;
+    private ModelRenderer barrel1;
+    private ModelRenderer barrel2;
+    private ModelRenderer barrel3;
+    private ModelRenderer barrel4;
+    private ModelRenderer barrel5;
+    private ModelRenderer barrel6;
+    private ModelRenderer barrel7;
+    private ModelRenderer barrel8;
+    private ModelRenderer body;
+    private ModelRenderer head;
+    private ModelRenderer handL;
+    private ModelRenderer handR;
+    private ModelRenderer hairL;
+    private ModelRenderer hairR;
+    private ModelRenderer barrelB;
 
     public EntityKisumeModel() {
         textureWidth = 128;

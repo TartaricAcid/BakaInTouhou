@@ -6,23 +6,23 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityCirnoModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer wingR1;
-    ModelRenderer wingR2;
-    ModelRenderer wingR3;
-    ModelRenderer wingL1;
-    ModelRenderer wingL2;
-    ModelRenderer wingL3;
-    ModelRenderer headdress1;
-    ModelRenderer headdress2;
-    ModelRenderer headdress3;
-    ModelRenderer footL;
-    ModelRenderer footR;
-    ModelRenderer handL;
-    ModelRenderer handR;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer wingR1;
+    private ModelRenderer wingR2;
+    private ModelRenderer wingR3;
+    private ModelRenderer wingL1;
+    private ModelRenderer wingL2;
+    private ModelRenderer wingL3;
+    private ModelRenderer headdress1;
+    private ModelRenderer headdress2;
+    private ModelRenderer headdress3;
+    private ModelRenderer footL;
+    private ModelRenderer footR;
+    private ModelRenderer handL;
+    private ModelRenderer handR;
 
     public EntityCirnoModel() {
         textureWidth = 128;

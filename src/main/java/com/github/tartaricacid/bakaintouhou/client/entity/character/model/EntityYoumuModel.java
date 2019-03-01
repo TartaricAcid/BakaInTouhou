@@ -6,21 +6,21 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityYoumuModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer headdress1;
-    ModelRenderer headdress2;
-    ModelRenderer slash1;
-    ModelRenderer slash2;
-    ModelRenderer soul1;
-    ModelRenderer soul2;
-    ModelRenderer soul3;
-    ModelRenderer soul4;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer headdress1;
+    private ModelRenderer headdress2;
+    private ModelRenderer slash1;
+    private ModelRenderer slash2;
+    private ModelRenderer soul1;
+    private ModelRenderer soul2;
+    private ModelRenderer soul3;
+    private ModelRenderer soul4;
 
     public EntityYoumuModel() {
         textureWidth = 128;

@@ -6,22 +6,22 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntitySunnyModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer head;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer hairR;
-    ModelRenderer hairL;
-    ModelRenderer headdress;
-    ModelRenderer bowM;
-    ModelRenderer bowL;
-    ModelRenderer bowR;
-    ModelRenderer wingL;
-    ModelRenderer wingR;
+    private ModelRenderer head;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer hairR;
+    private ModelRenderer hairL;
+    private ModelRenderer headdress;
+    private ModelRenderer bowM;
+    private ModelRenderer bowL;
+    private ModelRenderer bowR;
+    private ModelRenderer wingL;
+    private ModelRenderer wingR;
 
     public EntitySunnyModel() {
         textureWidth = 128;

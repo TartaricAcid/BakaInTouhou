@@ -6,26 +6,26 @@ import net.minecraft.util.math.MathHelper;
 
 public class EntityMarisaModel extends EntityTouhouCharacterModel {
     //fields
-    ModelRenderer face;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer footR;
-    ModelRenderer footL;
-    ModelRenderer hat1;
-    ModelRenderer hat2;
-    ModelRenderer hat3;
-    ModelRenderer hat4;
-    ModelRenderer headdressM;
-    ModelRenderer headdressR;
-    ModelRenderer headdressL;
-    ModelRenderer handR;
-    ModelRenderer handL;
-    ModelRenderer bowM;
-    ModelRenderer bowLB;
-    ModelRenderer bowLT;
-    ModelRenderer bowRT;
-    ModelRenderer bowRB;
+    private ModelRenderer face;
+    private ModelRenderer body1;
+    private ModelRenderer body2;
+    private ModelRenderer body3;
+    private ModelRenderer footR;
+    private ModelRenderer footL;
+    private ModelRenderer hat1;
+    private ModelRenderer hat2;
+    private ModelRenderer hat3;
+    private ModelRenderer hat4;
+    private ModelRenderer headdressM;
+    private ModelRenderer headdressR;
+    private ModelRenderer headdressL;
+    private ModelRenderer handR;
+    private ModelRenderer handL;
+    private ModelRenderer bowM;
+    private ModelRenderer bowLB;
+    private ModelRenderer bowLT;
+    private ModelRenderer bowRT;
+    private ModelRenderer bowRB;
 
     public EntityMarisaModel() {
         textureWidth = 128;

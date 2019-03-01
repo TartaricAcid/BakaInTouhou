@@ -1,0 +1,28 @@
+{
+  "display": {
+    "description": {
+      "translate": "bakaintouhou.advancement.th06.chen.desc"
+    },
+    "title": {
+      "translate": "bakaintouhou.advancement.th06.chen.title"
+    },
+    "icon": {
+      "item": "bakaintouhou:touhou_icons",
+      "nbt": "{icons_type:2}"
+    }
+  },
+  "criteria": {
+    "bakaintouhou.hurt.chen": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "bakaintouhou:textures/entity/chen.png"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 9
+  },
+  "parent": "bakaintouhou:th07/letty"
+}

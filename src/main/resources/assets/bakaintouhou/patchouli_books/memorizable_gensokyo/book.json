@@ -1,0 +1,10 @@
+{
+  "name": "bakaintouhou.patchouli.memorizable_gensokyo.name",
+  "landing_text": "bakaintouhou.patchouli.memorizable_gensokyo.landing_text",
+  "creative_tab": "bakaintouhou.items",
+  "model": "patchouli:book_red",
+  "advancement_namespaces": [
+    "bakaintouhou"
+  ],
+  "version": 1
+}
