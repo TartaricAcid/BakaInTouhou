@@ -1,5 +1,6 @@
 package com.github.tartaricacid.bakaintouhou.common.entity.danmaku;
 
+import com.github.tartaricacid.bakaintouhou.common.entity.character.EntityTouhouCharacter;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.network.datasync.DataParameter;
@@ -50,6 +51,10 @@ public class EntityDanmaku extends EntityThrowable {
     @Override
     protected void onImpact(RayTraceResult result) {
         if (result.typeOfHit == RayTraceResult.Type.ENTITY) {
+            // 不能击杀自己人吗，这一点毋庸置疑
+            if (result.entityHit instanceof EntityTouhouCharacter) {
+                return;
+            }
             result.entityHit.attackEntityFrom(DamageSource.MAGIC, this.getDataManager().get(DAMAGE));
         } else if (result.typeOfHit == RayTraceResult.Type.BLOCK) {
             this.setDead();

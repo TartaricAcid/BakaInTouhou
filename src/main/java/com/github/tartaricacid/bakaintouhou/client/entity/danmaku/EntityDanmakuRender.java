@@ -3,6 +3,8 @@ package com.github.tartaricacid.bakaintouhou.client.entity.danmaku;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -17,6 +19,17 @@ public class EntityDanmakuRender extends RenderSnowball<EntityDanmaku> {
         super(renderManagerIn, itemIn, itemRendererIn);
         this.item = itemIn;
     }
+
+    @Override
+    public void doRender(EntityDanmaku entity, double x, double y, double z, float entityYaw, float partialTicks) {
+        GlStateManager.pushMatrix();
+        GlStateManager.disableLighting();
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240f, 240f);
+        GlStateManager.enableLighting();
+        GlStateManager.popMatrix();
+        super.doRender(entity, x, y, z, entityYaw, partialTicks);
+    }
+
 
     @Override
     public ItemStack getStackToRender(EntityDanmaku entityIn) {

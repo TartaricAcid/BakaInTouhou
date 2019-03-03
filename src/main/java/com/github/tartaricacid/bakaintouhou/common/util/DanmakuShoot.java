@@ -30,7 +30,6 @@ public class DanmakuShoot {
                 EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, entity, danmakuType);
                 entityDanmaku.shoot(target.posX - entity.posX, target.posY - entity.posY + 1.5, target.posZ - entity.posZ, velocity, inaccuracy);
                 worldIn.spawnEntity(entityDanmaku);
-            } else {
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }
@@ -59,7 +58,6 @@ public class DanmakuShoot {
                 EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, entity, damage, gravity, danmakuType, width, height);
                 entityDanmaku.shoot(target.posX - entity.posX, target.posY - entity.posY + 1.5, target.posZ - entity.posZ, velocity, inaccuracy);
                 worldIn.spawnEntity(entityDanmaku);
-            } else {
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }
@@ -99,7 +97,6 @@ public class DanmakuShoot {
                     entityDanmaku.shoot(v1.x, v1.y, v1.z, velocity, inaccuracy);
                     worldIn.spawnEntity(entityDanmaku);
                 }
-            } else {
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }
@@ -143,7 +140,6 @@ public class DanmakuShoot {
                     entityDanmaku.shoot(v1.x, v1.y, v1.z, velocity, inaccuracy);
                     worldIn.spawnEntity(entityDanmaku);
                 }
-            } else {
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }
@@ -169,7 +165,6 @@ public class DanmakuShoot {
                 entityDanmaku.setPosition(target.posX, target.posY + height, target.posZ);
                 entityDanmaku.shoot(target.posX, target.posY, target.posZ, 0f, inaccuracy);
                 worldIn.spawnEntity(entityDanmaku);
-            } else {
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }

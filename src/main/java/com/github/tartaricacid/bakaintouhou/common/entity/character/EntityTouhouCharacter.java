@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob {
     private int flyDistance = 12;
-    private double flyHight = 3d;
+    private double flyHight = 0.2d;
 
     public EntityTouhouCharacter(World worldIn) {
         super(worldIn);
@@ -71,7 +71,6 @@ public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob
             return super.attackEntityFrom(source, amount);
         }
     }
-
 
     @Override
     public void setSwingingArms(boolean swingingArms) {

@@ -19,4 +19,9 @@ public abstract class RenderEntityTouhouCharacter<T extends EntityTouhouCharacte
     protected boolean canRenderName(T entity) {
         return true;
     }
+
+    @Override
+    protected void preRenderCallback(T entitylivingbaseIn, float partialTickTime) {
+        // TODO
+    }
 }
