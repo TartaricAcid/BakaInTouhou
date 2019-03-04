@@ -1,7 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
 import com.github.tartaricacid.bakaintouhou.client.entity.character.*;
-import com.github.tartaricacid.bakaintouhou.client.entity.danmaku.EntityDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.entity.danmaku.EntityDanmakuRenderTest;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
@@ -11,9 +11,12 @@ import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -151,6 +154,11 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntitySunny.class, EntitySunnyRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityLunar.class, EntityLunarRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityStar.class, EntityStarRender.FACTORY);
-        RenderingRegistry.registerEntityRenderingHandler(EntityDanmaku.class, new EntityDanmakuRender.Factory(itemDanmaku));
+        RenderingRegistry.registerEntityRenderingHandler(EntityDanmaku.class, new IRenderFactory<EntityDanmaku>() {
+            @Override
+            public Render<? super EntityDanmaku> createRenderFor(RenderManager manager) {
+                return new EntityDanmakuRenderTest(manager);
+            }
+        });
     }
 }
