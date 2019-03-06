@@ -1,10 +1,10 @@
 {
   "display": {
     "description": {
-      "translate": "bakaintouhou.advancement.th06.reimu.desc"
+      "translate": "bakaintouhou.advancement.player_ship.reimu.desc"
     },
     "title": {
-      "translate": "bakaintouhou.advancement.th06.reimu.title"
+      "translate": "bakaintouhou.advancement.player_ship.reimu.title"
     },
     "icon": {
       "item": "bakaintouhou:touhou_icons",

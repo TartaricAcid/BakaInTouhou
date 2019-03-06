@@ -1,10 +1,10 @@
 {
   "display": {
     "description": {
-      "translate": "bakaintouhou.advancement.th06.marisa.desc"
+      "translate": "bakaintouhou.advancement.player_ship.marisa.desc"
     },
     "title": {
-      "translate": "bakaintouhou.advancement.th06.marisa.title"
+      "translate": "bakaintouhou.advancement.player_ship.marisa.title"
     },
     "icon": {
       "item": "bakaintouhou:touhou_icons",

@@ -12,7 +12,7 @@ public abstract class RenderEntityTouhouCharacter<T extends EntityTouhouCharacte
 
     @Override
     protected void renderEntityName(T entityIn, double x, double y, double z, String name, double distanceSq) {
-        super.renderEntityName(entityIn, x, y, z, entityIn.getName(), distanceSq);
+        super.renderLivingLabel(entityIn, entityIn.getName(), x, y, z, 20);
     }
 
     @Override

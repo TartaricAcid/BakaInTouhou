@@ -44,9 +44,10 @@ tile.bakaintouhou.saisen_bako.name=Saisen Bako
 
 # Danmaku
 item.bakaintouhou.danmaku.name=Danmaku Item
-item.bakaintouhou.touhou_icons.name=Touhou Icons
+item.bakaintouhou.touhou_icons.name=Touhou Project Icons
 
-bakaintouhou.danmaku.tooltips.type=Type: %d
+bakaintouhou.danmaku.tooltips.type=Type: %s
+bakaintouhou.danmaku.tooltips.color=Color: %s
 bakaintouhou.danmaku.tooltips.damage=Damage: %d
 bakaintouhou.danmaku.tooltips.gravity=Gravity: %d
 
@@ -54,17 +55,27 @@ bakaintouhou.danmaku.type_name.0=Pellet
 bakaintouhou.danmaku.type_name.1=Ball
 bakaintouhou.danmaku.type_name.2=Big Ball
 bakaintouhou.danmaku.type_name.3=Bubble
-bakaintouhou.danmaku.type_name.4=Petal
-bakaintouhou.danmaku.type_name.5=Amulet
+bakaintouhou.danmaku.type_name.4=Jellybean
+bakaintouhou.danmaku.type_name.5=Heart
 bakaintouhou.danmaku.type_name.6=Star
-bakaintouhou.danmaku.type_name.7=Jellybean
-bakaintouhou.danmaku.type_name.8=Heart
-bakaintouhou.danmaku.type_name.9=Note
-bakaintouhou.danmaku.type_name.10=Rest
+bakaintouhou.danmaku.type_name.7=Amulet
+bakaintouhou.danmaku.type_name.8=Orbs
+
+bakaintouhou.danmaku.color_name.0=Red
+bakaintouhou.danmaku.color_name.1=Orange
+bakaintouhou.danmaku.color_name.2=Yellow
+bakaintouhou.danmaku.color_name.3=Green
+bakaintouhou.danmaku.color_name.4=Cyan
+bakaintouhou.danmaku.color_name.5=Blue
+bakaintouhou.danmaku.color_name.6=Purple
 
 # Advancement
 bakaintouhou.advancement.root.title=Baka In Touhou Advancement
 bakaintouhou.advancement.root.desc=Start your travis in touhou and minecraft!
+bakaintouhou.advancement.player_ship.reimu.title=Miss Shrine Maiden of the Hakurei Shrine
+bakaintouhou.advancement.player_ship.reimu.desc=Hurt the Reimu
+bakaintouhou.advancement.player_ship.marisa.title=Oriental Western Magician
+bakaintouhou.advancement.player_ship.marisa.desc=Hurt the Marisa
 bakaintouhou.advancement.th06.rumia.title=Youkai of the Dusk
 bakaintouhou.advancement.th06.rumia.desc=Hurt the Rumia
 bakaintouhou.advancement.th06.daiyousei.title=404 Not Found

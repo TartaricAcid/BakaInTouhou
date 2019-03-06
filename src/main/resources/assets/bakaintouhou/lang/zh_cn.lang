@@ -43,20 +43,59 @@ itemGroup.bakaintouhou.items=还没想好名字，按照规则应该是 东方xx
 tile.bakaintouhou.saisen_bako.name=赛钱箱
 
 # 弹幕部分
-item.bakaintouhou.danmaku.name=弹幕子弹
+item.bakaintouhou.danmaku.name=弹幕
 
 bakaintouhou.danmaku.tooltips.type=类型：%d
-bakaintouhou.danmaku.tooltips.damage=伤害值：%d
-bakaintouhou.danmaku.tooltips.gravity=重力加速度：%d
+bakaintouhou.danmaku.tooltips.color=颜色：%s
+bakaintouhou.danmaku.tooltips.damage=伤害：%d
+bakaintouhou.danmaku.tooltips.gravity=重力：%d
 
 bakaintouhou.danmaku.type_name.0=点弹
 bakaintouhou.danmaku.type_name.1=小玉
 bakaintouhou.danmaku.type_name.2=中玉
 bakaintouhou.danmaku.type_name.3=大玉
-bakaintouhou.danmaku.type_name.4=米弹
-bakaintouhou.danmaku.type_name.5=札弹
+bakaintouhou.danmaku.type_name.4=椭弹
+bakaintouhou.danmaku.type_name.5=心弹
 bakaintouhou.danmaku.type_name.6=星弹
-bakaintouhou.danmaku.type_name.7=椭弹
-bakaintouhou.danmaku.type_name.8=心弹
-bakaintouhou.danmaku.type_name.9=音符
-bakaintouhou.danmaku.type_name.10=休止符
+bakaintouhou.danmaku.type_name.7=札弹
+bakaintouhou.danmaku.type_name.8=环玉
+
+bakaintouhou.danmaku.color_name.0=红
+bakaintouhou.danmaku.color_name.1=橙
+bakaintouhou.danmaku.color_name.2=黄
+bakaintouhou.danmaku.color_name.3=绿
+bakaintouhou.danmaku.color_name.4=青
+bakaintouhou.danmaku.color_name.5=蓝
+bakaintouhou.danmaku.color_name.6=紫
+
+item.bakaintouhou.touhou_icons.name=东方 Project 图标
+
+# Advancement
+bakaintouhou.advancement.root.title=Baka In Touhou Advancement
+bakaintouhou.advancement.root.desc=Start your travis in touhou and minecraft!
+bakaintouhou.advancement.player_ship.reimu.title=Miss Shrine Maiden of the Hakurei Shrine
+bakaintouhou.advancement.player_ship.reimu.desc=Hurt the Reimu
+bakaintouhou.advancement.player_ship.marisa.title=Oriental Western Magician
+bakaintouhou.advancement.player_ship.marisa.desc=Hurt the Marisa
+bakaintouhou.advancement.th06.rumia.title=Youkai of the Dusk
+bakaintouhou.advancement.th06.rumia.desc=Hurt the Rumia
+bakaintouhou.advancement.th06.daiyousei.title=404 Not Found
+bakaintouhou.advancement.th06.daiyousei.desc=Hurt the daiyousei
+bakaintouhou.advancement.th06.cirno.title=Ice Fairy of the Lake
+bakaintouhou.advancement.th06.cirno.desc=Hurt the cirno
+bakaintouhou.advancement.th06.meiling.title=Chinese Girl
+bakaintouhou.advancement.th06.meiling.desc=Hurt the meiling
+bakaintouhou.advancement.th06.koakuma.title=502 Bad Gateway
+bakaintouhou.advancement.th06.koakuma.desc=Hurt the koakuma
+bakaintouhou.advancement.th06.patchouli.title=The Girl of Knowledge and Shade
+bakaintouhou.advancement.th06.patchouli.desc=Hurt the patchouli
+bakaintouhou.advancement.th06.sakuya.title=Maid of the Scarlet Devil Mansion
+bakaintouhou.advancement.th06.sakuya.desc=Hurt the sakuya
+bakaintouhou.advancement.th06.remilia.title=The Eternally Young Scarlet Moon
+bakaintouhou.advancement.th06.remilia.desc=Hurt the remilia
+bakaintouhou.advancement.th06.frandle.title=Sister of the Devil
+bakaintouhou.advancement.th06.frandle.desc=Hurt the frandle
+
+# Patchouli Book Memorizable Gensokyo
+bakaintouhou.patchouli.memorizable_gensokyo.name=Memorizable Gensokyo
+bakaintouhou.patchouli.memorizable_gensokyo.landing_text=？？？

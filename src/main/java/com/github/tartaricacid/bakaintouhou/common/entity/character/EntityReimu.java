@@ -12,7 +12,7 @@ public class EntityReimu extends EntityTouhouCharacter {
 
     @Override
     public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
-        DanmakuShoot.fanShapedShot(this.world, this, target, 0.1f, 30f,
-                5, 0.05f, 2 * Math.PI, 6, 15, 0.0003f, 0.25f, 0.25f);
+        DanmakuShoot.fanShapedShot(this.world, this, target, 0.3f, 30f, 1, rand.nextInt(7),
+                0.05f, Math.PI / 4, 6, 0, 0f, 0.25f, 0.25f);
     }
 }
