@@ -4,12 +4,8 @@
     "model": "bakaintouhou:saisen_bako"
   },
   "variants": {
-    "normal": [
-      {}
-    ],
-    "inventory": [
-      {}
-    ],
+    "normal": [{}],
+    "inventory": [{}],
     "facing": {
       "north": {
         "y": 90

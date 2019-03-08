@@ -16,7 +16,7 @@
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "entity": {
-          "type": "bakaintouhou:textures/entity/sakuya.png"
+          "type": "bakaintouhou:entity.character.sakuya"
         }
       }
     }

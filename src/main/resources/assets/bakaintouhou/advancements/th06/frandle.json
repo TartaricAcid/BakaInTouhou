@@ -17,7 +17,7 @@
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "entity": {
-          "type": "bakaintouhou:textures/entity/frandle.png"
+          "type": "bakaintouhou:entity.character.frandle"
         }
       }
     }

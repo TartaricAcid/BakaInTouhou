@@ -28,7 +28,6 @@ public class ItemDanmaku extends Item {
         setUnlocalizedName(BakaInTouhou.MOD_ID + ".danmaku");
         setRegistryName("danmaku");
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
-        setMaxStackSize(16);
     }
 
     @Override

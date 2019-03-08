@@ -39,6 +39,7 @@ public class BlockSaisenBako extends Block {
         if (hand == EnumHand.MAIN_HAND && playerIn.getHeldItem(hand).getItem() == Items.EMERALD) {
             playerIn.getHeldItem(hand).shrink(1);
             // TODO：传送到幻想乡？
+            // 不存在的
             return true;
         }
         return false;

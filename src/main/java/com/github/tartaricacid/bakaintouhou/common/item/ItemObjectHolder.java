@@ -2,7 +2,6 @@ package com.github.tartaricacid.bakaintouhou.common.item;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemTouhouIcons;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -23,6 +22,8 @@ public class ItemObjectHolder {
 
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "danmaku")
     public static ItemDanmaku itemDanmaku;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "hakurei_gohei")
+    public static ItemHakureiGohei itemHakureiGohei;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "touhou_icons")
     public static ItemTouhouIcons itemTouhouIcons;
 }

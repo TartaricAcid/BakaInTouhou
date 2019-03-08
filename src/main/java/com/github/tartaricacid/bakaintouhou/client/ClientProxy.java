@@ -1,9 +1,11 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
-import com.github.tartaricacid.bakaintouhou.client.entity.character.*;
-import com.github.tartaricacid.bakaintouhou.client.entity.danmaku.EntityDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.render.character.*;
+import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
+import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
@@ -12,6 +14,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -42,8 +45,14 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako),
                 0, new ModelResourceLocation(BlockObjectHolder.blockSaisenBako.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit),
+                0, new ModelResourceLocation(BlockObjectHolder.blockGarageKit.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemDanmaku,
                 0, new ModelResourceLocation(ItemObjectHolder.itemDanmaku.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemHakureiGohei,
+                0, new ModelResourceLocation(ItemObjectHolder.itemHakureiGohei.getRegistryName(), "inventory"));
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGarageKit.class, new GarageKitRender());
 
         ModelResourceLocation touhou_icons_0 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_0", "inventory");
         ModelResourceLocation touhou_icons_1 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_1", "inventory");

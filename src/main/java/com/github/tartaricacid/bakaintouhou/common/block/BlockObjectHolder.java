@@ -6,4 +6,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BlockObjectHolder {
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "saisen_bako")
     public static BlockSaisenBako blockSaisenBako;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "garage_kit")
+    public static BlockGarageKit blockGarageKit;
 }

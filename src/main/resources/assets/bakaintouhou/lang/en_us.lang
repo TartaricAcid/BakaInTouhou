@@ -41,10 +41,15 @@ entity.entity_wakasagihime.name=Wakasagihime
 # Other
 itemGroup.bakaintouhou.items=Baka In Touhou
 tile.bakaintouhou.saisen_bako.name=Saisen Bako
+tile.bakaintouhou.garage_kit.name=Garage Kit
+
+bakaintouhou.garage_kit.tooltips.character=Character: %s
 
 # Danmaku
 item.bakaintouhou.danmaku.name=Danmaku Item
 item.bakaintouhou.touhou_icons.name=Touhou Project Icons
+item.bakaintouhou.hakurei_gohei.name=Hakurei's Gohei
+item.bakaintouhou.hakurei_gohei.mode=Mode: %d
 
 bakaintouhou.danmaku.tooltips.type=Type: %s
 bakaintouhou.danmaku.tooltips.color=Color: %s
