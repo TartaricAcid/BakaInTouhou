@@ -8,6 +8,7 @@ import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGa
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemHakureiGohei;
+import com.github.tartaricacid.bakaintouhou.common.item.ItemReimuHeaddress;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemTouhouIcons;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
@@ -55,6 +56,7 @@ public class CommonProxy {
         event.getRegistry().register(new ItemDanmaku());
         event.getRegistry().register(new ItemTouhouIcons());
         event.getRegistry().register(new ItemHakureiGohei());
+        event.getRegistry().register(new ItemReimuHeaddress());
 
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
                 BlockObjectHolder.blockSaisenBako.getRegistryName()));

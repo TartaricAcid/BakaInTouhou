@@ -20,7 +20,7 @@ public class GarageKitRender extends TileEntitySpecialRenderer<TileEntityGarageK
 
         GlStateManager.pushMatrix();
         GlStateManager.translate(x, y + 0.0625, z);
-        GlStateManager.scale(0.5f, 0.5f, 0.5f);
+        GlStateManager.scale(0.5, 0.5, 0.5);
         GlStateManager.translate(1, 0, 1);
 
         switch (facing) {

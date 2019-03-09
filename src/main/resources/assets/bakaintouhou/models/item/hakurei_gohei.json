@@ -1,9 +1,9 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
-    "0": "minecraft:blocks/planks_spruce",
+    "0": "minecraft:blocks/hardened_clay_stained_black",
     "1": "bakaintouhou:items/gohei",
-    "particle": "minecraft:blocks/planks_spruce"
+    "particle": "minecraft:blocks/hardened_clay_stained_black"
   },
   "elements": [
     {

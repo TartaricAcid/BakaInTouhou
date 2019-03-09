@@ -41,7 +41,7 @@ public class EntityDanmakuRender extends Render<EntityDanmaku> {
         GlStateManager.disableLighting();
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
-        GlStateManager.depthMask(false);
+        // GlStateManager.depthMask(false); 不透明效果
         GlStateManager.enableBlend();
         GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA,
                 GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
@@ -68,7 +68,7 @@ public class EntityDanmakuRender extends Render<EntityDanmaku> {
         tessellator.draw();
 
         GlStateManager.disableBlend();
-        GlStateManager.depthMask(true);
+        // GlStateManager.depthMask(true);
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
         GlStateManager.enableLighting();

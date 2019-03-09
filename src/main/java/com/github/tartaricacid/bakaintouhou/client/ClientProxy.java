@@ -51,6 +51,8 @@ public class ClientProxy extends CommonProxy {
                 0, new ModelResourceLocation(ItemObjectHolder.itemDanmaku.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemHakureiGohei,
                 0, new ModelResourceLocation(ItemObjectHolder.itemHakureiGohei.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemReimuHeaddress,
+                0, new ModelResourceLocation(ItemObjectHolder.itemReimuHeaddress.getRegistryName(), "inventory"));
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGarageKit.class, new GarageKitRender());
 

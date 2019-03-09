@@ -26,4 +26,6 @@ public class ItemObjectHolder {
     public static ItemHakureiGohei itemHakureiGohei;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "touhou_icons")
     public static ItemTouhouIcons itemTouhouIcons;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "reimu_headdress")
+    public static ItemReimuHeaddress itemReimuHeaddress;
 }

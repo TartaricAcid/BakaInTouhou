@@ -148,4 +148,10 @@ public class BlockGarageKit extends Block implements ITileEntityProvider {
     public boolean isOpaqueCube(IBlockState blockState) {
         return false;
     }
+
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        // 否则玩家会卡死在方块里面窒息
+        return false;
+    }
 }

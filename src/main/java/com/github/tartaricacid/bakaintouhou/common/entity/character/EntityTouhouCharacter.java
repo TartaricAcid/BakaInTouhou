@@ -27,8 +27,8 @@ public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob
         tasks.addTask(3, new EntityAILookIdle(this));
         tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 
-        targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
-        targetTasks.addTask(2, new EntityAIHurtByTarget(this, true, new Class[0]));
+        targetTasks.addTask(1, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, true));
+        targetTasks.addTask(2, new EntityAIHurtByTarget(this, true));
     }
 
     @Override
