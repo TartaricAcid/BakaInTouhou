@@ -7,7 +7,9 @@ import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemHakureiGohei;
+import com.github.tartaricacid.bakaintouhou.common.item.ItemMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemReimuHeaddress;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemTouhouIcons;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
@@ -30,11 +32,25 @@ public class CommonProxy {
     private static int id = 0;
 
     @SubscribeEvent
-    public static void blockRegister(RegistryEvent.Register<Block> event) {
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockSaisenBako());
         event.getRegistry().register(new BlockGarageKit());
 
         GameRegistry.registerTileEntity(TileEntityGarageKit.class, BakaInTouhou.MOD_ID + ":garage_kit");
+    }
+
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemDanmaku());
+        event.getRegistry().register(new ItemTouhouIcons());
+        event.getRegistry().register(new ItemHakureiGohei());
+        event.getRegistry().register(new ItemReimuHeaddress());
+        event.getRegistry().register(new ItemMarisaBroom());
+
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
+                BlockObjectHolder.blockSaisenBako.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockGarageKit).setRegistryName(
+                BlockObjectHolder.blockGarageKit.getRegistryName()));
     }
 
     @Mod.EventHandler
@@ -48,23 +64,10 @@ public class CommonProxy {
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        entityRegister();
+        registerEntities();
     }
 
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemDanmaku());
-        event.getRegistry().register(new ItemTouhouIcons());
-        event.getRegistry().register(new ItemHakureiGohei());
-        event.getRegistry().register(new ItemReimuHeaddress());
-
-        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
-                BlockObjectHolder.blockSaisenBako.getRegistryName()));
-        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockGarageKit).setRegistryName(
-                BlockObjectHolder.blockGarageKit.getRegistryName()));
-    }
-
-    private void entityRegister() {
+    private void registerEntities() {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.cirno"),
                 EntityCirno.class, "entity_cirno", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x4a6195, 0xffffff);
@@ -149,8 +152,13 @@ public class CommonProxy {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.star"),
                 EntityStar.class, "entity_star", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x55658b, 0x5e3927);
+
+
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.damaku"),
                 EntityDanmaku.class, "entity_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.marisa_broom"),
+                EntityMarisaBroom.class, "entity_marisa_broom", id++, BakaInTouhou.INSTANCE, 8,
                 3, true);
     }
 }

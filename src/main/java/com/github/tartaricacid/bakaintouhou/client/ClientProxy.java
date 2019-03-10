@@ -2,12 +2,14 @@ package com.github.tartaricacid.bakaintouhou.client;
 
 import com.github.tartaricacid.bakaintouhou.client.render.character.*;
 import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -45,16 +47,21 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako),
                 0, new ModelResourceLocation(BlockObjectHolder.blockSaisenBako.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit),
-                0, new ModelResourceLocation(BlockObjectHolder.blockGarageKit.getRegistryName(), "inventory"));
+
         ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemDanmaku,
                 0, new ModelResourceLocation(ItemObjectHolder.itemDanmaku.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemHakureiGohei,
                 0, new ModelResourceLocation(ItemObjectHolder.itemHakureiGohei.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemReimuHeaddress,
                 0, new ModelResourceLocation(ItemObjectHolder.itemReimuHeaddress.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemMarisaBroom,
+                0, new ModelResourceLocation(ItemObjectHolder.itemMarisaBroom.getRegistryName(), "inventory"));
 
+
+        // ForgeHooksClient.registerTESRItemStack(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit), 0, TileEntityGarageKit.class);
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGarageKit.class, new GarageKitRender());
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit),
+                0, new ModelResourceLocation(BlockObjectHolder.blockGarageKit.getRegistryName(), "inventory"));
 
         ModelResourceLocation touhou_icons_0 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_0", "inventory");
         ModelResourceLocation touhou_icons_1 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_1", "inventory");
@@ -105,6 +112,10 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntitySunny.class, EntitySunnyRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityLunar.class, EntityLunarRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityStar.class, EntityStarRender.FACTORY);
+
+
         RenderingRegistry.registerEntityRenderingHandler(EntityDanmaku.class, EntityDanmakuRender.FACTORY);
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityMarisaBroom.class, EntityMarisaBroomRender.FACTORY);
     }
 }

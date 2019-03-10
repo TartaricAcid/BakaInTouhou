@@ -1,6 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.client.render.character.model;
 
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
@@ -126,6 +127,7 @@ public class EntityStarModel extends EntityTouhouCharacterModel {
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         super.render(entity, f, f1, f2, f3, f4, f5);
+        GlStateManager.enableBlend();
         setRotationAngles(f, f1, f2, f3, f4, f5, entity);
         head.render(f5);
         body1.render(f5);
@@ -137,6 +139,7 @@ public class EntityStarModel extends EntityTouhouCharacterModel {
         handL.render(f5);
         wingL.render(f5);
         wingR.render(f5);
+        GlStateManager.disableBlend();
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z) {

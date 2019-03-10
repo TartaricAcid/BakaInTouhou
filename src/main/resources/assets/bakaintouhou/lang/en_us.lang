@@ -50,6 +50,8 @@ item.bakaintouhou.danmaku.name=Danmaku Item
 item.bakaintouhou.touhou_icons.name=Touhou Project Icons
 item.bakaintouhou.hakurei_gohei.name=Hakurei's Gohei
 item.bakaintouhou.reimu_headdress.name=Reimu's Headdress
+item.bakaintouhou.marisa_broom.name=Marisa's Broom
+
 item.bakaintouhou.hakurei_gohei.mode=Mode: %d
 
 bakaintouhou.danmaku.tooltips.type=Type: %s
