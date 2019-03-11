@@ -36,7 +36,7 @@ public class CommonProxy {
         event.getRegistry().register(new BlockSaisenBako());
         event.getRegistry().register(new BlockGarageKit());
 
-        GameRegistry.registerTileEntity(TileEntityGarageKit.class, BakaInTouhou.MOD_ID + ":garage_kit");
+        GameRegistry.registerTileEntity(TileEntityGarageKit.class, new ResourceLocation(BakaInTouhou.MOD_ID, "garage_kit"));
     }
 
     @SubscribeEvent
@@ -66,6 +66,7 @@ public class CommonProxy {
     public void preinit(FMLPreInitializationEvent event) {
         registerEntities();
     }
+
 
     private void registerEntities() {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.cirno"),
@@ -158,7 +159,7 @@ public class CommonProxy {
                 EntityDanmaku.class, "entity_danmaku", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.marisa_broom"),
-                EntityMarisaBroom.class, "entity_marisa_broom", id++, BakaInTouhou.INSTANCE, 8,
+                EntityMarisaBroom.class, "entity_marisa_broom", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);
     }
 }

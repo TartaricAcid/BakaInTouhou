@@ -22,7 +22,7 @@ public class ItemMarisaBroom extends Item {
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (!worldIn.isRemote && player.isSneaking() && facing == EnumFacing.UP) {
             EntityMarisaBroom broom = new EntityMarisaBroom(worldIn);
-            broom.setPosition(pos.getX(), pos.up().getY(), pos.getZ());
+            broom.setPosition(pos.getX() + 0.5, pos.up().getY(), pos.getZ() + 0.5);
             player.getHeldItem(hand).shrink(1);
             worldIn.spawnEntity(broom);
             return EnumActionResult.SUCCESS;

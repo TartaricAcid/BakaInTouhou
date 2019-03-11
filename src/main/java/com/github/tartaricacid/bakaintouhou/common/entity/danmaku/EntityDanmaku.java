@@ -37,7 +37,8 @@ public class EntityDanmaku extends EntityThrowable {
         this.getDataManager().register(GRAVITY, gravity);
     }
 
-    public EntityDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuType, int danmakuColor) {
+    public EntityDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity,
+                         int danmakuType, int danmakuColor) {
         super(worldIn, throwerIn);
         this.danmakuType = danmakuType;
         this.danmakuColor = danmakuColor;
@@ -49,7 +50,8 @@ public class EntityDanmaku extends EntityThrowable {
         this.getDataManager().register(GRAVITY, gravity);
     }
 
-    public EntityDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuType, int danmakuColor, float width, float height) {
+    public EntityDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity,
+                         int danmakuType, int danmakuColor, float width, float height) {
         this(worldIn, throwerIn, damage, gravity, danmakuType, danmakuColor);
         this.width = width;
         this.height = height;
@@ -59,8 +61,12 @@ public class EntityDanmaku extends EntityThrowable {
 
     @Override
     protected void onImpact(RayTraceResult result) {
-        if (result.typeOfHit == RayTraceResult.Type.ENTITY) {
-            result.entityHit.attackEntityFrom(new EntityDamageSource("arrow", this.getThrower()), this.getDataManager().get(DAMAGE));
+        if (result.typeOfHit == RayTraceResult.Type.ENTITY && getThrower() != null) {
+            if (result.entityHit.getUniqueID().equals(this.getThrower().getUniqueID())) {
+                return;
+            }
+            result.entityHit.attackEntityFrom(new EntityDamageSource("arrow", getThrower()),
+                    this.getDataManager().get(DAMAGE));
         } else if (result.typeOfHit == RayTraceResult.Type.BLOCK) {
             this.setDead();
         }
