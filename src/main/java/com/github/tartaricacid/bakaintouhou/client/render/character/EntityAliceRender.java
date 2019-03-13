@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityAliceRender extends RenderEntityTouhouCharacter<EntityAlice> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/alice.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/alice.png");
 
     public EntityAliceRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityWakasagihimeRender extends RenderEntityTouhouCharacter<EntityWakasagihime> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/wakasagihime.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/wakasagihime.png");
 
     public EntityWakasagihimeRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

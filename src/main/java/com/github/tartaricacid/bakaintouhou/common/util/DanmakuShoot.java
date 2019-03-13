@@ -1,7 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.util;
 
 import com.github.tartaricacid.bakaintouhou.common.entity.character.EntityTouhouCharacter;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.math.Vec3d;
@@ -28,9 +28,9 @@ public final class DanmakuShoot {
                                  int color, float chance) {
         if (random.nextFloat() < chance) {
             if (!worldIn.isRemote) {
-                EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, entity, danmakuType, color);
-                entityDanmaku.shoot(target.posX - entity.posX, target.posY - entity.posY, target.posZ - entity.posZ, velocity, inaccuracy);
-                worldIn.spawnEntity(entityDanmaku);
+                EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, entity, danmakuType, color);
+                entityNormalDanmaku.shoot(target.posX - entity.posX, target.posY - entity.posY, target.posZ - entity.posZ, velocity, inaccuracy);
+                worldIn.spawnEntity(entityNormalDanmaku);
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }
@@ -57,9 +57,9 @@ public final class DanmakuShoot {
                                  int damage, float gravity, int danmakuType, int color, float width, float height, float chance) {
         if (random.nextFloat() < chance) {
             if (!worldIn.isRemote) {
-                EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, entity, damage, gravity, danmakuType, color, width, height);
-                entityDanmaku.shoot(target.posX - entity.posX, target.posY - entity.posY, target.posZ - entity.posZ, velocity, inaccuracy);
-                worldIn.spawnEntity(entityDanmaku);
+                EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, entity, damage, gravity, danmakuType, color, width, height);
+                entityNormalDanmaku.shoot(target.posX - entity.posX, target.posY - entity.posY, target.posZ - entity.posZ, velocity, inaccuracy);
+                worldIn.spawnEntity(entityNormalDanmaku);
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }
@@ -88,7 +88,7 @@ public final class DanmakuShoot {
 
         if (random.nextFloat() < chance) {
             if (!worldIn.isRemote) {
-                EntityDanmaku entityDanmaku;
+                EntityNormalDanmaku entityNormalDanmaku;
                 Vec3d v = new Vec3d(target.posX - entity.posX, target.posY - entity.posY, target.posZ - entity.posZ);
                 double yaw = -(yawTotal / 2);
                 double addYaw = yawTotal / (fanNum - 1);
@@ -96,9 +96,9 @@ public final class DanmakuShoot {
                     Vec3d v1 = v.rotateYaw((float) yaw);
                     yaw = yaw + addYaw;
 
-                    entityDanmaku = new EntityDanmaku(worldIn, entity, danmakuType, color);
-                    entityDanmaku.shoot(v1.x, v1.y, v1.z, velocity, inaccuracy);
-                    worldIn.spawnEntity(entityDanmaku);
+                    entityNormalDanmaku = new EntityNormalDanmaku(worldIn, entity, danmakuType, color);
+                    entityNormalDanmaku.shoot(v1.x, v1.y, v1.z, velocity, inaccuracy);
+                    worldIn.spawnEntity(entityNormalDanmaku);
                 }
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
@@ -132,7 +132,7 @@ public final class DanmakuShoot {
 
         if (random.nextFloat() < chance) {
             if (!worldIn.isRemote) {
-                EntityDanmaku entityDanmaku;
+                EntityNormalDanmaku entityNormalDanmaku;
                 Vec3d v = new Vec3d(target.posX - entity.posX, target.posY - entity.posY, target.posZ - entity.posZ);
                 double yaw = -(yawTotal / 2);
                 double addYaw = yawTotal / (fanNum - 1);
@@ -140,9 +140,9 @@ public final class DanmakuShoot {
                     Vec3d v1 = v.rotateYaw((float) yaw);
                     yaw = yaw + addYaw;
 
-                    entityDanmaku = new EntityDanmaku(worldIn, entity, damage, gravity, danmakuType, color, width, height);
-                    entityDanmaku.shoot(v1.x, v1.y, v1.z, velocity, inaccuracy);
-                    worldIn.spawnEntity(entityDanmaku);
+                    entityNormalDanmaku = new EntityNormalDanmaku(worldIn, entity, damage, gravity, danmakuType, color, width, height);
+                    entityNormalDanmaku.shoot(v1.x, v1.y, v1.z, velocity, inaccuracy);
+                    worldIn.spawnEntity(entityNormalDanmaku);
                 }
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
@@ -166,10 +166,10 @@ public final class DanmakuShoot {
                                     int color, float chance, double height) {
         if (random.nextFloat() < chance) {
             if (!worldIn.isRemote) {
-                EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, entity, danmakuType, color);
-                entityDanmaku.setPosition(target.posX, target.posY + height, target.posZ);
-                entityDanmaku.shoot(target.posX, target.posY, target.posZ, 0f, inaccuracy);
-                worldIn.spawnEntity(entityDanmaku);
+                EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, entity, danmakuType, color);
+                entityNormalDanmaku.setPosition(target.posX, target.posY + height, target.posZ);
+                entityNormalDanmaku.shoot(target.posX, target.posY, target.posZ, 0f, inaccuracy);
+                worldIn.spawnEntity(entityNormalDanmaku);
                 worldIn.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, entity.getSoundCategory(),
                         1.0f, 0.8f);
             }

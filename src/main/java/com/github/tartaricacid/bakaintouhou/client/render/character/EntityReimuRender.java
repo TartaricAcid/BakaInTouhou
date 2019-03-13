@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityReimuRender extends RenderEntityTouhouCharacter<EntityReimu> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/reimu.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/reimu.png");
 
     public EntityReimuRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

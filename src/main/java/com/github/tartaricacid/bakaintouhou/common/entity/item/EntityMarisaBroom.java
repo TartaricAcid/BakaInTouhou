@@ -68,6 +68,7 @@ public class EntityMarisaBroom extends EntityLiving {
         if (entity instanceof EntityPlayer && this.isBeingRidden()) {
             EntityPlayer player = (EntityPlayer) entity;
 
+            // 与旋转有关系的一堆东西，用来控制扫帚朝向
             this.rotationYaw = player.rotationYaw;
             this.rotationPitch = player.rotationPitch;
             this.prevRotationYaw = this.rotationYaw;
@@ -84,6 +85,7 @@ public class EntityMarisaBroom extends EntityLiving {
                 keyRight = keyRight();
             }
 
+            // 按键控制扫帚各个方向速度
             strafe = keyLeft ? 0.5f : (keyRight ? -0.5f : 0);
             vertical = keyForward ? -(player.rotationPitch - 10) / 45 : 0;
             forward = keyForward ? 3 : (keyBack ? -0.5f : 0);
@@ -91,6 +93,7 @@ public class EntityMarisaBroom extends EntityLiving {
             this.moveRelative(strafe, vertical, forward, 0.02f);
             this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
         } else if (entity == null && !this.onGround) {
+            // 玩家没有坐在扫帚上，那就让它掉下来
             super.travel(0, -0.3f, 0);
         }
     }

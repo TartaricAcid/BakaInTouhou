@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityMarisaRender extends RenderEntityTouhouCharacter<EntityMarisa> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/marisa.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/marisa.png");
 
     public EntityMarisaRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

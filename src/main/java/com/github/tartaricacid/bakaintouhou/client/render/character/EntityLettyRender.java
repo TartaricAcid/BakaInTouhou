@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityLettyRender extends RenderEntityTouhouCharacter<EntityLetty> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/letty.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/letty.png");
 
     public EntityLettyRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

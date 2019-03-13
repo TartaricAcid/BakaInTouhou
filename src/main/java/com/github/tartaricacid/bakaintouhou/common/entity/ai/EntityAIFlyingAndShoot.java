@@ -32,6 +32,7 @@ public class EntityAIFlyingAndShoot extends EntityAIBase {
             entityIn.motionY = 0.1;
         } else {
             entityIn.motionY = 0;
+            entityIn.getLookHelper().setLookPositionWithEntity(entityTarget, 5f, 5f);
             entityIn.attackEntityWithRangedAttack(entityIn.getAttackTarget(), flyDistance);
         }
 

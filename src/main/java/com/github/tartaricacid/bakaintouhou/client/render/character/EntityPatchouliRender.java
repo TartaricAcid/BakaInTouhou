@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityPatchouliRender extends RenderEntityTouhouCharacter<EntityPatchouli> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/patchouli.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/patchouli.png");
 
     public EntityPatchouliRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

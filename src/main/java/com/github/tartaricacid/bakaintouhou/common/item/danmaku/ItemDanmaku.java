@@ -1,7 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.item.danmaku;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityKnifeDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.util.DanmakuInit;
 import net.minecraft.client.resources.I18n;
@@ -23,8 +23,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 public class ItemDanmaku extends Item {
+    private static Random random = new Random();
+
     public ItemDanmaku() {
         setUnlocalizedName(BakaInTouhou.MOD_ID + ".danmaku");
         setRegistryName("danmaku");
@@ -38,12 +41,13 @@ public class ItemDanmaku extends Item {
             if (playerIn.isSneaking()) {
                 setDanmakuType(stack, (getDanmakuType(stack) + 1 > DanmakuInit.danmakuTypeMax) ? 0 : getDanmakuType(stack) + 1);
             } else {
-                EntityDanmaku entityDanmaku = new EntityDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
+                /*EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
                         getDanmakuGravity(stack), getDanmakuType(stack), getDanmakuColor(stack));
-                playerIn.getHeldItem(handIn).shrink(1);
+                playerIn.getHeldItem(handIn).shrink(1);*/
+                EntityKnifeDanmaku entityNormalDanmaku = new EntityKnifeDanmaku(worldIn, playerIn, 5, 0f, random.nextInt(5));
                 Vec3d v = playerIn.getLookVec();
-                entityDanmaku.shoot(v.x, v.y, v.z, 0.9f, 5f);
-                worldIn.spawnEntity(entityDanmaku);
+                entityNormalDanmaku.shoot(v.x, v.y, v.z, 0.9f, 5f);
+                worldIn.spawnEntity(entityNormalDanmaku);
                 worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, playerIn.getSoundCategory(),
                         1.0f, 0.8f);
             }

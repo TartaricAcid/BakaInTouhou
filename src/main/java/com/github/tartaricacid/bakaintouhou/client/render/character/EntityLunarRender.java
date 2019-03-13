@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityLunarRender extends RenderEntityTouhouCharacter<EntityLunar> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/lunar.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/lunar.png");
 
     public EntityLunarRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

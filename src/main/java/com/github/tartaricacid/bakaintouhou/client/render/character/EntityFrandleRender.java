@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityFrandleRender extends RenderEntityTouhouCharacter<EntityFrandle> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/frandle.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/frandle.png");
 
     public EntityFrandleRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityRemiliaRender extends RenderEntityTouhouCharacter<EntityRemilia> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/remilia.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/remilia.png");
 
     public EntityRemiliaRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

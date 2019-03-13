@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityLyricaRender extends RenderEntityTouhouCharacter<EntityLyrica> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/lyrica.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/lyrica.png");
 
     public EntityLyricaRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

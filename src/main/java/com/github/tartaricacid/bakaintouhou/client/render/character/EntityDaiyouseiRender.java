@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityDaiyouseiRender extends RenderEntityTouhouCharacter<EntityDaiyousei> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/daiyousei.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/daiyousei.png");
 
     public EntityDaiyouseiRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

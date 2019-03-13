@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntitySuikaRender extends RenderEntityTouhouCharacter<EntitySuika> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/suika.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/suika.png");
 
     public EntitySuikaRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

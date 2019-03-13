@@ -1,7 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.item;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.util.DanmakuInit;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -46,7 +46,7 @@ public class ItemHakureiGohei extends Item {
             int color = random.nextInt(DanmakuInit.danmakuColorMax + 1);
             int type = getGoheiMode(stack);
 
-            EntityDanmaku danmaku = new EntityDanmaku(worldIn, player, damage, 0, type, color);
+            EntityNormalDanmaku danmaku = new EntityNormalDanmaku(worldIn, player, damage, 0, type, color);
             Vec3d v = player.getLookVec();
             danmaku.shoot(v.x, v.y, v.z, velocity, 5f);
             worldIn.spawnEntity(danmaku);

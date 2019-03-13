@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityRumiaRender extends RenderEntityTouhouCharacter<EntityRumia> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/rumia.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/rumia.png");
 
     public EntityRumiaRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

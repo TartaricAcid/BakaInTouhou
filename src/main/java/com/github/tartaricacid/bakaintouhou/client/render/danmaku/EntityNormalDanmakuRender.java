@@ -1,9 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.client.render.danmaku;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
-import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.util.DanmakuInit;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
@@ -16,18 +14,16 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import org.lwjgl.opengl.GL11;
 
-public class EntityDanmakuRender extends Render<EntityDanmaku> {
-    public static final Factory FACTORY = new EntityDanmakuRender.Factory();
-    protected final ItemDanmaku item;
+public class EntityNormalDanmakuRender extends Render<EntityNormalDanmaku> {
+    public static final Factory FACTORY = new EntityNormalDanmakuRender.Factory();
     private double[] size = DanmakuInit.danmakuSize;
 
-    public EntityDanmakuRender(RenderManager renderManagerIn, ItemDanmaku itemIn) {
+    public EntityNormalDanmakuRender(RenderManager renderManagerIn) {
         super(renderManagerIn);
-        this.item = itemIn;
     }
 
     @Override
-    public void doRender(EntityDanmaku entity, double x, double y, double z, float entityYaw, float partialTicks) {
+    public void doRender(EntityNormalDanmaku entity, double x, double y, double z, float entityYaw, float partialTicks) {
         // 获取相关数据
         int type = (entity.getDanmakuType()) > DanmakuInit.danmakuTypeMax ? 0 : entity.getDanmakuType();
         int color = (entity.getDanmakuColor()) > DanmakuInit.danmakuColorMax ? 0 : entity.getDanmakuColor();
@@ -75,14 +71,14 @@ public class EntityDanmakuRender extends Render<EntityDanmaku> {
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntityDanmaku entity) {
-        return new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/danmaku.png");
+    protected ResourceLocation getEntityTexture(EntityNormalDanmaku entity) {
+        return new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/danmaku/normal_danmaku.png");
     }
 
-    public static class Factory implements IRenderFactory<EntityDanmaku> {
+    public static class Factory implements IRenderFactory<EntityNormalDanmaku> {
         @Override
-        public Render<? super EntityDanmaku> createRenderFor(RenderManager manager) {
-            return new EntityDanmakuRender(manager, ItemObjectHolder.itemDanmaku);
+        public Render<? super EntityNormalDanmaku> createRenderFor(RenderManager manager) {
+            return new EntityNormalDanmakuRender(manager);
         }
     }
 }

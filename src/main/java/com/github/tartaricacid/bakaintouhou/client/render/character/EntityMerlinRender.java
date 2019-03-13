@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityMerlinRender extends RenderEntityTouhouCharacter<EntityMerlin> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/merlin.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/merlin.png");
 
     public EntityMerlinRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

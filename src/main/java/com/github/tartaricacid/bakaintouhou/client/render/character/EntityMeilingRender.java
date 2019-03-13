@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class EntityMeilingRender extends RenderEntityTouhouCharacter<EntityMeiling> {
     public static final Factory FACTORY = new Factory();
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/meiling.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/character/meiling.png");
 
     public EntityMeilingRender(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);

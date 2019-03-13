@@ -6,7 +6,8 @@ import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityKnifeDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemHakureiGohei;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemMarisaBroom;
@@ -155,9 +156,14 @@ public class CommonProxy {
                 3, true, 0x55658b, 0x5e3927);
 
 
-        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.damaku"),
-                EntityDanmaku.class, "entity_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.normal_damaku"),
+                EntityNormalDanmaku.class, "entity_normal_danmaku", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.knife_damaku"),
+                EntityKnifeDanmaku.class, "entity_knife_damaku", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
+
+
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.marisa_broom"),
                 EntityMarisaBroom.class, "entity_marisa_broom", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);

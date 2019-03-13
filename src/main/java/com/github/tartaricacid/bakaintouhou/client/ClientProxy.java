@@ -1,14 +1,16 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
 import com.github.tartaricacid.bakaintouhou.client.render.character.*;
-import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityKnifeDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityNormalDanmakuRender;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityKnifeDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -114,7 +116,8 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityStar.class, EntityStarRender.FACTORY);
 
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityDanmaku.class, EntityDanmakuRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityNormalDanmaku.class, EntityNormalDanmakuRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityKnifeDanmaku.class, EntityKnifeDanmakuRender.FACTORY);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityMarisaBroom.class, EntityMarisaBroomRender.FACTORY);
     }
