@@ -1,7 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.item.danmaku;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityKnifeDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityTrainDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.util.DanmakuInit;
 import net.minecraft.client.resources.I18n;
@@ -44,9 +44,9 @@ public class ItemDanmaku extends Item {
                 /*EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, playerIn, getDanmakuDamage(stack),
                         getDanmakuGravity(stack), getDanmakuType(stack), getDanmakuColor(stack));
                 playerIn.getHeldItem(handIn).shrink(1);*/
-                EntityKnifeDanmaku entityNormalDanmaku = new EntityKnifeDanmaku(worldIn, playerIn, 5, 0f, random.nextInt(5));
+                EntityTrainDanmaku entityNormalDanmaku = new EntityTrainDanmaku(worldIn, playerIn, 5, 0f);
                 Vec3d v = playerIn.getLookVec();
-                entityNormalDanmaku.shoot(v.x, v.y, v.z, 0.9f, 5f);
+                entityNormalDanmaku.shoot(v.x, v.y, v.z, 0.1f, 5f);
                 worldIn.spawnEntity(entityNormalDanmaku);
                 worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, playerIn.getSoundCategory(),
                         1.0f, 0.8f);
