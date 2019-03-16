@@ -30,4 +30,6 @@ public class ItemObjectHolder {
     public static ItemReimuHeaddress itemReimuHeaddress;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "marisa_broom")
     public static ItemMarisaBroom itemMarisaBroom;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "mini_hakkero")
+    public static ItemMiniHakkero itemMiniHakkero;
 }

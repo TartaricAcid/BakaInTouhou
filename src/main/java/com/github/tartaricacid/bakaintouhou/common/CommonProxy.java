@@ -6,14 +6,9 @@ import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityKnifeDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityTrainDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
-import com.github.tartaricacid.bakaintouhou.common.item.ItemHakureiGohei;
-import com.github.tartaricacid.bakaintouhou.common.item.ItemMarisaBroom;
-import com.github.tartaricacid.bakaintouhou.common.item.ItemReimuHeaddress;
-import com.github.tartaricacid.bakaintouhou.common.item.ItemTouhouIcons;
+import com.github.tartaricacid.bakaintouhou.common.item.*;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
 import net.minecraft.block.Block;
@@ -48,6 +43,7 @@ public class CommonProxy {
         event.getRegistry().register(new ItemHakureiGohei());
         event.getRegistry().register(new ItemReimuHeaddress());
         event.getRegistry().register(new ItemMarisaBroom());
+        event.getRegistry().register(new ItemMiniHakkero());
 
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSaisenBako).setRegistryName(
                 BlockObjectHolder.blockSaisenBako.getRegistryName()));
@@ -165,6 +161,12 @@ public class CommonProxy {
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.train_danmaku"),
                 EntityTrainDanmaku.class, "entity_train_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.butterfly_danmaku"),
+                EntityButterflyDanmaku.class, "entity_butterfly_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.laser_danmaku"),
+                EntityLaserDanmaku.class, "entity_laser_danmaku", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);
 
 

@@ -1,25 +1,24 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
+import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.client.render.character.*;
-import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityKnifeDanmakuRender;
-import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityNormalDanmakuRender;
-import com.github.tartaricacid.bakaintouhou.client.render.danmaku.EntityTrainDanmakuRender;
+import com.github.tartaricacid.bakaintouhou.client.render.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityKnifeDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityTrainDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -31,22 +30,6 @@ import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
-    @Mod.EventHandler
-    public void preinit(FMLPreInitializationEvent event) {
-        super.preinit(event);
-        entityRenderRegistry();
-    }
-
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        super.init(event);
-    }
-
-    @Mod.EventHandler
-    public void postinit(FMLPostInitializationEvent event) {
-        super.postinit(event);
-    }
-
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako),
@@ -60,6 +43,8 @@ public class ClientProxy extends CommonProxy {
                 0, new ModelResourceLocation(ItemObjectHolder.itemReimuHeaddress.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemMarisaBroom,
                 0, new ModelResourceLocation(ItemObjectHolder.itemMarisaBroom.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemMiniHakkero,
+                0, new ModelResourceLocation(ItemObjectHolder.itemMiniHakkero.getRegistryName(), "inventory"));
 
 
         // ForgeHooksClient.registerTESRItemStack(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit), 0, TileEntityGarageKit.class);
@@ -85,6 +70,28 @@ public class ClientProxy extends CommonProxy {
                     return touhou_icons_3;
             }
         });
+    }
+
+    @SubscribeEvent
+    public static void onModelBake(ModelBakeEvent event) {
+
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        super.init(event);
+    }
+
+    @Mod.EventHandler
+    public void postinit(FMLPostInitializationEvent event) {
+        super.postinit(event);
+    }
+
+    @Mod.EventHandler
+    public void preinit(FMLPreInitializationEvent event) {
+        super.preinit(event);
+        OBJLoader.INSTANCE.addDomain(BakaInTouhou.MOD_ID);
+        entityRenderRegistry();
     }
 
     private void entityRenderRegistry() {
@@ -121,6 +128,8 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityNormalDanmaku.class, EntityNormalDanmakuRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityKnifeDanmaku.class, EntityKnifeDanmakuRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityTrainDanmaku.class, EntityTrainDanmakuRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityButterflyDanmaku.class, EntityButterflyDanmakuRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityLaserDanmaku.class, EntityLaserDanmakuRender.FACTORY);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityMarisaBroom.class, EntityMarisaBroomRender.FACTORY);
     }

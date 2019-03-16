@@ -9,31 +9,34 @@ import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityKnifeDanmaku extends EntityThrowable {
-    private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityKnifeDanmaku.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> DAMAGE = EntityDataManager.createKey(EntityKnifeDanmaku.class, DataSerializers.VARINT);
-    private static final DataParameter<Float> GRAVITY = EntityDataManager.createKey(EntityKnifeDanmaku.class, DataSerializers.FLOAT);
-    private int danmakuColor = 0;
+public class EntityButterflyDanmaku extends EntityThrowable {
+    private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityButterflyDanmaku.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> DAMAGE = EntityDataManager.createKey(EntityButterflyDanmaku.class, DataSerializers.VARINT);
+    private static final DataParameter<Float> GRAVITY = EntityDataManager.createKey(EntityButterflyDanmaku.class, DataSerializers.FLOAT);
+    private int danmakuColor = 0xffffff;
     private int damage = 1;
     private float gravity = 0.01f;
 
-    public EntityKnifeDanmaku(World worldIn) {
+    public EntityButterflyDanmaku(World worldIn) {
         super(worldIn);
+        setSize(0.5f, 0.1f);
         this.getDataManager().register(COLOR, danmakuColor);
         this.getDataManager().register(DAMAGE, damage);
         this.getDataManager().register(GRAVITY, gravity);
     }
 
-    public EntityKnifeDanmaku(World worldIn, EntityLivingBase throwerIn, int danmakuColor) {
+    public EntityButterflyDanmaku(World worldIn, EntityLivingBase throwerIn, int danmakuColor) {
         super(worldIn, throwerIn);
+        setSize(0.5f, 0.1f);
         this.danmakuColor = danmakuColor;
         this.getDataManager().register(COLOR, danmakuColor);
         this.getDataManager().register(DAMAGE, damage);
         this.getDataManager().register(GRAVITY, gravity);
     }
 
-    public EntityKnifeDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuColor) {
+    public EntityButterflyDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuColor) {
         super(worldIn, throwerIn);
+        setSize(0.5f, 0.1f);
         this.danmakuColor = danmakuColor;
         this.damage = damage;
         this.gravity = gravity;
