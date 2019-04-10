@@ -9,47 +9,30 @@ import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityKnifeDanmaku extends EntityThrowable {
-    private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityKnifeDanmaku.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> DAMAGE = EntityDataManager.createKey(EntityKnifeDanmaku.class, DataSerializers.VARINT);
-    private static final DataParameter<Float> GRAVITY = EntityDataManager.createKey(EntityKnifeDanmaku.class, DataSerializers.FLOAT);
-    private int danmakuColor = 0;
+public class EntityHakureDanmaku extends EntityThrowable {
+    private static final DataParameter<Integer> DAMAGE = EntityDataManager.createKey(EntityHakureDanmaku.class, DataSerializers.VARINT);
+    private static final DataParameter<Float> GRAVITY = EntityDataManager.createKey(EntityHakureDanmaku.class, DataSerializers.FLOAT);
     private int damage = 1;
     private float gravity = 0.01f;
 
-    public EntityKnifeDanmaku(World worldIn) {
+    public EntityHakureDanmaku(World worldIn) {
         super(worldIn);
-        this.getDataManager().register(COLOR, danmakuColor);
+        setSize(0.2f, 0.1f);
         this.getDataManager().register(DAMAGE, damage);
         this.getDataManager().register(GRAVITY, gravity);
     }
 
     /**
-     * @param worldIn      实体所处世界
-     * @param throwerIn    发射实体者
-     * @param danmakuColor 弹幕颜色，范围为 0-4
+     * @param worldIn   实体所处世界
+     * @param throwerIn 发射实体者
+     * @param damage    弹幕造成的伤害
+     * @param gravity   弹幕的重力
      */
-    public EntityKnifeDanmaku(World worldIn, EntityLivingBase throwerIn, int danmakuColor) {
+    public EntityHakureDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity) {
         super(worldIn, throwerIn);
-        this.danmakuColor = danmakuColor;
-        this.getDataManager().register(COLOR, danmakuColor);
-        this.getDataManager().register(DAMAGE, damage);
-        this.getDataManager().register(GRAVITY, gravity);
-    }
-
-    /**
-     * @param worldIn      实体所处世界
-     * @param throwerIn    发射实体者
-     * @param damage       弹幕造成的伤害
-     * @param gravity      弹幕的重力
-     * @param danmakuColor 弹幕颜色，范围为 0-4
-     */
-    public EntityKnifeDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuColor) {
-        super(worldIn, throwerIn);
-        this.danmakuColor = danmakuColor;
+        setSize(2f, 2f);
         this.damage = damage;
         this.gravity = gravity;
-        this.getDataManager().register(COLOR, danmakuColor);
         this.getDataManager().register(DAMAGE, damage);
         this.getDataManager().register(GRAVITY, gravity);
     }
@@ -61,6 +44,7 @@ public class EntityKnifeDanmaku extends EntityThrowable {
                 && !result.entityHit.getUniqueID().equals(this.getThrower().getUniqueID())) {
             result.entityHit.attackEntityFrom(new EntityDamageSource("arrow", getThrower()),
                     this.getDataManager().get(DAMAGE));
+            this.setDead();
         } else if (result.typeOfHit == RayTraceResult.Type.BLOCK) {
             this.setDead();
         }
@@ -77,9 +61,5 @@ public class EntityKnifeDanmaku extends EntityThrowable {
     @Override
     protected float getGravityVelocity() {
         return this.getDataManager().get(GRAVITY);
-    }
-
-    public int getDanmakuColor() {
-        return this.getDataManager().get(COLOR);
     }
 }

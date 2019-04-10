@@ -32,7 +32,7 @@ public class EntityLaserDanmakuRender extends Render<EntityLaserDanmaku> {
 
     private static List<BakedQuad> getBakedQuard() throws Exception {
         IModel model = ModelLoaderRegistry.getModel(new ResourceLocation(BakaInTouhou.MOD_ID,
-                "custom/laser_danmaku.obj"));
+                "entity/laser_danmaku.obj"));
         IBakedModel bakedModel = model.bake(model.getDefaultState(), DefaultVertexFormats.ITEM, ModelLoader.defaultTextureGetter());
         return bakedModel.getQuads(null, null, 0);
     }
@@ -53,7 +53,7 @@ public class EntityLaserDanmakuRender extends Render<EntityLaserDanmaku> {
         GlStateManager.rotate(entityYaw, 0.0F, 1.0F, 0.0F);
         GlStateManager.rotate(-entity.rotationPitch, 1.0f, 0.0f, 0.0f);
 
-        GlStateManager.scale(2f, 1f, 4f);
+        GlStateManager.scale(1f, 1f, entity.getLength());
 
         try {
             List<BakedQuad> quads = getBakedQuard();
@@ -62,7 +62,8 @@ public class EntityLaserDanmakuRender extends Render<EntityLaserDanmaku> {
             buff.begin(GL11.GL_QUADS, DefaultVertexFormats.ITEM);
 
             for (BakedQuad quad : quads) {
-                LightUtil.renderQuadColor(buff, quad, entity.getDanmakuColor());
+                LightUtil.renderQuadColor(buff, quad, 0xcc_00_00_00 // 透明度硬编码为 aa
+                        + entity.getDanmakuColor());
             }
 
             tessellator.draw();

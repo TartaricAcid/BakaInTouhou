@@ -1,7 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.item.danmaku;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
-import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityLaserDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityHakureDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.util.DanmakuInit;
 import net.minecraft.client.resources.I18n;
@@ -41,13 +41,14 @@ public class ItemDanmaku extends Item {
             if (playerIn.isSneaking()) {
                 setDanmakuType(stack, (getDanmakuType(stack) + 1 > DanmakuInit.danmakuTypeMax) ? 0 : getDanmakuType(stack) + 1);
             } else {
-                //EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, playerIn, getDanmakuDamage(stack), dgetDanmakuGravity(stack), getDanmakuType(stack), getDanmakuColor(stack));
-                EntityLaserDanmaku entityNormalDanmaku = new EntityLaserDanmaku(worldIn, playerIn, 5, 0f, 0xaa_aa_aa_00);
-                //EntityButterflyDanmaku entityNormalDanmaku = new EntityButterflyDanmaku(worldIn, playerIn, 5, 0f, 0xff_ff_00_00);
+                //EntityNormalDanmaku entityNormalDanmaku = new EntityNormalDanmaku(worldIn, playerIn, getDanmakuDamage(stack), getDanmakuGravity(stack), getDanmakuType(stack), getDanmakuColor(stack));
+                //EntityLaserDanmaku entityNormalDanmaku = new EntityLaserDanmaku(worldIn, playerIn, 5, 0f, 0xff_00_ff, 3f);
+                //EntityButterflyDanmaku entityNormalDanmaku = new EntityButterflyDanmaku(worldIn, playerIn, 5, 0f, 0xff_00_00);
                 //EntityKnifeDanmaku entityNormalDanmaku = new EntityKnifeDanmaku(worldIn, playerIn, 5, 0f, 1);
-                //EntityTrainDanmaku entityNormalDanmaku = new EntityTrainDanmaku(worldIn, playerIn, 5, 0f);
+                //EntityTrainDanmaku entityNormalDanmaku = new EntityTrainDanmaku(worldIn, playerIn, 5, 0f, 5f);
+                EntityHakureDanmaku entityNormalDanmaku = new EntityHakureDanmaku(worldIn, playerIn, 1, 0);
                 Vec3d v = playerIn.getLookVec();
-                entityNormalDanmaku.shoot(v.x, v.y, v.z, 0.4f, 0f);
+                entityNormalDanmaku.shoot(v.x, v.y, v.z, 0.1f, 0f);
                 worldIn.spawnEntity(entityNormalDanmaku);
                 worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, playerIn.getSoundCategory(),
                         1.0f, 0.8f);

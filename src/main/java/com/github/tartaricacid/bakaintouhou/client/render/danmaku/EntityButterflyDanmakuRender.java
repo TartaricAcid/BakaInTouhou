@@ -26,13 +26,18 @@ public class EntityButterflyDanmakuRender extends Render<EntityButterflyDanmaku>
 
     @Override
     public void doRender(EntityButterflyDanmaku entity, double x, double y, double z, float entityYaw, float partialTicks) {
+        int color = entity.getDanmakuColor();
+        int r = (color >> 16) & 0xff;
+        int g = (color >> 8) & 0xff;
+        int b = color & 0xff;
+
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
         GlStateManager.shadeModel(GL11.GL_SMOOTH);
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
         GlStateManager.disableAlpha();
-        GlStateManager.color(0f, 0f, 1f, 1f);
+        GlStateManager.color(r / 255, g / 255, b / 255, 1f);
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240f, 240f);
 
         GlStateManager.translate(x, y, z);

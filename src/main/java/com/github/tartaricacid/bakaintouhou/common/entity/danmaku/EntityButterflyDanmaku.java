@@ -13,7 +13,7 @@ public class EntityButterflyDanmaku extends EntityThrowable {
     private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityButterflyDanmaku.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> DAMAGE = EntityDataManager.createKey(EntityButterflyDanmaku.class, DataSerializers.VARINT);
     private static final DataParameter<Float> GRAVITY = EntityDataManager.createKey(EntityButterflyDanmaku.class, DataSerializers.FLOAT);
-    private int danmakuColor = 0xffffff;
+    private int danmakuColor = 0xff_ff_ff;
     private int damage = 1;
     private float gravity = 0.01f;
 
@@ -25,6 +25,11 @@ public class EntityButterflyDanmaku extends EntityThrowable {
         this.getDataManager().register(GRAVITY, gravity);
     }
 
+    /**
+     * @param worldIn      实体所处世界
+     * @param throwerIn    发射实体者
+     * @param danmakuColor 弹幕颜色，格式为 RGB
+     */
     public EntityButterflyDanmaku(World worldIn, EntityLivingBase throwerIn, int danmakuColor) {
         super(worldIn, throwerIn);
         setSize(0.5f, 0.1f);
@@ -34,6 +39,13 @@ public class EntityButterflyDanmaku extends EntityThrowable {
         this.getDataManager().register(GRAVITY, gravity);
     }
 
+    /**
+     * @param worldIn      实体所处世界
+     * @param throwerIn    发射实体者
+     * @param damage       弹幕造成的伤害
+     * @param gravity      弹幕的重力
+     * @param danmakuColor 弹幕颜色，格式为 RGB
+     */
     public EntityButterflyDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity, int danmakuColor) {
         super(worldIn, throwerIn);
         setSize(0.5f, 0.1f);

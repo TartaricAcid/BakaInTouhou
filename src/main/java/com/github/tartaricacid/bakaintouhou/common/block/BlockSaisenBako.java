@@ -9,7 +9,6 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -36,12 +35,7 @@ public class BlockSaisenBako extends Block {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if (hand == EnumHand.MAIN_HAND && playerIn.getHeldItem(hand).getItem() == Items.EMERALD) {
-            playerIn.getHeldItem(hand).shrink(1);
-            // TODO：传送到幻想乡？
-            // 不存在的
-            return true;
-        }
+        //TODO
         return false;
     }
 

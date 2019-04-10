@@ -37,7 +37,6 @@ public class EntityNormalDanmakuRender extends Render<EntityNormalDanmaku> {
         GlStateManager.disableLighting();
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
-        // GlStateManager.depthMask(false); 不透明效果
         GlStateManager.shadeModel(GL11.GL_SMOOTH);
         GlStateManager.enableBlend();
         GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA,
@@ -66,7 +65,6 @@ public class EntityNormalDanmakuRender extends Render<EntityNormalDanmaku> {
 
         GlStateManager.disableBlend();
         GlStateManager.shadeModel(GL11.GL_FLAT);
-        // GlStateManager.depthMask(true);
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
         GlStateManager.enableLighting();

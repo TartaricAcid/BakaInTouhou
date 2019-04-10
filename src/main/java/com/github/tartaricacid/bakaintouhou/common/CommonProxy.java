@@ -8,6 +8,7 @@ import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGa
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
+import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMiniHakkero;
 import com.github.tartaricacid.bakaintouhou.common.item.*;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
@@ -151,6 +152,9 @@ public class CommonProxy {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.star"),
                 EntityStar.class, "entity_star", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x55658b, 0x5e3927);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.momizi"),
+                EntityMomizi.class, "entity_momizi", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xffffff, 0xb7afba);
 
 
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.normal_damaku"),
@@ -168,10 +172,16 @@ public class CommonProxy {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.laser_danmaku"),
                 EntityLaserDanmaku.class, "entity_laser_danmaku", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.hakure_danmaku"),
+                EntityHakureDanmaku.class, "entity_hakure_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
 
 
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.marisa_broom"),
                 EntityMarisaBroom.class, "entity_marisa_broom", id++, BakaInTouhou.INSTANCE, 32,
+                3, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.mini_hakkero"),
+                EntityMiniHakkero.class, "entity_mini_hakkero", id++, BakaInTouhou.INSTANCE, 32,
                 3, true);
     }
 }

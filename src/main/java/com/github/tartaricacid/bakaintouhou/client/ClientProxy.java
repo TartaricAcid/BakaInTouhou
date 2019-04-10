@@ -4,6 +4,7 @@ import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.client.render.character.*;
 import com.github.tartaricacid.bakaintouhou.client.render.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
+import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMiniHakkeroRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
@@ -11,6 +12,7 @@ import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGa
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
+import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMiniHakkero;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -123,6 +125,7 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntitySunny.class, EntitySunnyRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityLunar.class, EntityLunarRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityStar.class, EntityStarRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityMomizi.class, EntityMomiziRender.FACTORY);
 
 
         RenderingRegistry.registerEntityRenderingHandler(EntityNormalDanmaku.class, EntityNormalDanmakuRender.FACTORY);
@@ -130,7 +133,9 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityTrainDanmaku.class, EntityTrainDanmakuRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityButterflyDanmaku.class, EntityButterflyDanmakuRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityLaserDanmaku.class, EntityLaserDanmakuRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityHakureDanmaku.class, EntityHakureDanmakuRender.FACTORY);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityMarisaBroom.class, EntityMarisaBroomRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityMiniHakkero.class, EntityMiniHakkeroRender.FACTORY);
     }
 }

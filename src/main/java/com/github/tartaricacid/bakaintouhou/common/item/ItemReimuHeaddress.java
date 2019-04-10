@@ -17,7 +17,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 public class ItemReimuHeaddress extends ItemArmor {
-    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID, "textures/entity/reimu.png");
+    private static ResourceLocation resourceLocation = new ResourceLocation(BakaInTouhou.MOD_ID,
+            "textures/entity/character/reimu.png");
 
     public ItemReimuHeaddress() {
         super(ArmorMaterial.LEATHER, 0, EntityEquipmentSlot.HEAD);

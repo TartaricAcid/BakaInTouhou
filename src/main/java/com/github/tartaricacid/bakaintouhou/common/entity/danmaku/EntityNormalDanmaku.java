@@ -27,6 +27,12 @@ public class EntityNormalDanmaku extends EntityThrowable {
         this.getDataManager().register(GRAVITY, gravity);
     }
 
+    /**
+     * @param worldIn      实体所处世界
+     * @param throwerIn    发射实体者
+     * @param danmakuType  弹幕类型，类型限制为 0-8
+     * @param danmakuColor 弹幕颜色，颜色限制为 0-6
+     */
     public EntityNormalDanmaku(World worldIn, EntityLivingBase throwerIn, int danmakuType, int danmakuColor) {
         super(worldIn, throwerIn);
         this.danmakuType = danmakuType;
@@ -37,6 +43,14 @@ public class EntityNormalDanmaku extends EntityThrowable {
         this.getDataManager().register(GRAVITY, gravity);
     }
 
+    /**
+     * @param worldIn      实体所处世界
+     * @param throwerIn    发射实体者
+     * @param damage       弹幕造成的伤害
+     * @param gravity      弹幕的重力
+     * @param danmakuType  弹幕类型，类型限制为 0-8
+     * @param danmakuColor 弹幕颜色，颜色限制为 0-6
+     */
     public EntityNormalDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity,
                                int danmakuType, int danmakuColor) {
         super(worldIn, throwerIn);
@@ -48,14 +62,6 @@ public class EntityNormalDanmaku extends EntityThrowable {
         this.getDataManager().register(COLOR, danmakuColor);
         this.getDataManager().register(DAMAGE, damage);
         this.getDataManager().register(GRAVITY, gravity);
-    }
-
-    public EntityNormalDanmaku(World worldIn, EntityLivingBase throwerIn, int damage, float gravity,
-                               int danmakuType, int danmakuColor, float width, float height) {
-        this(worldIn, throwerIn, damage, gravity, danmakuType, danmakuColor);
-        this.width = width;
-        this.height = height;
-        this.setSize(width, height);
     }
 
 
