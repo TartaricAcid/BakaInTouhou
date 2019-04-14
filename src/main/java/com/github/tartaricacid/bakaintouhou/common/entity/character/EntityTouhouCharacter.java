@@ -14,6 +14,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob {
+    // P 点和分数
+    private float powerPoint = 0.1f;
+    private float scorePoint = 1.0f;
+
     public EntityTouhouCharacter(World worldIn) {
         super(worldIn);
         setNoGravity(true);
@@ -60,5 +64,18 @@ public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob
         DanmakuShoot.aimedShot(danmaku, world, this, this.getAttackTarget(), 0.5f, 5f, 0.5f);
         world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, this.getSoundCategory(),
                 1.0f, 0.8f);
+    }
+
+    public void setPoint(float scorePoint, float powerPoint) {
+        this.scorePoint = scorePoint;
+        this.powerPoint = powerPoint;
+    }
+
+    public float getPowerPoint() {
+        return powerPoint;
+    }
+
+    public float getScorePoint() {
+        return scorePoint;
     }
 }

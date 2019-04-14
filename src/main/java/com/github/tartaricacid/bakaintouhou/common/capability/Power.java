@@ -26,7 +26,7 @@ public class Power implements IPower {
 
     @Override
     public void set(float points) {
-        this.power = points;
+        this.power = (points > 5.0f) ? 5.0f : points;
     }
 
     @Override
