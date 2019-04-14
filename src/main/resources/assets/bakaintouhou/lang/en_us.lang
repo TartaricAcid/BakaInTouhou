@@ -27,6 +27,9 @@ entity.entity_yukari.name=Yakumo Yukari
 # ～ Immaterial and Missing Power.
 entity.entity_suika.name=Ibuki Suika
 
+# ～ Mountain of Faith.
+entity.entity_momizi.name=Inubashiri Momizi
+
 # ~ Touhou Sangetsusei
 entity.entity_sunny.name=Sunny Milk
 entity.entity_lunar.name=Lunar Child
@@ -44,6 +47,11 @@ tile.bakaintouhou.saisen_bako.name=Saisen Bako
 tile.bakaintouhou.garage_kit.name=Garage Kit
 
 bakaintouhou.garage_kit.tooltips.character=Character: %s
+
+# Command
+command.bakaintouhou.main.usage=Usage: /bakaintouhou <power|score> <get|set|add|min> <player> [float]
+command.bakaintouhou.main.power.info=Current Power: %.2f
+command.bakaintouhou.main.score.info=Current Score: %.2f
 
 # Danmaku
 item.bakaintouhou.danmaku.name=Danmaku Item

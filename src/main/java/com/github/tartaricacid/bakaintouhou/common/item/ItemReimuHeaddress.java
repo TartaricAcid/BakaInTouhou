@@ -2,6 +2,11 @@ package com.github.tartaricacid.bakaintouhou.common.item;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.client.render.armor.ReimuHeaddressModel;
+import com.github.tartaricacid.bakaintouhou.common.capability.IPower;
+import com.github.tartaricacid.bakaintouhou.common.capability.IScore;
+import com.github.tartaricacid.bakaintouhou.common.capability.PowerProvider;
+import com.github.tartaricacid.bakaintouhou.common.capability.ScoreProvider;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -45,6 +50,12 @@ public class ItemReimuHeaddress extends ItemArmor {
     @Override
     @SideOnly(Side.CLIENT)
     public void renderHelmetOverlay(ItemStack stack, EntityPlayer player, ScaledResolution resolution, float partialTicks) {
-        // TODO：没想好
+        IPower power = player.getCapability(PowerProvider.POWER_CAP, null);
+        IScore score = player.getCapability(ScoreProvider.SCORE_CAP, null);
+
+        Minecraft.getMinecraft().ingameGUI.drawString(Minecraft.getMinecraft().fontRenderer
+                , "Power: " + power.get(), 5, 5, 0xffffff);
+        Minecraft.getMinecraft().ingameGUI.drawString(Minecraft.getMinecraft().fontRenderer
+                , "Score: " + score.get(), 5, 15, 0xffffff);
     }
 }

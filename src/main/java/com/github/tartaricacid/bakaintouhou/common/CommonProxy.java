@@ -5,22 +5,27 @@ import com.github.tartaricacid.bakaintouhou.common.block.BlockGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
+import com.github.tartaricacid.bakaintouhou.common.capability.*;
+import com.github.tartaricacid.bakaintouhou.common.command.MainCommand;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMiniHakkero;
 import com.github.tartaricacid.bakaintouhou.common.item.*;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
+import com.github.tartaricacid.bakaintouhou.common.network.PointPackHandler;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -55,6 +60,9 @@ public class CommonProxy {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         GameRegistry.registerWorldGenerator(new TouhouGen(), 0);
+
+        CapabilityManager.INSTANCE.register(IPower.class, new PowerStroage(), Power.FACTORY);
+        CapabilityManager.INSTANCE.register(IScore.class, new ScoreStroage(), Score.FACTORY);
     }
 
     @Mod.EventHandler
@@ -64,6 +72,13 @@ public class CommonProxy {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         registerEntities();
+
+        PointPackHandler.registerMessages(BakaInTouhou.MOD_ID);
+    }
+
+    @Mod.EventHandler
+    public void serverLoad(FMLServerStartingEvent event) {
+        event.registerServerCommand(new MainCommand());
     }
 
 

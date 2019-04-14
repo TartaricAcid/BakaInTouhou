@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(
         modid = BakaInTouhou.MOD_ID,
@@ -38,5 +39,10 @@ public class BakaInTouhou {
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
         commonProxy.postinit(event);
+    }
+
+    @Mod.EventHandler
+    public void serverLoad(FMLServerStartingEvent event) {
+        commonProxy.serverLoad(event);
     }
 }
