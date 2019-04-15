@@ -1,10 +1,9 @@
 package com.github.tartaricacid.bakaintouhou.client.render.character.model;
 
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class EntityMagicCircleModel extends ModelBase {
+public class EntityMagicCircleModel extends EntityTouhouCharacterModel {
     //fields
     private ModelRenderer body;
 

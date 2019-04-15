@@ -174,6 +174,25 @@ public class CommonProxy {
                 EntitySunflowerFairy.class, "entity_sunflower_fairy", id++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0xf27922);
 
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_red"),
+                EntityFairyRed.class, "entity_fairy_red", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xffffff, 0xC84852);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_yellow"),
+                EntityFairyYellow.class, "entity_fairy_yellow", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xffffff, 0xC1C242);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_blue"),
+                EntityFairyBlue.class, "entity_fairy_blue", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xffffff, 0x3B3BBB);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_green"),
+                EntityFairyGreen.class, "entity_fairy_green", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xffffff, 0x48C881);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.flying_yinyangs"),
+                EntityFlyingYinyangs.class, "entity_flying_yinyangs", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xffffff, 0x10931D);
+        EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.magic_book"),
+                EntityMagicBook.class, "entity_magic_book", id++, BakaInTouhou.INSTANCE, 32,
+                3, true, 0xDA6364, 0xFCE2C9);
+
 
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.normal_damaku"),
                 EntityNormalDanmaku.class, "entity_normal_danmaku", id++, BakaInTouhou.INSTANCE, 32,

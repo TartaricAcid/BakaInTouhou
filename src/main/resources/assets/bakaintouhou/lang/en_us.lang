@@ -1,5 +1,11 @@
 # Other
 entity.entity_sunflower_fairy.name=Sunflower Fairy
+entity.entity_fairy_red.name=Fairy
+entity.entity_fairy_yellow.name=Fairy
+entity.entity_fairy_green.name=Fairy
+entity.entity_fairy_blue.name=Fairy
+entity.entity_flying_yinyangs.name=Flying Yin-yangs
+entity.entity_magic_book.name=Magic Book
 
 # ～ the Embodiment of Scarlet Devil.
 entity.entity_reimu.name=Reimu Hakurei

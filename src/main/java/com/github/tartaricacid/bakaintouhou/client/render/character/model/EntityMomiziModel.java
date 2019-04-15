@@ -1,11 +1,10 @@
 package com.github.tartaricacid.bakaintouhou.client.render.character.model;
 
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class EntityMomiziModel extends ModelBase {
+public class EntityMomiziModel extends EntityTouhouCharacterModel {
 
     //fields
     ModelRenderer body1;

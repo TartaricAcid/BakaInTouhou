@@ -127,7 +127,12 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityStar.class, EntityStarRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityMomizi.class, EntityMomiziRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntitySunflowerFairy.class, EntitySunflowerFairyRender.FACTORY);
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityFairyRed.class, EntityFairyRedRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFairyYellow.class, EntityFairyYellowRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFairyGreen.class, EntityFairyGreenRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFairyBlue.class, EntityFairyBlueRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFlyingYinyangs.class, EntityFlyingYinyangsRender.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityMagicBook.class, EntityMagicBookRender.FACTORY);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityNormalDanmaku.class, EntityNormalDanmakuRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityKnifeDanmaku.class, EntityKnifeDanmakuRender.FACTORY);
