@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "custom": {
+      "flip-v": true
+    },
+    "model": "bakaintouhou:spawn_crystal.obj"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

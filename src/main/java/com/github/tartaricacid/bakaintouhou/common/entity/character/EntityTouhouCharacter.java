@@ -9,7 +9,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
@@ -61,9 +60,7 @@ public class EntityTouhouCharacter extends EntityMob implements IRangedAttackMob
     public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
         EntityNormalDanmaku danmaku = new EntityNormalDanmaku(world, this, 2, 0, rand.nextInt(2),
                 rand.nextInt(7));
-        DanmakuShoot.aimedShot(danmaku, world, this, this.getAttackTarget(), 0.5f, 5f, 0.5f);
-        world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, this.getSoundCategory(),
-                1.0f, 0.8f);
+        DanmakuShoot.aimedShot(danmaku, world, this, this.getAttackTarget(), 0.5f, 5f, 0.05f);
     }
 
     public void setPoint(float scorePoint, float powerPoint) {

@@ -8,4 +8,6 @@ public class BlockObjectHolder {
     public static BlockSaisenBako blockSaisenBako;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "garage_kit")
     public static BlockGarageKit blockGarageKit;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "spawn_crystal")
+    public static BlockSpawnCrystal blockSpawnCrystal;
 }

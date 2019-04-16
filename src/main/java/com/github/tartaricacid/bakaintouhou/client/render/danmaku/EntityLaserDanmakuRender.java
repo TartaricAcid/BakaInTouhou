@@ -62,7 +62,7 @@ public class EntityLaserDanmakuRender extends Render<EntityLaserDanmaku> {
             buff.begin(GL11.GL_QUADS, DefaultVertexFormats.ITEM);
 
             for (BakedQuad quad : quads) {
-                LightUtil.renderQuadColor(buff, quad, 0xcc_00_00_00 // 透明度硬编码为 aa
+                LightUtil.renderQuadColor(buff, quad, 0xee_00_00_00 // 透明度硬编码为 aa
                         + entity.getDanmakuColor());
             }
 

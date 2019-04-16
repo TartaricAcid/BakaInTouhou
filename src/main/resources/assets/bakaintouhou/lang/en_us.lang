@@ -54,8 +54,10 @@ entity.entity_wakasagihime.name=Wakasagihime
 itemGroup.bakaintouhou.items=Baka In Touhou
 tile.bakaintouhou.saisen_bako.name=Saisen Bako
 tile.bakaintouhou.garage_kit.name=Garage Kit
+tile.bakaintouhou.spawn_crystal.name=Spawn Crystal
 
 bakaintouhou.garage_kit.tooltips.character=Character: %s
+bakaintouhou.spawn_crystal.tooltips.character=Character: %s
 
 # Command
 command.bakaintouhou.main.usage=Usage: /bakaintouhou <power|score> <get|set|add|min> <player> [float]
@@ -68,6 +70,7 @@ item.bakaintouhou.touhou_icons.name=Touhou Project Icons
 item.bakaintouhou.hakurei_gohei.name=Hakurei's Gohei
 item.bakaintouhou.reimu_headdress.name=Reimu's Headdress
 item.bakaintouhou.marisa_broom.name=Marisa's Broom
+item.bakaintouhou.mini_hakkero.name=Mini Hakkero
 
 item.bakaintouhou.hakurei_gohei.mode=Mode: %d
 

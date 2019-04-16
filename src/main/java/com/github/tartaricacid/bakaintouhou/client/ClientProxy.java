@@ -6,9 +6,11 @@ import com.github.tartaricacid.bakaintouhou.client.render.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMiniHakkeroRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
+import com.github.tartaricacid.bakaintouhou.client.render.tesr.SpawnCrystalRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
+import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
@@ -51,8 +53,12 @@ public class ClientProxy extends CommonProxy {
 
         // ForgeHooksClient.registerTESRItemStack(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit), 0, TileEntityGarageKit.class);
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGarageKit.class, new GarageKitRender());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySpawnCrystal.class, new SpawnCrystalRender());
+
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit),
                 0, new ModelResourceLocation(BlockObjectHolder.blockGarageKit.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSpawnCrystal),
+                0, new ModelResourceLocation(BlockObjectHolder.blockSpawnCrystal.getRegistryName(), "inventory"));
 
         ModelResourceLocation touhou_icons_0 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_0", "inventory");
         ModelResourceLocation touhou_icons_1 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_1", "inventory");

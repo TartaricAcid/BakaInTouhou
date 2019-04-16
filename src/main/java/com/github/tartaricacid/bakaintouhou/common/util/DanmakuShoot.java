@@ -3,6 +3,7 @@ package com.github.tartaricacid.bakaintouhou.common.util;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.EntityTouhouCharacter;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -28,6 +29,8 @@ public final class DanmakuShoot {
                 danmaku.shoot(target.posX - entity.posX, target.posY - entity.posY + entity.getEyeHeight(), target.posZ - entity.posZ, velocity, inaccuracy);
                 worldIn.spawnEntity(danmaku);
             }
+            worldIn.playSound(null, danmaku.posX, danmaku.posY, danmaku.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, danmaku.getSoundCategory(),
+                    1.0f, 0.8f);
         }
     }
 
@@ -63,6 +66,8 @@ public final class DanmakuShoot {
                     worldIn.spawnEntity(danmaku);
                 }
             }
+            worldIn.playSound(null, danmaku.posX, danmaku.posY, danmaku.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, danmaku.getSoundCategory(),
+                    1.0f, 0.8f);
         }
     }
 
@@ -85,6 +90,8 @@ public final class DanmakuShoot {
                 danmaku.shoot(target.posX, target.posY, target.posZ, 0f, inaccuracy);
                 worldIn.spawnEntity(danmaku);
             }
+            worldIn.playSound(null, danmaku.posX, danmaku.posY, danmaku.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, danmaku.getSoundCategory(),
+                    1.0f, 0.8f);
         }
     }
 }

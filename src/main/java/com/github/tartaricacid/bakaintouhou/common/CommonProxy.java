@@ -4,7 +4,9 @@ import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
+import com.github.tartaricacid.bakaintouhou.common.block.BlockSpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
+import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.capability.*;
 import com.github.tartaricacid.bakaintouhou.common.command.MainCommand;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
@@ -19,6 +21,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -38,8 +41,10 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockSaisenBako());
         event.getRegistry().register(new BlockGarageKit());
+        event.getRegistry().register(new BlockSpawnCrystal());
 
         GameRegistry.registerTileEntity(TileEntityGarageKit.class, new ResourceLocation(BakaInTouhou.MOD_ID, "garage_kit"));
+        GameRegistry.registerTileEntity(TileEntitySpawnCrystal.class, new ResourceLocation(BakaInTouhou.MOD_ID, "spawn_crystal"));
     }
 
     @SubscribeEvent
@@ -55,6 +60,13 @@ public class CommonProxy {
                 BlockObjectHolder.blockSaisenBako.getRegistryName()));
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockGarageKit).setRegistryName(
                 BlockObjectHolder.blockGarageKit.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSpawnCrystal).setRegistryName(
+                BlockObjectHolder.blockSpawnCrystal.getRegistryName()));
+    }
+
+    @SubscribeEvent
+    public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+
     }
 
     @Mod.EventHandler
