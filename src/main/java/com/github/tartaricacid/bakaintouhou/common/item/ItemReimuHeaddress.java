@@ -54,8 +54,8 @@ public class ItemReimuHeaddress extends ItemArmor {
         IScore score = player.getCapability(ScoreProvider.SCORE_CAP, null);
 
         Minecraft.getMinecraft().ingameGUI.drawString(Minecraft.getMinecraft().fontRenderer
-                , "Power: " + power.get(), 5, 5, 0xffffff);
+                , String.format("Power: %.2f", power.get()), 5, 5, 0xffffff);
         Minecraft.getMinecraft().ingameGUI.drawString(Minecraft.getMinecraft().fontRenderer
-                , "Score: " + score.get(), 5, 15, 0xffffff);
+                , String.format("Score: %.2f", score.get()), 5, 15, 0xffffff);
     }
 }

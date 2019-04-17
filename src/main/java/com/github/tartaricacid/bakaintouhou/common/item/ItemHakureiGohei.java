@@ -1,14 +1,20 @@
 package com.github.tartaricacid.bakaintouhou.common.item;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.common.capability.IPower;
+import com.github.tartaricacid.bakaintouhou.common.capability.PowerProvider;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.EntityNormalDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.util.DanmakuInit;
+import com.google.common.collect.Multimap;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,23 +32,32 @@ import java.util.Random;
 
 public class ItemHakureiGohei extends Item {
     private static Random random = new Random();
+    private double attackDamage;
+    private double attackSpeed;
 
     public ItemHakureiGohei() {
         setUnlocalizedName(BakaInTouhou.MOD_ID + ".hakurei_gohei");
         setRegistryName("hakurei_gohei");
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
         setMaxStackSize(1);
+        this.attackDamage = 4;
+        this.attackSpeed = -2;
     }
 
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
         if (!worldIn.isRemote && entityLiving instanceof EntityPlayer && !entityLiving.isSneaking()) {
             EntityPlayer player = (EntityPlayer) entityLiving;
+            IPower power = player.getCapability(PowerProvider.POWER_CAP, null);
 
-            int a = ((500 - timeLeft) > 100 ? 100 : (500 - timeLeft)) / 20; // 依据右键时长来决定后面的伤害和速度（0-5s）
+            // 依据右键时长，Power 数来决定伤害和发射速度
+            // a = 右键时长增益（0-5）+ Power 数（0-5）
+            // 右键有效时长为 0-5 s
+            // Power 有效范围 0-5
+            int a = (((500 - timeLeft) > 100 ? 100 : (500 - timeLeft)) / 20) + Math.round(power.get());
 
             int damage = a + 4;
-            float velocity = 0.3f * (a + 1);
+            float velocity = 0.2f * (a + 1);
             int color = random.nextInt(DanmakuInit.danmakuColorMax + 1);
             int type = getGoheiMode(stack);
 
@@ -75,6 +90,20 @@ public class ItemHakureiGohei extends Item {
     }
 
     @Override
+    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
+        Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(slot);
+
+        if (slot == EntityEquipmentSlot.MAINHAND) {
+            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
+                    new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", this.attackDamage, 0));
+            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
+                    new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", this.attackSpeed, 0));
+        }
+
+        return multimap;
+    }
+
+    @Override
     public int getMaxItemUseDuration(ItemStack stack) {
         return 500;
     }
@@ -82,21 +111,16 @@ public class ItemHakureiGohei extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         if (!worldIn.isRemote) {
-            if (playerIn.isSneaking()) {
-                ItemStack stack = playerIn.getHeldItemMainhand();
-                setGoheiMode(stack, (getGoheiMode(stack) + 1 > DanmakuInit.danmakuTypeMax) ? 0 : getGoheiMode(stack) + 1);
-            } else {
-                playerIn.setActiveHand(handIn);
-            }
+            playerIn.setActiveHand(handIn);
         }
         return new ActionResult<>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }
 
-    private int getGoheiMode(ItemStack stack) {
+    public int getGoheiMode(ItemStack stack) {
         return getTagCompoundSafe(stack).getInteger("gohei_mode");
     }
 
-    private void setGoheiMode(ItemStack stack, int mode) {
+    public void setGoheiMode(ItemStack stack, int mode) {
         getTagCompoundSafe(stack).setInteger("gohei_mode", mode);
     }
 

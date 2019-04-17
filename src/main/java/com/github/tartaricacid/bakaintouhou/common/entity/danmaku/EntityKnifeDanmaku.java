@@ -61,6 +61,7 @@ public class EntityKnifeDanmaku extends EntityThrowable {
                 && !result.entityHit.getUniqueID().equals(this.getThrower().getUniqueID())) {
             result.entityHit.attackEntityFrom(new EntityDamageSource("arrow", getThrower()),
                     this.getDataManager().get(DAMAGE));
+            this.setDead();
         } else if (result.typeOfHit == RayTraceResult.Type.BLOCK) {
             this.setDead();
         }

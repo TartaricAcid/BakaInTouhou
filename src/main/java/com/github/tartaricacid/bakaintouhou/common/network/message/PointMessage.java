@@ -1,4 +1,4 @@
-package com.github.tartaricacid.bakaintouhou.common.network;
+package com.github.tartaricacid.bakaintouhou.common.network.message;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;

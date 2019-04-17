@@ -1,11 +1,14 @@
 package com.github.tartaricacid.bakaintouhou.client.util;
 
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.Cylinder;
 import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.glu.Sphere;
 
+@SideOnly(Side.CLIENT)
 public final class CustomShape {
     public static int SPHERE_OUT_INDEX;
     public static int SPHERE_IN_INDEX;

@@ -8,6 +8,10 @@
   },
   "variants": {
     "normal": [{}],
-    "inventory": [{}]
+    "inventory": [
+      {
+        "model": "bakaintouhou:item/spawn_crystal"
+      }
+    ]
   }
 }

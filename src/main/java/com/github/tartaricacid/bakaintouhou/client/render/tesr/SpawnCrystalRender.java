@@ -19,8 +19,9 @@ public class SpawnCrystalRender extends TileEntitySpecialRenderer<TileEntitySpaw
 
         GlStateManager.pushMatrix();
         GlStateManager.translate(x, y + 0.0625, z);
-        GlStateManager.scale(0.5, 0.5, 0.5);
-        GlStateManager.translate(1, 1, 1);
+        GlStateManager.scale(0.4, 0.4, 0.4);
+        GlStateManager.translate(1.2, 1.4 + 0.2 * Math.cos(0.05 * (this.getWorld().getWorldTime() + partialTicks))
+                , 1.2);
         GlStateManager.rotate(this.getWorld().getWorldTime() * 2, 0, 1, 0);
 
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240f, 240f);

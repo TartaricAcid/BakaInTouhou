@@ -1,6 +1,8 @@
 package com.github.tartaricacid.bakaintouhou.common;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.client.network.handler.PointMessageHandler;
+import com.github.tartaricacid.bakaintouhou.client.network.message.GoheiChangeMessage;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
@@ -15,7 +17,8 @@ import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMiniHakkero;
 import com.github.tartaricacid.bakaintouhou.common.item.*;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
-import com.github.tartaricacid.bakaintouhou.common.network.PointPackHandler;
+import com.github.tartaricacid.bakaintouhou.common.network.handler.GoheiChangeMessageHandler;
+import com.github.tartaricacid.bakaintouhou.common.network.message.PointMessage;
 import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -30,12 +33,17 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
-    private static int id = 0;
+    public static SimpleNetworkWrapper INSTANCE = null;
+    private static int packetId = 0;
+    private static int entityId = 0;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -84,8 +92,7 @@ public class CommonProxy {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         registerEntities();
-
-        PointPackHandler.registerMessages(BakaInTouhou.MOD_ID);
+        registerMessage();
     }
 
     @Mod.EventHandler
@@ -96,141 +103,150 @@ public class CommonProxy {
 
     private void registerEntities() {
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.cirno"),
-                EntityCirno.class, "entity_cirno", id++, BakaInTouhou.INSTANCE, 32,
+                EntityCirno.class, "entity_cirno", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x4a6195, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.reimu"),
-                EntityReimu.class, "entity_reimu", id++, BakaInTouhou.INSTANCE, 32,
+                EntityReimu.class, "entity_reimu", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xbc0408, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.marisa"),
-                EntityMarisa.class, "entity_marisa", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMarisa.class, "entity_marisa", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x2e1714, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.rumia"),
-                EntityRumia.class, "entity_rumia", id++, BakaInTouhou.INSTANCE, 32,
+                EntityRumia.class, "entity_rumia", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x181818, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.daiyousei"),
-                EntityDaiyousei.class, "entity_daiyousei", id++, BakaInTouhou.INSTANCE, 32,
+                EntityDaiyousei.class, "entity_daiyousei", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x87c564, 0x83b6eb);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.meiling"),
-                EntityMeiling.class, "entity_meiling", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMeiling.class, "entity_meiling", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xd9262c, 0x344c06);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.koakuma"),
-                EntityKoakuma.class, "entity_koakuma", id++, BakaInTouhou.INSTANCE, 32,
+                EntityKoakuma.class, "entity_koakuma", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xd45b4f, 0x513438);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.patchouli"),
-                EntityPatchouli.class, "entity_patchouli", id++, BakaInTouhou.INSTANCE, 32,
+                EntityPatchouli.class, "entity_patchouli", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x975680, 0xf1e1eb);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.sakuya"),
-                EntitySakuya.class, "entity_sakuya", id++, BakaInTouhou.INSTANCE, 32,
+                EntitySakuya.class, "entity_sakuya", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x00c68, 0xced0d0);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.remilia"),
-                EntityRemilia.class, "entity_remilia", id++, BakaInTouhou.INSTANCE, 32,
+                EntityRemilia.class, "entity_remilia", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xf2cbcc, 0x94a7d2);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.frandle"),
-                EntityFrandle.class, "entity_frandle", id++, BakaInTouhou.INSTANCE, 32,
+                EntityFrandle.class, "entity_frandle", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xfbda93, 0xff5d5b);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.kisume"),
-                EntityKisume.class, "entity_kisume", id++, BakaInTouhou.INSTANCE, 32,
+                EntityKisume.class, "entity_kisume", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x53c346, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.letty"),
-                EntityLetty.class, "entity_letty", id++, BakaInTouhou.INSTANCE, 32,
+                EntityLetty.class, "entity_letty", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x7d72b6, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.wakasagihime"),
-                EntityWakasagihime.class, "entity_wakasagihime", id++, BakaInTouhou.INSTANCE, 32,
+                EntityWakasagihime.class, "entity_wakasagihime", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x05406e, 0x1e7d40);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.chen"),
-                EntityChen.class, "entity_chen", id++, BakaInTouhou.INSTANCE, 32,
+                EntityChen.class, "entity_chen", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xe03a2c, 0x2a907e);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.alice"),
-                EntityAlice.class, "entity_alice", id++, BakaInTouhou.INSTANCE, 32,
+                EntityAlice.class, "entity_alice", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xe0cd80, 0x5171be);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.lily"),
-                EntityLily.class, "entity_lily", id++, BakaInTouhou.INSTANCE, 32,
+                EntityLily.class, "entity_lily", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xf39229, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.lunasa"),
-                EntityLunasa.class, "entity_lunasa", id++, BakaInTouhou.INSTANCE, 32,
+                EntityLunasa.class, "entity_lunasa", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x000000, 0xffffff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.merlin"),
-                EntityMerlin.class, "entity_merlin", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMerlin.class, "entity_merlin", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xcdcbf3, 0xf3e8ec);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.lyrica"),
-                EntityLyrica.class, "entity_lyrica", id++, BakaInTouhou.INSTANCE, 32,
+                EntityLyrica.class, "entity_lyrica", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xd8beaf, 0xff0807);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.ran"),
-                EntityRan.class, "entity_ran", id++, BakaInTouhou.INSTANCE, 32,
+                EntityRan.class, "entity_ran", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xf4e563, 0x8e83ff);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.youmu"),
-                EntityYoumu.class, "entity_youmu", id++, BakaInTouhou.INSTANCE, 32,
+                EntityYoumu.class, "entity_youmu", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x185865, 0xececec);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.yuyuko"),
-                EntityYuyuko.class, "entity_yuyuko", id++, BakaInTouhou.INSTANCE, 32,
+                EntityYuyuko.class, "entity_yuyuko", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xc28aa6, 0xa0b1c2);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.yukari"),
-                EntityYukari.class, "entity_yukari", id++, BakaInTouhou.INSTANCE, 32,
+                EntityYukari.class, "entity_yukari", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xd8b970, 0x9f78af);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.suika"),
-                EntitySuika.class, "entity_suika", id++, BakaInTouhou.INSTANCE, 32,
+                EntitySuika.class, "entity_suika", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xff941d, 0x642195);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.sunny"),
-                EntitySunny.class, "entity_sunny", id++, BakaInTouhou.INSTANCE, 32,
+                EntitySunny.class, "entity_sunny", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xf1b67a, 0xcd5c41);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.lunar"),
-                EntityLunar.class, "entity_lunar", id++, BakaInTouhou.INSTANCE, 32,
+                EntityLunar.class, "entity_lunar", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xfffffb, 0x330d04);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.star"),
-                EntityStar.class, "entity_star", id++, BakaInTouhou.INSTANCE, 32,
+                EntityStar.class, "entity_star", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0x55658b, 0x5e3927);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.momizi"),
-                EntityMomizi.class, "entity_momizi", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMomizi.class, "entity_momizi", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0xb7afba);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.sunflower_fairy"),
-                EntitySunflowerFairy.class, "entity_sunflower_fairy", id++, BakaInTouhou.INSTANCE, 32,
+                EntitySunflowerFairy.class, "entity_sunflower_fairy", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0xf27922);
 
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_red"),
-                EntityFairyRed.class, "entity_fairy_red", id++, BakaInTouhou.INSTANCE, 32,
+                EntityFairyRed.class, "entity_fairy_red", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0xC84852);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_yellow"),
-                EntityFairyYellow.class, "entity_fairy_yellow", id++, BakaInTouhou.INSTANCE, 32,
+                EntityFairyYellow.class, "entity_fairy_yellow", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0xC1C242);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_blue"),
-                EntityFairyBlue.class, "entity_fairy_blue", id++, BakaInTouhou.INSTANCE, 32,
+                EntityFairyBlue.class, "entity_fairy_blue", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0x3B3BBB);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.fairy_green"),
-                EntityFairyGreen.class, "entity_fairy_green", id++, BakaInTouhou.INSTANCE, 32,
+                EntityFairyGreen.class, "entity_fairy_green", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0x48C881);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.flying_yinyangs"),
-                EntityFlyingYinyangs.class, "entity_flying_yinyangs", id++, BakaInTouhou.INSTANCE, 32,
+                EntityFlyingYinyangs.class, "entity_flying_yinyangs", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xffffff, 0x10931D);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.character.magic_book"),
-                EntityMagicBook.class, "entity_magic_book", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMagicBook.class, "entity_magic_book", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true, 0xDA6364, 0xFCE2C9);
 
 
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.normal_damaku"),
-                EntityNormalDanmaku.class, "entity_normal_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                EntityNormalDanmaku.class, "entity_normal_danmaku", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.knife_damaku"),
-                EntityKnifeDanmaku.class, "entity_knife_damaku", id++, BakaInTouhou.INSTANCE, 32,
+                EntityKnifeDanmaku.class, "entity_knife_damaku", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.train_danmaku"),
-                EntityTrainDanmaku.class, "entity_train_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                EntityTrainDanmaku.class, "entity_train_danmaku", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.butterfly_danmaku"),
-                EntityButterflyDanmaku.class, "entity_butterfly_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                EntityButterflyDanmaku.class, "entity_butterfly_danmaku", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.laser_danmaku"),
-                EntityLaserDanmaku.class, "entity_laser_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                EntityLaserDanmaku.class, "entity_laser_danmaku", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.danmaku.hakure_danmaku"),
-                EntityHakureDanmaku.class, "entity_hakure_danmaku", id++, BakaInTouhou.INSTANCE, 32,
+                EntityHakureDanmaku.class, "entity_hakure_danmaku", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
 
 
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.marisa_broom"),
-                EntityMarisaBroom.class, "entity_marisa_broom", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMarisaBroom.class, "entity_marisa_broom", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
         EntityRegistry.registerModEntity(new ResourceLocation(BakaInTouhou.MOD_ID, "entity.item.mini_hakkero"),
-                EntityMiniHakkero.class, "entity_mini_hakkero", id++, BakaInTouhou.INSTANCE, 32,
+                EntityMiniHakkero.class, "entity_mini_hakkero", entityId++, BakaInTouhou.INSTANCE, 32,
                 3, true);
+    }
+
+    private void registerMessage() {
+        // 通过 NetworkRegistry.INSTANCE.newSimpleChannel 方法创建出 SimpleNetworkWrapper 实例
+        INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(BakaInTouhou.MOD_ID);
+
+        INSTANCE.registerMessage(PointMessageHandler.class, PointMessage.class, packetId++, Side.CLIENT);
+
+        INSTANCE.registerMessage(GoheiChangeMessageHandler.class, GoheiChangeMessage.class, packetId++, Side.SERVER);
     }
 }
