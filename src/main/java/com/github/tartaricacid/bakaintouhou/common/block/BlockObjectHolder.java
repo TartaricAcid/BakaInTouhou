@@ -32,4 +32,10 @@ public class BlockObjectHolder {
     public static BlockSakuraSapling blockSakuraSaplingPink;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "sakura_sapling_yellow")
     public static BlockSakuraSapling blockSakuraSaplingYellow;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "bamboo_shoot")
+    public static BlockBambooShoot blockBambooShoot;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "bamboo")
+    public static BlockBamboo blockBamboo;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "shoji")
+    public static BlockShoji blockShoji;
 }

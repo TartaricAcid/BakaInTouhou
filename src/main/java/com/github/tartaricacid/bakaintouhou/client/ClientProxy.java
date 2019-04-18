@@ -6,10 +6,12 @@ import com.github.tartaricacid.bakaintouhou.client.render.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMiniHakkeroRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.GarageKitRender;
+import com.github.tartaricacid.bakaintouhou.client.render.tesr.ShojiRender;
 import com.github.tartaricacid.bakaintouhou.client.render.tesr.SpawnCrystalRender;
 import com.github.tartaricacid.bakaintouhou.common.CommonProxy;
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
+import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityShoji;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
@@ -38,6 +40,7 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGarageKit.class, new GarageKitRender());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySpawnCrystal.class, new SpawnCrystalRender());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityShoji.class, new ShojiRender());
 
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit));
@@ -52,6 +55,8 @@ public class ClientProxy extends CommonProxy {
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingRed));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingPink));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingYellow));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockBamboo));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockBambooShoot));
 
         registerRender(ItemObjectHolder.itemDanmaku);
         registerRender(ItemObjectHolder.itemHakureiGohei);

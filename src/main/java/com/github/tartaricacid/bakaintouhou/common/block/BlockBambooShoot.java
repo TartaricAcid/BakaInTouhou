@@ -2,34 +2,28 @@ package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
-import com.github.tartaricacid.bakaintouhou.common.world.WorldGenBigTree;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.IGrowable;
-import net.minecraft.block.SoundType;
+import com.github.tartaricacid.bakaintouhou.common.world.WorldGenBamboo;
+import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 import java.util.Random;
 
-public class BlockSakuraSapling extends BlockBush implements IGrowable {
+public class BlockBambooShoot extends BlockBush implements IGrowable {
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
-    private final String color;
 
-    public BlockSakuraSapling(String color) {
-        setUnlocalizedName(BakaInTouhou.MOD_ID + ".sakura_sapling_" + color);
-        setRegistryName("sakura_sapling_" + color);
-        this.color = color;
+    public BlockBambooShoot() {
+        setUnlocalizedName(BakaInTouhou.MOD_ID + "." + "bamboo_shoot");
+        setRegistryName("bamboo_shoot");
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
         setHardness(0.1F);
         setSoundType(SoundType.PLANT);
@@ -50,26 +44,12 @@ public class BlockSakuraSapling extends BlockBush implements IGrowable {
             return;
         }
 
-        IBlockState wood = BlockObjectHolder.blockSakuraLog.getDefaultState();
-        IBlockState leaf;
-        WorldGenAbstractTree worldgenerator;
+        IBlockState wood = BlockObjectHolder.blockBamboo.getDefaultState();
+        IBlockState leaf = Blocks.LEAVES.getDefaultState()
+                .withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.SPRUCE)
+                .withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
 
-        switch (this.color) {
-            case "red":
-                leaf = BlockObjectHolder.blockSakuraLeafRed.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
-                break;
-            case "yellow":
-                leaf = BlockObjectHolder.blockSakuraLeafYellow.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
-                break;
-            default:
-                leaf = BlockObjectHolder.blockSakuraLeafPink.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
-        }
-
-        if (rand.nextInt(5) == 0) {
-            worldgenerator = new WorldGenBigTree(true, leaf, wood);
-        } else {
-            worldgenerator = new WorldGenTrees(true, 4 + rand.nextInt(2), wood, leaf, false);
-        }
+        WorldGenBamboo worldgenerator = new WorldGenBamboo(true, wood, 8 + rand.nextInt(4));
         worldIn.setBlockToAir(pos);
         worldgenerator.generate(worldIn, rand, pos);
     }

@@ -65,6 +65,8 @@ tile.bakaintouhou.sakura_leaf_yellow.name=Sakura Leaf
 tile.bakaintouhou.sakura_sapling_red.name=Sakura Sapling
 tile.bakaintouhou.sakura_sapling_pink.name=Sakura Sapling
 tile.bakaintouhou.sakura_sapling_yellow.name=Sakura Sapling
+tile.bakaintouhou.bamboo.name=Bamboo
+tile.bakaintouhou.bamboo_shoot.name=Bamboo Shoot
 
 bakaintouhou.garage_kit.tooltips.character=Character: %s
 bakaintouhou.spawn_crystal.tooltips.character=Character: %s

@@ -5,6 +5,7 @@ import com.github.tartaricacid.bakaintouhou.client.network.handler.PointMessageH
 import com.github.tartaricacid.bakaintouhou.client.network.message.GoheiChangeMessage;
 import com.github.tartaricacid.bakaintouhou.common.block.*;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
+import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityShoji;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.capability.*;
 import com.github.tartaricacid.bakaintouhou.common.command.MainCommand;
@@ -16,7 +17,7 @@ import com.github.tartaricacid.bakaintouhou.common.item.*;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.network.handler.GoheiChangeMessageHandler;
 import com.github.tartaricacid.bakaintouhou.common.network.message.PointMessage;
-import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
+import com.github.tartaricacid.bakaintouhou.common.world.WorldGenShrine;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -59,9 +60,13 @@ public class CommonProxy {
         event.getRegistry().register(new BlockSakuraSapling("red"));
         event.getRegistry().register(new BlockSakuraSapling("pink"));
         event.getRegistry().register(new BlockSakuraSapling("yellow"));
+        event.getRegistry().register(new BlockBamboo());
+        event.getRegistry().register(new BlockBambooShoot());
+        event.getRegistry().register(new BlockShoji());
 
         GameRegistry.registerTileEntity(TileEntityGarageKit.class, new ResourceLocation(BakaInTouhou.MOD_ID, "garage_kit"));
         GameRegistry.registerTileEntity(TileEntitySpawnCrystal.class, new ResourceLocation(BakaInTouhou.MOD_ID, "spawn_crystal"));
+        GameRegistry.registerTileEntity(TileEntityShoji.class, new ResourceLocation(BakaInTouhou.MOD_ID, "shoji"));
     }
 
     @SubscribeEvent
@@ -100,6 +105,12 @@ public class CommonProxy {
                 BlockObjectHolder.blockSakuraSaplingPink.getRegistryName()));
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraSaplingYellow).setRegistryName(
                 BlockObjectHolder.blockSakuraSaplingYellow.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockBamboo).setRegistryName(
+                BlockObjectHolder.blockBamboo.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockBambooShoot).setRegistryName(
+                BlockObjectHolder.blockBambooShoot.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockShoji).setRegistryName(
+                BlockObjectHolder.blockShoji.getRegistryName()));
     }
 
     @SubscribeEvent
@@ -109,7 +120,7 @@ public class CommonProxy {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        GameRegistry.registerWorldGenerator(new TouhouGen(), 0);
+        GameRegistry.registerWorldGenerator(new WorldGenShrine(), 0);
 
         CapabilityManager.INSTANCE.register(IPower.class, new PowerStroage(), Power.FACTORY);
         CapabilityManager.INSTANCE.register(IScore.class, new ScoreStroage(), Score.FACTORY);

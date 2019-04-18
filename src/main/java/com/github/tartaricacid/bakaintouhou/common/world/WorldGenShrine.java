@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-public class TouhouGen implements IWorldGenerator {
+public class WorldGenShrine implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         if (random.nextFloat() < 0.50f) {

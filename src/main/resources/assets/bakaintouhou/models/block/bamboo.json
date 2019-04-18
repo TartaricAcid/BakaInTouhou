@@ -1,0 +1,76 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "bakaintouhou:blocks/bamboo_side",
+    "1": "bakaintouhou:blocks/bamboo_top",
+    "particle": "bakaintouhou:blocks/bamboo_side"
+  },
+  "elements": [
+    {
+      "from": [5, 0, 5],
+      "to": [11, 16, 11],
+      "faces": {
+        "north": {
+          "uv": [5, 0, 11, 16],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [5, 0, 11, 16],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [5, 0, 11, 16],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [5, 0, 11, 16],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [5, 5, 11, 11],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [5, 5, 11, 11],
+          "texture": "#1"
+        }
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "scale": [0.7, 0.7, 0.7],
+      "rotation": [0, 0, 0],
+      "translation": [0, 2, 0]
+    },
+    "thirdperson_lefthand": {
+      "scale": [0.7, 0.7, 0.7],
+      "translation": [-0.5, -1.5, 0]
+    },
+    "firstperson_righthand": {
+      "scale": [0.7, 0.7, 0.7],
+      "translation": [-0.5, -1.5, 0]
+    },
+    "firstperson_lefthand": {
+      "scale": [0.7, 0.7, 0.7],
+      "translation": [-0.5, -1.5, 0]
+    },
+    "head": {
+      "translation": [0, 12.5, 0]
+    },
+    "ground": {
+      "scale": [0.7, 0.7, 0.7],
+      "rotation": [63, 0, -1],
+      "translation": [-0.5, -1.5, 0]
+    },
+    "fixed": {
+      "translation": [0, 0, 0],
+      "rotation": [0, 0, 34]
+    },
+    "gui": {
+      "scale": [0.9, 0.9, 0.9],
+      "translation": [0, 0, 0],
+      "rotation": [17, 28, -46]
+    }
+  }
+}
