@@ -6,8 +6,10 @@ import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySp
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -18,10 +20,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -32,6 +31,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 public class BlockSpawnCrystal extends Block implements ITileEntityProvider {
     public static final AxisAlignedBB BLOCK_AABB = new AxisAlignedBB(0.15D, 0.0D, 0.15D, 0.85D, 2D, 0.85D);
@@ -40,9 +40,23 @@ public class BlockSpawnCrystal extends Block implements ITileEntityProvider {
         super(Material.GLASS);
         setUnlocalizedName(BakaInTouhou.MOD_ID + "." + "spawn_crystal");
         setBlockUnbreakable();
+        this.setResistance(6000001.0F);
         setRegistryName("spawn_crystal");
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
         setLightLevel(1);
+        setSoundType(SoundType.GLASS);
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        if (worldIn.isRemote) {
+            Minecraft mc = Minecraft.getMinecraft();
+            mc.ingameGUI.displayTitle("そーなのかー", null, 5, 40, 5);
+            return true;
+        } else {
+            // TODO
+        }
+        return false;
     }
 
     private ItemStack getDefaultItemStack() {
@@ -140,5 +154,14 @@ public class BlockSpawnCrystal extends Block implements ITileEntityProvider {
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+        double d0 = (double) ((float) pos.getX() + rand.nextFloat());
+        double d1 = (double) ((float) pos.getY() + 2 * rand.nextFloat());
+        double d2 = (double) ((float) pos.getZ() + rand.nextFloat());
+        worldIn.spawnParticle(EnumParticleTypes.CLOUD, d0, d1, d2, 0.0D, 0.0D, 0.0D);
     }
 }

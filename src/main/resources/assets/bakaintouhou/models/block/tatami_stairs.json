@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "bakaintouhou:blocks/tatami",
+    "top": "bakaintouhou:blocks/tatami",
+    "side": "bakaintouhou:blocks/tatami"
+  }
+}

@@ -36,29 +36,28 @@ import net.minecraftforge.fml.relauncher.Side;
 public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako),
-                0, new ModelResourceLocation(BlockObjectHolder.blockSaisenBako.getRegistryName(), "inventory"));
-
-        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemDanmaku,
-                0, new ModelResourceLocation(ItemObjectHolder.itemDanmaku.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemHakureiGohei,
-                0, new ModelResourceLocation(ItemObjectHolder.itemHakureiGohei.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemReimuHeaddress,
-                0, new ModelResourceLocation(ItemObjectHolder.itemReimuHeaddress.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemMarisaBroom,
-                0, new ModelResourceLocation(ItemObjectHolder.itemMarisaBroom.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemObjectHolder.itemMiniHakkero,
-                0, new ModelResourceLocation(ItemObjectHolder.itemMiniHakkero.getRegistryName(), "inventory"));
-
-
-        // ForgeHooksClient.registerTESRItemStack(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit), 0, TileEntityGarageKit.class);
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGarageKit.class, new GarageKitRender());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySpawnCrystal.class, new SpawnCrystalRender());
 
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit),
-                0, new ModelResourceLocation(BlockObjectHolder.blockGarageKit.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockObjectHolder.blockSpawnCrystal),
-                0, new ModelResourceLocation(BlockObjectHolder.blockSpawnCrystal.getRegistryName(), "inventory"));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSaisenBako));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockGarageKit));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSpawnCrystal));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockTatami));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockTatamiSlabHalf));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockTatamiStairs));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraLog));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraLeafRed));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraLeafPink));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraLeafYellow));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingRed));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingPink));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingYellow));
+
+        registerRender(ItemObjectHolder.itemDanmaku);
+        registerRender(ItemObjectHolder.itemHakureiGohei);
+        registerRender(ItemObjectHolder.itemReimuHeaddress);
+        registerRender(ItemObjectHolder.itemMarisaBroom);
+        registerRender(ItemObjectHolder.itemMiniHakkero);
 
         ModelResourceLocation touhou_icons_0 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_0", "inventory");
         ModelResourceLocation touhou_icons_1 = new ModelResourceLocation(ItemObjectHolder.itemTouhouIcons.getRegistryName() + "_1", "inventory");
@@ -149,5 +148,9 @@ public class ClientProxy extends CommonProxy {
 
         RenderingRegistry.registerEntityRenderingHandler(EntityMarisaBroom.class, EntityMarisaBroomRender.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityMiniHakkero.class, EntityMiniHakkeroRender.FACTORY);
+    }
+
+    private static void registerRender(Item item) {
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 }

@@ -3,10 +3,7 @@ package com.github.tartaricacid.bakaintouhou.common;
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.client.network.handler.PointMessageHandler;
 import com.github.tartaricacid.bakaintouhou.client.network.message.GoheiChangeMessage;
-import com.github.tartaricacid.bakaintouhou.common.block.BlockGarageKit;
-import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
-import com.github.tartaricacid.bakaintouhou.common.block.BlockSaisenBako;
-import com.github.tartaricacid.bakaintouhou.common.block.BlockSpawnCrystal;
+import com.github.tartaricacid.bakaintouhou.common.block.*;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.capability.*;
@@ -23,6 +20,7 @@ import com.github.tartaricacid.bakaintouhou.common.world.TouhouGen;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -50,6 +48,17 @@ public class CommonProxy {
         event.getRegistry().register(new BlockSaisenBako());
         event.getRegistry().register(new BlockGarageKit());
         event.getRegistry().register(new BlockSpawnCrystal());
+        event.getRegistry().register(new BlockTatami());
+        event.getRegistry().register(new BlockTatamiSlab.Half());
+        event.getRegistry().register(new BlockTatamiSlab.Double());
+        event.getRegistry().register(new BlockTatamiStairs());
+        event.getRegistry().register(new BlockSakuraLog());
+        event.getRegistry().register(new BlockSakuraLeaf("red"));
+        event.getRegistry().register(new BlockSakuraLeaf("pink"));
+        event.getRegistry().register(new BlockSakuraLeaf("yellow"));
+        event.getRegistry().register(new BlockSakuraSapling("red"));
+        event.getRegistry().register(new BlockSakuraSapling("pink"));
+        event.getRegistry().register(new BlockSakuraSapling("yellow"));
 
         GameRegistry.registerTileEntity(TileEntityGarageKit.class, new ResourceLocation(BakaInTouhou.MOD_ID, "garage_kit"));
         GameRegistry.registerTileEntity(TileEntitySpawnCrystal.class, new ResourceLocation(BakaInTouhou.MOD_ID, "spawn_crystal"));
@@ -70,6 +79,27 @@ public class CommonProxy {
                 BlockObjectHolder.blockGarageKit.getRegistryName()));
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSpawnCrystal).setRegistryName(
                 BlockObjectHolder.blockSpawnCrystal.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockTatami).setRegistryName(
+                BlockObjectHolder.blockTatami.getRegistryName()));
+        event.getRegistry().register(new ItemSlab(BlockObjectHolder.blockTatamiSlabHalf,
+                BlockObjectHolder.blockTatamiSlabHalf, BlockObjectHolder.blockTatamiSlabDouble).setRegistryName(
+                BlockObjectHolder.blockTatamiSlabHalf.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockTatamiStairs).setRegistryName(
+                BlockObjectHolder.blockTatamiStairs.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraLog).setRegistryName(
+                BlockObjectHolder.blockSakuraLog.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraLeafRed).setRegistryName(
+                BlockObjectHolder.blockSakuraLeafRed.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraLeafPink).setRegistryName(
+                BlockObjectHolder.blockSakuraLeafPink.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraLeafYellow).setRegistryName(
+                BlockObjectHolder.blockSakuraLeafYellow.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraSaplingRed).setRegistryName(
+                BlockObjectHolder.blockSakuraSaplingRed.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraSaplingPink).setRegistryName(
+                BlockObjectHolder.blockSakuraSaplingPink.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockSakuraSaplingYellow).setRegistryName(
+                BlockObjectHolder.blockSakuraSaplingYellow.getRegistryName()));
     }
 
     @SubscribeEvent

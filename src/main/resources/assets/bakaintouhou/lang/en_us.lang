@@ -55,6 +55,16 @@ itemGroup.bakaintouhou.items=Baka In Touhou
 tile.bakaintouhou.saisen_bako.name=Saisen Bako
 tile.bakaintouhou.garage_kit.name=Garage Kit
 tile.bakaintouhou.spawn_crystal.name=Spawn Crystal
+tile.bakaintouhou.tatami.name=Tatami
+tile.bakaintouhou.tatami_slab.name=Tatami Slab
+tile.bakaintouhou.tatami_stairs.name=Tatami Stairs
+tile.bakaintouhou.sakura_log.name=Sakura Log
+tile.bakaintouhou.sakura_leaf_red.name=Sakura Leaf
+tile.bakaintouhou.sakura_leaf_pink.name=Sakura Leaf
+tile.bakaintouhou.sakura_leaf_yellow.name=Sakura Leaf
+tile.bakaintouhou.sakura_sapling_red.name=Sakura Sapling
+tile.bakaintouhou.sakura_sapling_pink.name=Sakura Sapling
+tile.bakaintouhou.sakura_sapling_yellow.name=Sakura Sapling
 
 bakaintouhou.garage_kit.tooltips.character=Character: %s
 bakaintouhou.spawn_crystal.tooltips.character=Character: %s

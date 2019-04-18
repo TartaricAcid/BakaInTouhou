@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=north,half=bottom,variant=default": {
+      "model": "bakaintouhou:tatami_slab_bottom"
+    },
+    "facing=north,half=top,variant=default": {
+      "model": "bakaintouhou:tatami_slab_top"
+    },
+    "facing=south,half=bottom,variant=default": {
+      "model": "bakaintouhou:tatami_slab_bottom"
+    },
+    "facing=south,half=top,variant=default": {
+      "model": "bakaintouhou:tatami_slab_top"
+    },
+    "facing=west,half=bottom,variant=default": {
+      "model": "bakaintouhou:tatami_slab_bottom",
+      "y": 90
+    },
+    "facing=west,half=top,variant=default": {
+      "model": "bakaintouhou:tatami_slab_top",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=default": {
+      "model": "bakaintouhou:tatami_slab_bottom",
+      "y": 90
+    },
+    "facing=east,half=top,variant=default": {
+      "model": "bakaintouhou:tatami_slab_top",
+      "y": 90
+    },
+    "facing=up,half=bottom,variant=default": {
+      "model": "bakaintouhou:tatami_slab_bottom",
+      "y": 90
+    },
+    "facing=up,half=top,variant=default": {
+      "model": "bakaintouhou:tatami_slab_top",
+      "y": 90
+    },
+    "facing=down,half=bottom,variant=default": {
+      "model": "bakaintouhou:tatami_slab_bottom",
+      "y": 90
+    },
+    "facing=down,half=top,variant=default": {
+      "model": "bakaintouhou:tatami_slab_top",
+      "y": 90
+    }
+  }
+}

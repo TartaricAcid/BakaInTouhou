@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=north,variant=default": {
+      "model": "bakaintouhou:tatami_slab_double"
+    },
+    "facing=south,variant=default": {
+      "model": "bakaintouhou:tatami_slab_double"
+    },
+    "facing=west,variant=default": {
+      "model": "bakaintouhou:tatami_slab_double",
+      "y": 90
+    },
+    "facing=east,variant=default": {
+      "model": "bakaintouhou:tatami_slab_double",
+      "y": 90
+    },
+    "facing=up,variant=default": {
+      "model": "bakaintouhou:tatami_slab_double",
+      "y": 90
+    },
+    "facing=down,variant=default": {
+      "model": "bakaintouhou:tatami_slab_double",
+      "y": 90
+    }
+  }
+}

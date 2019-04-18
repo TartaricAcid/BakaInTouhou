@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "bakaintouhou:blocks/sakura_log_top",
+    "side": "bakaintouhou:blocks/sakura_log"
+  }
+}

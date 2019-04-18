@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "bakaintouhou:tatami"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "facing": {
+      "north": {},
+      "south": {},
+      "west": {
+        "y": 90
+      },
+      "east": {
+        "y": 90
+      },
+      "up": {
+        "y": 90
+      },
+      "down": {
+        "y": 90
+      }
+    }
+  }
+}

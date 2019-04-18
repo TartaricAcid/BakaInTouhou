@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "bakaintouhou:sakura_log"
+    },
+    "axis=z": {
+      "model": "bakaintouhou:sakura_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "bakaintouhou:sakura_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=none": {
+      "model": "bakaintouhou:sakura_log"
+    }
+  }
+}
