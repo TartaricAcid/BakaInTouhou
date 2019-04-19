@@ -7,6 +7,7 @@ import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -22,6 +23,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -36,16 +38,35 @@ import java.util.List;
 
 public class BlockShoji extends Block implements ITileEntityProvider {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
+    public static final PropertyBool OPEN = PropertyBool.create("open");
     public static final AxisAlignedBB BLOCK_AABB = new AxisAlignedBB(0.4375D, 0.0D, 0D, 0.5625D, 2D, 1D);
     public static final AxisAlignedBB BLOCK_AABB_ROTATE = new AxisAlignedBB(0D, 0.0D, 0.4375D, 1D, 2D, 0.5625D);
+    public static final AxisAlignedBB WEST_AABB = new AxisAlignedBB(0D, 0.0D, 0.4375D, 0.2D, 2D, 0.5625D);
+    public static final AxisAlignedBB EAST_AABB = new AxisAlignedBB(0.8D, 0.0D, 0.4375D, 1D, 2D, 0.5625D);
+    public static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.4375D, 0.0D, 0.8D, 0.5625D, 2D, 1D);
+    public static final AxisAlignedBB SOUTH_AABB = new AxisAlignedBB(0.4375D, 0.0D, 0D, 0.5625D, 2D, 0.2D);
 
     public BlockShoji() {
         super(Material.WOOD);
         setUnlocalizedName(BakaInTouhou.MOD_ID + "." + "shoji");
         setHardness(0.5f);
         setRegistryName("shoji");
-        setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(OPEN, false));
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        state = state.cycleProperty(OPEN);
+        worldIn.setBlockState(pos, state, 10);
+        worldIn.markBlockRangeForRenderUpdate(pos, pos);
+        worldIn.playEvent(playerIn, state.getValue(OPEN) ? 1006 : 1012, pos, 0);
+        TileEntityShoji te = (TileEntityShoji) worldIn.getTileEntity(pos);
+        if (te != null) {
+            te.setOpen(!te.isOpen());
+            te.setAnimation(10);
+        }
+        return true;
     }
 
     private ItemStack getDefaultItemStack() {
@@ -68,25 +89,39 @@ public class BlockShoji extends Block implements ITileEntityProvider {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7));
+        return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta % 6))
+                .withProperty(OPEN, meta >= 6);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return state.getValue(FACING).getIndex();
+        int meta = state.getValue(FACING).getIndex();
+        if (state.getValue(OPEN)) {
+            meta += 6;
+        }
+        return meta;
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, FACING);
+        return new BlockStateContainer(this, FACING, OPEN);
     }
 
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        if (state.getValue(FACING) == EnumFacing.SOUTH || state.getValue(FACING) == EnumFacing.NORTH) {
-            return BLOCK_AABB_ROTATE;
-        } else {
-            return BLOCK_AABB;
+        boolean isOpen = state.getValue(OPEN);
+
+        switch (state.getValue(FACING)) {
+            case NORTH:
+                return isOpen ? EAST_AABB : BLOCK_AABB_ROTATE;
+            case SOUTH:
+                return isOpen ? WEST_AABB : BLOCK_AABB_ROTATE;
+            case WEST:
+                return isOpen ? SOUTH_AABB : BLOCK_AABB;
+            case EAST:
+                return isOpen ? NORTH_AABB : BLOCK_AABB;
+            default:
+                return isOpen ? EAST_AABB : BLOCK_AABB_ROTATE;
         }
     }
 
@@ -121,7 +156,8 @@ public class BlockShoji extends Block implements ITileEntityProvider {
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        worldIn.setBlockState(pos, state.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer)), 2);
+        worldIn.setBlockState(pos, state.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer))
+                .withProperty(OPEN, false), 2);
         if (!worldIn.isRemote) {
             TileEntityShoji te = (TileEntityShoji) worldIn.getTileEntity(pos);
             if (te != null) {

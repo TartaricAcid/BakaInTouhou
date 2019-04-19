@@ -48,17 +48,17 @@ public class BlockTatamiSlab extends BlockSlab {
     public IBlockState getStateFromMeta(int meta) {
         IBlockState blockstate = this.blockState.getBaseState();
         if (!this.isDouble()) {
-            blockstate = blockstate.withProperty(HALF, ((meta & 7) != 0) ? EnumBlockHalf.TOP : EnumBlockHalf.BOTTOM)
-                    .withProperty(FACING, EnumFacing.getFront(meta & 7)).withProperty(VARIANT, Variant.DEFAULT);
+            blockstate = blockstate.withProperty(HALF, (meta >= 6) ? EnumBlockHalf.TOP : EnumBlockHalf.BOTTOM)
+                    .withProperty(FACING, EnumFacing.getFront(meta % 6)).withProperty(VARIANT, Variant.DEFAULT);
         }
         return blockstate;
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        int meta = 0;
+        int meta = state.getValue(FACING).getIndex();
         if (!this.isDouble() && state.getValue(HALF) == EnumBlockHalf.TOP) {
-            meta |= 7;
+            meta += 6;
         }
         return meta;
     }

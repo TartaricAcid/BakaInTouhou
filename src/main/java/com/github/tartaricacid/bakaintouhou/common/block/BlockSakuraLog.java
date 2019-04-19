@@ -17,7 +17,7 @@ public class BlockSakuraLog extends BlockLog {
     public IBlockState getStateFromMeta(int meta) {
         IBlockState iblockstate = this.getDefaultState();
 
-        switch (meta & 4) {
+        switch (meta) {
             case 0:
                 iblockstate = iblockstate.withProperty(LOG_AXIS, BlockLog.EnumAxis.Y);
                 break;
@@ -40,13 +40,13 @@ public class BlockSakuraLog extends BlockLog {
 
         switch (state.getValue(LOG_AXIS)) {
             case X:
-                i |= 1;
+                i = 1;
                 break;
             case Z:
-                i |= 2;
+                i = 2;
                 break;
             case NONE:
-                i |= 3;
+                i = 3;
         }
 
         return i;
