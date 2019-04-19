@@ -55,6 +55,7 @@ public class ShojiRender extends TileEntitySpecialRenderer<TileEntityShoji> {
                 break;
         }
         GlStateManager.scale(0.0625, 0.0625, 0.0625);
+        GlStateManager.rotate(180, 0, 0, 1);
         GlStateManager.rotate(90, 0, 1, 0);
         model.render(1.0f);
         GlStateManager.popMatrix();

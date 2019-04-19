@@ -20,9 +20,7 @@ public class ShojiModel extends ModelBase {
 
     public void render(float scale) {
         main.rotateAngleY = (float) Math.PI / 2;
-        main.offsetY = 8f;
-        main.offsetX = 0f;
-        main.offsetZ = 0f;
+        main.offsetY = -24f;
         main.render(scale);
     }
 

@@ -38,4 +38,6 @@ public class BlockObjectHolder {
     public static BlockBamboo blockBamboo;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "shoji")
     public static BlockShoji blockShoji;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "lantern")
+    public static BlockLantern blockLantern;
 }

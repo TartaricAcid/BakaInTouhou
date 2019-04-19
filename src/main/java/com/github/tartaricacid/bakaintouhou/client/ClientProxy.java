@@ -18,6 +18,7 @@ import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMiniHakkero;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -57,6 +58,10 @@ public class ClientProxy extends CommonProxy {
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraSaplingYellow));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockBamboo));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockBambooShoot));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockShoji));
+
+        registerBlockstateRender(BlockObjectHolder.blockLantern, 0, "type=a");
+        registerBlockstateRender(BlockObjectHolder.blockLantern, 1, "type=b");
 
         registerRender(ItemObjectHolder.itemDanmaku);
         registerRender(ItemObjectHolder.itemHakureiGohei);
@@ -157,5 +162,12 @@ public class ClientProxy extends CommonProxy {
 
     private static void registerRender(Item item) {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+    }
+
+    /**
+     * 用来注册拥有不同模型，但是属于同一方块的物品的形态
+     */
+    private static void registerBlockstateRender(Block block, int meta, String variantIn) {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(block.getRegistryName(), variantIn));
     }
 }

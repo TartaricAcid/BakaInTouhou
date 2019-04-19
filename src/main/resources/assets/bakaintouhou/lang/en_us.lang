@@ -67,9 +67,16 @@ tile.bakaintouhou.sakura_sapling_pink.name=Sakura Sapling
 tile.bakaintouhou.sakura_sapling_yellow.name=Sakura Sapling
 tile.bakaintouhou.bamboo.name=Bamboo
 tile.bakaintouhou.bamboo_shoot.name=Bamboo Shoot
+tile.bakaintouhou.shoji.name=Shoji
+tile.bakaintouhou.lantern.name=Lantern
 
 bakaintouhou.garage_kit.tooltips.character=Character: %s
 bakaintouhou.spawn_crystal.tooltips.character=Character: %s
+bakaintouhou.shoji.tooltips.type.0=Slot Type
+bakaintouhou.shoji.tooltips.type.1=Paint Type
+bakaintouhou.shoji.tooltips.type.2=3 Type
+bakaintouhou.shoji.tooltips.type.3=4 Type
+bakaintouhou.shoji.tooltips.type.4=5 Type
 
 # Command
 command.bakaintouhou.main.usage=Usage: /bakaintouhou <power|score> <get|set|add|min> <player> [float]

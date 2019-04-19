@@ -63,6 +63,7 @@ public class CommonProxy {
         event.getRegistry().register(new BlockBamboo());
         event.getRegistry().register(new BlockBambooShoot());
         event.getRegistry().register(new BlockShoji());
+        event.getRegistry().register(new BlockLantern());
 
         GameRegistry.registerTileEntity(TileEntityGarageKit.class, new ResourceLocation(BakaInTouhou.MOD_ID, "garage_kit"));
         GameRegistry.registerTileEntity(TileEntitySpawnCrystal.class, new ResourceLocation(BakaInTouhou.MOD_ID, "spawn_crystal"));
@@ -111,6 +112,8 @@ public class CommonProxy {
                 BlockObjectHolder.blockBambooShoot.getRegistryName()));
         event.getRegistry().register(new ItemBlock(BlockObjectHolder.blockShoji).setRegistryName(
                 BlockObjectHolder.blockShoji.getRegistryName()));
+        event.getRegistry().register(new ItemLantern(BlockObjectHolder.blockLantern).setRegistryName(
+                BlockObjectHolder.blockLantern.getRegistryName()));
     }
 
     @SubscribeEvent

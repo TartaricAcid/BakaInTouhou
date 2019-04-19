@@ -66,9 +66,9 @@ public class BlockTatamiSlab extends BlockSlab {
     @Override
     protected BlockStateContainer createBlockState() {
         if (!this.isDouble()) {
-            return new BlockStateContainer(this, new IProperty[]{VARIANT, HALF, FACING});
+            return new BlockStateContainer(this, VARIANT, HALF, FACING);
         }
-        return new BlockStateContainer(this, new IProperty[]{VARIANT, FACING});
+        return new BlockStateContainer(this, VARIANT, FACING);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class BlockTatamiSlab extends BlockSlab {
         return super.getUnlocalizedName();
     }
 
-    public static enum Variant implements IStringSerializable {
+    public enum Variant implements IStringSerializable {
         DEFAULT;
 
         @Override

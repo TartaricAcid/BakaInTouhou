@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "bakaintouhou:shoji"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [
+      {
+        "model": "bakaintouhou:item/shoji"
+      }
+    ],
+    "facing": {
+      "north": {},
+      "south": {},
+      "west": {},
+      "east": {},
+      "up": {},
+      "down": {}
+    },
+    "open": {
+      "true": {},
+      "false": {}
+    }
+  }
+}

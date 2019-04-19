@@ -6,6 +6,7 @@ import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySh
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
@@ -52,6 +53,7 @@ public class BlockShoji extends Block implements ITileEntityProvider {
         setHardness(0.5f);
         setRegistryName("shoji");
         setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(OPEN, false));
+        setSoundType(SoundType.WOOD);
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
     }
 
@@ -128,6 +130,10 @@ public class BlockShoji extends Block implements ITileEntityProvider {
     @Override
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
         items.add(getItemStackWithType(0));
+        items.add(getItemStackWithType(1));
+        items.add(getItemStackWithType(2));
+        items.add(getItemStackWithType(3));
+        items.add(getItemStackWithType(4));
     }
 
     @Override
@@ -185,7 +191,7 @@ public class BlockShoji extends Block implements ITileEntityProvider {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(I18n.format("bakaintouhou.shoji.tooltips.type.", getTagCompoundSafe(stack).getInteger("type")));
+        tooltip.add(I18n.format("bakaintouhou.shoji.tooltips.type." + getTagCompoundSafe(stack).getInteger("type")));
     }
 
     @Override
@@ -211,6 +217,6 @@ public class BlockShoji extends Block implements ITileEntityProvider {
     }
 
     public EnumBlockRenderType getRenderType(IBlockState state) {
-        return EnumBlockRenderType.INVISIBLE;
+        return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
     }
 }
