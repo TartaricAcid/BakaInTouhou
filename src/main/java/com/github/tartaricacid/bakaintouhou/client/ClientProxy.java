@@ -59,6 +59,9 @@ public class ClientProxy extends CommonProxy {
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockBamboo));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockBambooShoot));
         registerRender(Item.getItemFromBlock(BlockObjectHolder.blockShoji));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraPaneRed));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraPanePink));
+        registerRender(Item.getItemFromBlock(BlockObjectHolder.blockSakuraPaneYellow));
 
         registerBlockstateRender(BlockObjectHolder.blockLantern, 0, "type=a");
         registerBlockstateRender(BlockObjectHolder.blockLantern, 1, "type=b");

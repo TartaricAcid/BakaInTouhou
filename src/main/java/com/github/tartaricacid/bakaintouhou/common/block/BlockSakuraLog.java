@@ -1,6 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
@@ -11,6 +12,7 @@ public class BlockSakuraLog extends BlockLog {
         this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
         setUnlocalizedName(BakaInTouhou.MOD_ID + "." + "sakura_log");
         setRegistryName("sakura_log");
+        setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
     }
 
     @Override

@@ -40,4 +40,10 @@ public class BlockObjectHolder {
     public static BlockShoji blockShoji;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "lantern")
     public static BlockLantern blockLantern;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "sakura_pane_red")
+    public static BlockSakuraPane blockSakuraPaneRed;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "sakura_pane_pink")
+    public static BlockSakuraPane blockSakuraPanePink;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "sakura_pane_yellow")
+    public static BlockSakuraPane blockSakuraPaneYellow;
 }

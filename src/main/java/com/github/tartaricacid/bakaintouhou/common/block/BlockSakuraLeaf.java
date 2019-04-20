@@ -1,6 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.properties.IProperty;
@@ -24,6 +25,7 @@ public class BlockSakuraLeaf extends BlockLeaves {
                 .withProperty(CHECK_DECAY, Boolean.valueOf(true))
                 .withProperty(DECAYABLE, Boolean.valueOf(true)));
         this.setGraphicsLevel(true);
+        setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
     }
 
     @Override

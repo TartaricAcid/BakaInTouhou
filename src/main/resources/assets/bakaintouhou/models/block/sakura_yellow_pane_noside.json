@@ -1,0 +1,6 @@
+{
+  "parent": "block/pane_noside",
+  "textures": {
+    "pane": "bakaintouhou:blocks/sakura_leaf_yellow"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_side_alt",
+  "textures": {
+    "edge": "bakaintouhou:blocks/sakura_leaf_yellow",
+    "pane": "bakaintouhou:blocks/sakura_leaf_yellow"
+  }
+}
