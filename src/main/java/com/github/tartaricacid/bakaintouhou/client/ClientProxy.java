@@ -1,6 +1,7 @@
 package com.github.tartaricacid.bakaintouhou.client;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.client.particle.SakuraParticle;
 import com.github.tartaricacid.bakaintouhou.client.render.character.*;
 import com.github.tartaricacid.bakaintouhou.client.render.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.client.render.item.EntityMarisaBroomRender;
@@ -13,12 +14,14 @@ import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityGarageKit;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntityShoji;
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
+import com.github.tartaricacid.bakaintouhou.common.config.MainConfig;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMiniHakkero;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -65,6 +68,9 @@ public class ClientProxy extends CommonProxy {
 
         registerBlockstateRender(BlockObjectHolder.blockLantern, 0, "type=a");
         registerBlockstateRender(BlockObjectHolder.blockLantern, 1, "type=b");
+        registerBlockstateRender(BlockObjectHolder.blockSakuraCarpet, 14, "color=red");
+        registerBlockstateRender(BlockObjectHolder.blockSakuraCarpet, 6, "color=pink");
+        registerBlockstateRender(BlockObjectHolder.blockSakuraCarpet, 4, "color=yellow");
 
         registerRender(ItemObjectHolder.itemDanmaku);
         registerRender(ItemObjectHolder.itemHakureiGohei);
@@ -100,6 +106,9 @@ public class ClientProxy extends CommonProxy {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         super.init(event);
+        Minecraft.getMinecraft().effectRenderer.registerParticle(MainConfig.changeId.sakuraParticleId, new SakuraParticle.RedFactory());
+        Minecraft.getMinecraft().effectRenderer.registerParticle(MainConfig.changeId.sakuraParticleId + 1, new SakuraParticle.PinkFactory());
+        Minecraft.getMinecraft().effectRenderer.registerParticle(MainConfig.changeId.sakuraParticleId + 2, new SakuraParticle.YellowFactory());
     }
 
     @Mod.EventHandler

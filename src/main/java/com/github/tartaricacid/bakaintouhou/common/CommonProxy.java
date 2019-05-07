@@ -9,6 +9,7 @@ import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySh
 import com.github.tartaricacid.bakaintouhou.common.block.tileentity.TileEntitySpawnCrystal;
 import com.github.tartaricacid.bakaintouhou.common.capability.*;
 import com.github.tartaricacid.bakaintouhou.common.command.MainCommand;
+import com.github.tartaricacid.bakaintouhou.common.config.MainConfig;
 import com.github.tartaricacid.bakaintouhou.common.entity.character.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.danmaku.*;
 import com.github.tartaricacid.bakaintouhou.common.entity.item.EntityMarisaBroom;
@@ -17,13 +18,19 @@ import com.github.tartaricacid.bakaintouhou.common.item.*;
 import com.github.tartaricacid.bakaintouhou.common.item.danmaku.ItemDanmaku;
 import com.github.tartaricacid.bakaintouhou.common.network.handler.GoheiChangeMessageHandler;
 import com.github.tartaricacid.bakaintouhou.common.network.message.PointMessage;
-import com.github.tartaricacid.bakaintouhou.common.world.WorldGenShrine;
+import com.github.tartaricacid.bakaintouhou.common.world.TouhouWorldProvider;
+import com.github.tartaricacid.bakaintouhou.common.world.biome.BambooBiome;
+import com.github.tartaricacid.bakaintouhou.common.world.biome.BiomeObjectHolder;
+import com.github.tartaricacid.bakaintouhou.common.world.gen.WorldGenShrine;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -41,6 +48,8 @@ import net.minecraftforge.fml.relauncher.Side;
 @Mod.EventBusSubscriber
 public class CommonProxy {
     public static SimpleNetworkWrapper INSTANCE = null;
+    public static DimensionType touhou;
+
     private static int packetId = 0;
     private static int entityId = 0;
 
@@ -67,6 +76,7 @@ public class CommonProxy {
         event.getRegistry().register(new BlockSakuraPane("red"));
         event.getRegistry().register(new BlockSakuraPane("pink"));
         event.getRegistry().register(new BlockSakuraPane("yellow"));
+        event.getRegistry().register(new BlockSakuraCarpet());
 
         GameRegistry.registerTileEntity(TileEntityGarageKit.class, new ResourceLocation(BakaInTouhou.MOD_ID, "garage_kit"));
         GameRegistry.registerTileEntity(TileEntitySpawnCrystal.class, new ResourceLocation(BakaInTouhou.MOD_ID, "spawn_crystal"));
@@ -123,11 +133,19 @@ public class CommonProxy {
                 BlockObjectHolder.blockSakuraPanePink.getRegistryName()));
         event.getRegistry().register(new ItemLantern(BlockObjectHolder.blockSakuraPaneYellow).setRegistryName(
                 BlockObjectHolder.blockSakuraPaneYellow.getRegistryName()));
+        event.getRegistry().register(new ItemSakuraCarpet(BlockObjectHolder.blockSakuraCarpet).setRegistryName(
+                BlockObjectHolder.blockSakuraCarpet.getRegistryName()));
     }
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+        // TODO
+    }
 
+    @SubscribeEvent
+    public static void registerBiomes(RegistryEvent.Register<Biome> event) {
+        event.getRegistry().register(new BambooBiome(new Biome.BiomeProperties("Touhou Bamboo Biome")).setRegistryName(
+                BakaInTouhou.MOD_ID, "bamboo_biome"));
     }
 
     @Mod.EventHandler
@@ -136,6 +154,8 @@ public class CommonProxy {
 
         CapabilityManager.INSTANCE.register(IPower.class, new PowerStroage(), Power.FACTORY);
         CapabilityManager.INSTANCE.register(IScore.class, new ScoreStroage(), Score.FACTORY);
+
+        BiomeObjectHolder.initBiomeManagerAndDictionary();
     }
 
     @Mod.EventHandler
@@ -146,6 +166,7 @@ public class CommonProxy {
     public void preinit(FMLPreInitializationEvent event) {
         registerEntities();
         registerMessage();
+        registerDimensions();
     }
 
     @Mod.EventHandler
@@ -301,5 +322,11 @@ public class CommonProxy {
         INSTANCE.registerMessage(PointMessageHandler.class, PointMessage.class, packetId++, Side.CLIENT);
 
         INSTANCE.registerMessage(GoheiChangeMessageHandler.class, GoheiChangeMessage.class, packetId++, Side.SERVER);
+    }
+
+    private void registerDimensions() {
+        touhou = DimensionType.register(BakaInTouhou.MOD_ID, "touhou", MainConfig.changeId.dimensionId,
+                TouhouWorldProvider.class, false);
+        DimensionManager.registerDimension(MainConfig.changeId.dimensionId, touhou);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/carpet",
+  "textures": {
+    "particle": "bakaintouhou:blocks/sakura_leaf_pink",
+    "wool": "bakaintouhou:blocks/sakura_leaf_pink"
+  }
+}

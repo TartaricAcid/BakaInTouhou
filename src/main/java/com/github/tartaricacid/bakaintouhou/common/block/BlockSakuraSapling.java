@@ -2,7 +2,7 @@ package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
-import com.github.tartaricacid.bakaintouhou.common.world.WorldGenBigTree;
+import com.github.tartaricacid.bakaintouhou.common.world.gen.WorldGenBigTree;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.IGrowable;

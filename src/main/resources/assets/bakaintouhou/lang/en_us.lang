@@ -72,6 +72,7 @@ tile.bakaintouhou.lantern.name=Lantern
 tile.bakaintouhou.sakura_pane_red.name=Red Sakura Pane
 tile.bakaintouhou.sakura_pane_pink.name=Pink Sakura Pane
 tile.bakaintouhou.sakura_pane_yellow.name=Yellow Sakura Pane
+tile.bakaintouhou.sakura_carpet.name=Sakura Carpet
 
 bakaintouhou.garage_kit.tooltips.character=Character: %s
 bakaintouhou.spawn_crystal.tooltips.character=Character: %s
@@ -148,3 +149,11 @@ bakaintouhou.advancement.th06.frandle.desc=Hurt the frandle
 # Patchouli Book Memorizable Gensokyo
 bakaintouhou.patchouli.memorizable_gensokyo.name=Memorizable Gensokyo
 bakaintouhou.patchouli.memorizable_gensokyo.landing_text=？？？
+
+# GUI
+gui.bakaintouhou.world.loading=少女祈祷中 NowLoading...
+
+# Config
+config.bakaintouhou.change_id.name=Change ID
+config.bakaintouhou.dimension_id.name=Dimension ID
+config.bakaintouhou.sakura_particle_id.name=Sakura Particle ID

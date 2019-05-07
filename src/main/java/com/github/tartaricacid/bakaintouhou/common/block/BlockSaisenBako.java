@@ -1,7 +1,9 @@
 package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
+import com.github.tartaricacid.bakaintouhou.common.config.MainConfig;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
+import com.github.tartaricacid.bakaintouhou.common.world.TouhouTeleporter;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -16,6 +18,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -35,7 +38,15 @@ public class BlockSaisenBako extends Block {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        //TODO
+        if (!worldIn.isRemote && !playerIn.isRiding() && !playerIn.isBeingRidden()) {
+            BlockPos p = worldIn.getSpawnPoint();
+            if (playerIn.dimension != 0) {
+                playerIn.changeDimension(0, new TouhouTeleporter((WorldServer) worldIn, p.getX(), p.getY(), p.getZ()));
+            } else {
+                playerIn.changeDimension(MainConfig.changeId.dimensionId, new TouhouTeleporter((WorldServer) worldIn, p.getX(), p.getY(), p.getZ()));
+            }
+            return true;
+        }
         return false;
     }
 

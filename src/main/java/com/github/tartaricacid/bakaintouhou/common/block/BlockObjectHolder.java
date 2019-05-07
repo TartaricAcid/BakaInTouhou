@@ -46,4 +46,6 @@ public class BlockObjectHolder {
     public static BlockSakuraPane blockSakuraPanePink;
     @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "sakura_pane_yellow")
     public static BlockSakuraPane blockSakuraPaneYellow;
+    @GameRegistry.ObjectHolder(BakaInTouhou.MOD_ID + ":" + "sakura_carpet")
+    public static BlockSakuraCarpet blockSakuraCarpet;
 }

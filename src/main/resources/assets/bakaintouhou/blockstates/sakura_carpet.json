@@ -1,0 +1,34 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "bakaintouhou:sakura_carpet_pink"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "color": {
+      "red": {
+        "model": "bakaintouhou:sakura_carpet_red"
+      },
+      "pink": {
+        "model": "bakaintouhou:sakura_carpet_pink"
+      },
+      "yellow": {
+        "model": "bakaintouhou:sakura_carpet_yellow"
+      },
+      "light_blue": {},
+      "blue": {},
+      "silver": {},
+      "orange": {},
+      "gray": {},
+      "black": {},
+      "lime": {},
+      "cyan": {},
+      "magenta": {},
+      "white": {},
+      "purple": {},
+      "green": {},
+      "brown": {}
+    }
+  }
+}

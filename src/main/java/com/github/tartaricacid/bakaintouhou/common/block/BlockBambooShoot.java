@@ -2,7 +2,7 @@ package com.github.tartaricacid.bakaintouhou.common.block;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import com.github.tartaricacid.bakaintouhou.common.item.ItemObjectHolder;
-import com.github.tartaricacid.bakaintouhou.common.world.WorldGenBamboo;
+import com.github.tartaricacid.bakaintouhou.common.world.gen.WorldGenBamboo;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;

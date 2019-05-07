@@ -1,4 +1,4 @@
-package com.github.tartaricacid.bakaintouhou.common.world;
+package com.github.tartaricacid.bakaintouhou.common.world.gen;
 
 import com.github.tartaricacid.bakaintouhou.common.block.BlockObjectHolder;
 import com.google.common.collect.Lists;

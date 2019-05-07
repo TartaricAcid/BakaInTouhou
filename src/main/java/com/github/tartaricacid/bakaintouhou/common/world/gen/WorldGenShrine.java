@@ -1,4 +1,4 @@
-package com.github.tartaricacid.bakaintouhou.common.world;
+package com.github.tartaricacid.bakaintouhou.common.world.gen;
 
 import com.github.tartaricacid.bakaintouhou.BakaInTouhou;
 import net.minecraft.init.Biomes;

@@ -11,6 +11,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -25,6 +28,7 @@ public class BlockSakuraLeaf extends BlockLeaves {
                 .withProperty(CHECK_DECAY, Boolean.valueOf(true))
                 .withProperty(DECAYABLE, Boolean.valueOf(true)));
         this.setGraphicsLevel(true);
+        this.setLightLevel(0.8f);
         setCreativeTab(ItemObjectHolder.bakaInTouhouTabs);
     }
 
@@ -71,6 +75,29 @@ public class BlockSakuraLeaf extends BlockLeaves {
             i |= 2;
         }
         return i;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+        super.randomDisplayTick(stateIn, worldIn, pos, rand);
+        if (rand.nextInt(8) == 0) {
+            double x = (double) ((float) pos.getX() + rand.nextFloat());
+            double y = (double) pos.getY() - 0.05D;
+            double z = (double) ((float) pos.getZ() + rand.nextFloat());
+
+            switch (color) {
+                case "red":
+                    worldIn.spawnAlwaysVisibleParticle(99, x, y, z, 0D, 0D, 0D);
+                    break;
+                case "yellow":
+                    worldIn.spawnAlwaysVisibleParticle(101, x, y, z, 0D, 0D, 0D);
+                    break;
+                default:
+                    worldIn.spawnAlwaysVisibleParticle(100, x, y, z, 0D, 0D, 0D);
+                    break;
+            }
+        }
     }
 
     @Override
